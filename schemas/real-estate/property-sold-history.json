@@ -89,23 +89,22 @@
     },
     "financing_type": {
       "type": "string",
-      "enum": ["conventional", "cash", "FHA", "VA"],
+      "enum": ["conventional", "cash", "FHA", "VA", "other"],
       "description": "Type of financing used in the transaction. Commonly found in: transaction details, deed records, public records."
     },
     "mls_id": {
       "type": "string",
       "description": "MLS identifier for the listing. Commonly found in: listing details, MLS data block, transaction record."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this record was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["address", "city", "state", "zip_code", "sale_price", "sale_date", "source_url", "extracted_at"]
+  "required": ["address", "city", "state", "zip_code", "sale_price", "sale_date"]
 }

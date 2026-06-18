@@ -47,7 +47,7 @@
     },
     "lease_type": {
       "type": "string",
-      "enum": ["fixed", "month_to_month"],
+      "enum": ["fixed", "month_to_month", "other"],
       "description": "Type of lease agreement. Commonly found in: lease terms section, rental details."
     },
     "available_date": {
@@ -77,7 +77,7 @@
     },
     "pet_policy": {
       "type": "string",
-      "enum": ["allowed", "cats_only", "no_pets"],
+      "enum": ["allowed", "cats_only", "no_pets", "other"],
       "description": "Pet policy for the rental. Commonly found in: rental policies section, amenities list, listing details."
     },
     "utilities_included": {
@@ -104,7 +104,7 @@
     },
     "laundry_type": {
       "type": "string",
-      "enum": ["in_unit", "shared", "none"],
+      "enum": ["in_unit", "shared", "none", "other"],
       "description": "Type of laundry facilities available. Commonly found in: amenities section, rental features list, property details."
     },
     "furnished": {
@@ -145,16 +145,15 @@
       "type": "number",
       "description": "Number of days the rental has been listed. Commonly found in: listing stats section, property details."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["address", "city", "state", "zip_code", "rent_monthly", "bedrooms", "bathrooms", "source_url", "extracted_at"]
+  "required": ["address", "city", "state", "zip_code", "rent_monthly", "bedrooms", "bathrooms"]
 }

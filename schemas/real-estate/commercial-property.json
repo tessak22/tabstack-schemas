@@ -35,12 +35,12 @@
     },
     "price_type": {
       "type": "string",
-      "enum": ["sale", "lease"],
+      "enum": ["sale", "lease", "other"],
       "description": "Whether the property is listed for sale or lease. Commonly found in: listing type badge, property header, transaction type field."
     },
     "lease_type": {
       "type": "string",
-      "enum": ["NNN", "gross", "modified_gross"],
+      "enum": ["NNN", "gross", "modified_gross", "other"],
       "description": "Type of lease structure (Net, Gross, or Modified Gross). Commonly found in: lease details section, property financials, listing details table."
     },
     "price_per_sqft": {
@@ -57,12 +57,12 @@
     },
     "building_class": {
       "type": "string",
-      "enum": ["A", "B", "C"],
+      "enum": ["A", "B", "C", "other"],
       "description": "Building class rating (A, B, or C). Commonly found in: property details table, building specs section, listing highlights."
     },
     "property_type": {
       "type": "string",
-      "enum": ["office", "retail", "industrial", "multifamily", "mixed_use", "land"],
+      "enum": ["office", "retail", "industrial", "multifamily", "mixed_use", "land", "other"],
       "description": "Type of commercial property. Commonly found in: listing header, property type badge, breadcrumb navigation."
     },
     "total_sqft": {
@@ -122,16 +122,15 @@
       "format": "date",
       "description": "Date the property was listed. Commonly found in: listing stats section, property history, metadata."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["address", "city", "state", "zip_code", "price_type", "property_type", "source_url", "extracted_at"]
+  "required": ["address", "city", "state", "zip_code", "price_type", "property_type"]
 }

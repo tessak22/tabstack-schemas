@@ -47,7 +47,7 @@
     },
     "status": {
       "type": "string",
-      "enum": ["active", "pending", "sold", "off_market"],
+      "enum": ["active", "pending", "sold", "off_market", "other"],
       "description": "Current listing status of the property. Commonly found in: listing status badge, property header, MLS status field."
     },
     "bedrooms": {
@@ -76,7 +76,7 @@
     },
     "property_type": {
       "type": "string",
-      "enum": ["single_family", "condo", "townhouse", "multi_family", "land"],
+      "enum": ["single_family", "condo", "townhouse", "multi_family", "land", "other"],
       "description": "Type of residential property. Commonly found in: listing header, property details, breadcrumb navigation."
     },
     "stories": {
@@ -151,16 +151,15 @@
       "type": "number",
       "description": "Annual property tax amount. Commonly found in: property tax section, listing financial details, public records."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["address", "city", "state", "zip_code", "price", "status", "bedrooms", "bathrooms_full", "property_type", "source_url", "extracted_at"]
+  "required": ["address", "city", "state", "zip_code", "price", "status", "bedrooms", "bathrooms_full", "property_type"]
 }

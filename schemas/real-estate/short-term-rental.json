@@ -27,7 +27,7 @@
     },
     "property_type": {
       "type": "string",
-      "enum": ["entire_place", "private_room", "shared_room"],
+      "enum": ["entire_place", "private_room", "shared_room", "other"],
       "description": "Type of space offered. Commonly found in: listing header, property type badge, room type indicator."
     },
     "city": {
@@ -103,7 +103,7 @@
     },
     "cancellation_policy": {
       "type": "string",
-      "enum": ["flexible", "moderate", "strict"],
+      "enum": ["flexible", "moderate", "strict", "other"],
       "description": "Cancellation policy for the listing. Commonly found in: cancellation policy section, booking terms, listing policies."
     },
     "images": {
@@ -122,16 +122,15 @@
       "type": "boolean",
       "description": "Whether the listing supports instant booking. Commonly found in: instant book badge, booking widget, listing header indicators."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["title", "platform", "property_type", "city", "country", "bedrooms", "bathrooms", "max_guests", "nightly_rate", "source_url", "extracted_at"]
+  "required": ["title", "platform", "property_type", "city", "country", "bedrooms", "bathrooms", "max_guests", "nightly_rate"]
 }

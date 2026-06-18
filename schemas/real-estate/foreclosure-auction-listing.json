@@ -47,7 +47,7 @@
     },
     "foreclosure_stage": {
       "type": "string",
-      "enum": ["pre_foreclosure", "auction", "reo", "bank_owned"],
+      "enum": ["pre_foreclosure", "auction", "reo", "bank_owned", "other"],
       "description": "Current stage of the foreclosure process. Commonly found in: listing status badge, foreclosure stage indicator, property header."
     },
     "auction_date": {
@@ -73,12 +73,12 @@
     },
     "property_condition": {
       "type": "string",
-      "enum": ["unknown", "poor", "fair", "good"],
+      "enum": ["unknown", "poor", "fair", "good", "other"],
       "description": "Reported condition of the property. Commonly found in: property condition section, inspection notes, listing details."
     },
     "occupancy_status": {
       "type": "string",
-      "enum": ["vacant", "occupied"],
+      "enum": ["vacant", "occupied", "other"],
       "description": "Whether the property is currently vacant or occupied. Commonly found in: property details, occupancy status field, listing notes."
     },
     "inspection_allowed": {
@@ -101,16 +101,15 @@
       "type": "number",
       "description": "Amount the borrower has defaulted on. Commonly found in: foreclosure notice, default details, legal documents."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["address", "city", "state", "zip_code", "foreclosure_stage", "source_url", "extracted_at"]
+  "required": ["address", "city", "state", "zip_code", "foreclosure_stage"]
 }
