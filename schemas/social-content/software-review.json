@@ -33,7 +33,7 @@
     "reviewer_company_size": {
       "type": "string",
       "description": "Company size bracket of the reviewer's employer.",
-      "enum": ["1-10", "11-50", "51-200", "201-1000", "1001-5000", "5001+"]
+      "enum": ["1-10", "11-50", "51-200", "201-1000", "1001-5000", "5001+", "other"]
     },
     "reviewer_industry": {
       "type": "string",
@@ -96,15 +96,15 @@
       "type": "boolean",
       "description": "Whether the reviewer is a verified purchaser of the product."
     },
-    "source_url": {
+    "page_title": {
       "type": "string",
-      "description": "The URL of the page this data was sourced from."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
     },
-    "extracted_at": {
+    "favicon": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted."
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["platform", "product_name", "rating_overall", "review_date", "source_url", "extracted_at"]
+  "required": ["platform", "product_name", "rating_overall", "review_date"]
 }

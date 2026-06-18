@@ -13,7 +13,7 @@
     "profile_type": {
       "type": "string",
       "description": "Whether this profile belongs to a person, company, or organization.",
-      "enum": ["person", "company", "organization"]
+      "enum": ["person", "company", "organization", "other"]
     },
     "username_or_handle": {
       "type": "string",
@@ -88,15 +88,15 @@
       "format": "date-time",
       "description": "Timestamp when the profile data was snapshotted."
     },
-    "source_url": {
+    "page_title": {
       "type": "string",
-      "description": "The URL of the page this data was sourced from."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
     },
-    "extracted_at": {
+    "favicon": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted."
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["platform", "profile_type", "username_or_handle", "display_name", "profile_url", "source_url", "extracted_at"]
+  "required": ["platform", "profile_type", "username_or_handle", "display_name", "profile_url"]
 }

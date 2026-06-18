@@ -84,7 +84,7 @@
     "sentiment": {
       "type": "string",
       "description": "Overall sentiment of the article.",
-      "enum": ["positive", "negative", "neutral"]
+      "enum": ["positive", "negative", "neutral", "other"]
     },
     "paywall": {
       "type": "boolean",
@@ -94,14 +94,14 @@
       "type": "string",
       "description": "URL to the article's featured image."
     },
-    "source_url": {
+    "page_title": {
       "type": "string",
-      "description": "The URL of the page this data was sourced from."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
     },
-    "extracted_at": {
+    "favicon": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted."
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
   "$defs": {
@@ -126,5 +126,5 @@
       "required": ["name", "type"]
     }
   },
-  "required": ["headline", "publication_name", "published_at", "article_url", "source_url", "extracted_at"]
+  "required": ["headline", "publication_name", "published_at", "article_url"]
 }
