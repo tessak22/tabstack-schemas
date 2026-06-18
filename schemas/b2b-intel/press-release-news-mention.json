@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/press-release-news-mention.json",
+  "title": "Press Release & News Mention",
+  "description": "Schema for press releases and news mentions about B2B companies.",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "description": "Headline or title of the press release or news article. Commonly found in: h1 tag, og:title meta tag, article headline."
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Primary company mentioned or featured. Commonly found in: press release header, article body company mention, company byline."
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the primary company. Commonly found in: company website link, press release footer, company profile link."
+    },
+    "publication_name": {
+      "type": "string",
+      "description": "Name of the publication or newswire. Commonly found in: site header, og:site_name meta tag, publication byline."
+    },
+    "author": {
+      "type": "string",
+      "description": "Author of the article or press release. Commonly found in: byline, author metadata, article header."
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the article or press release was published. Commonly found in: publish date metadata, article date display, article:published_time meta tag."
+    },
+    "mention_type": {
+      "type": "string",
+      "enum": ["funding", "product_launch", "partnership", "acquisition", "exec_change", "award", "event", "regulatory", "layoff", "other"],
+      "description": "Category of the news mention. Commonly found in: article topic classification, press release category, news tag."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short summary or lead paragraph. Commonly found in: article lead paragraph, meta description, article excerpt."
+    },
+    "full_text": {
+      "type": "string",
+      "description": "Full text content of the press release or article. Commonly found in: article body, press release full text, main content area."
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": ["positive", "neutral", "negative", "other"],
+      "description": "Inferred sentiment of the mention. Commonly found in: NLP sentiment analysis, tone of article, headline framing."
+    },
+    "quote_from_exec": {
+      "type": "string",
+      "description": "Notable executive quote from the article. Commonly found in: quote block in article, press release executive quote, highlighted quote."
+    },
+    "related_companies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Other companies mentioned in the article. Commonly found in: article body company mentions, related companies section, linked company names."
+    },
+    "related_products": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Products mentioned in the article. Commonly found in: article body product mentions, product name references, launch announcement names."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["headline", "company_name", "publish_date", "mention_type"]
+}

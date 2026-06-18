@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/product-changelog-entry.json",
+  "title": "Product Changelog Entry",
+  "description": "Schema for individual product changelog or release note entries.",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the company publishing the changelog. Commonly found in: site header, changelog page header, og:site_name meta tag."
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the company. Commonly found in: site URL, canonical domain, changelog URL."
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Name of the specific product or component. Commonly found in: changelog entry header, product tag, release notes section title."
+    },
+    "version": {
+      "type": "string",
+      "description": "Version number or release identifier. Commonly found in: changelog version heading, release tag, version badge."
+    },
+    "release_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of this changelog entry or release. Commonly found in: changelog entry date, release date display, article publish date."
+    },
+    "change_type": {
+      "type": "string",
+      "enum": ["feature", "improvement", "bugfix", "deprecation", "security", "breaking_change", "other"],
+      "description": "Type of change described in this entry. Commonly found in: change type badge, changelog category label, entry tag."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title or headline of the changelog entry. Commonly found in: changelog entry heading, release note title, h2/h3 tag."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the change. Commonly found in: changelog entry body, release note description, change detail text."
+    },
+    "affected_products": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Products or modules affected by this change. Commonly found in: product tag labels, affected products list, changelog entry metadata."
+    },
+    "affected_plans": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Pricing plans affected by this change. Commonly found in: plan availability note, plan tag labels, changelog metadata."
+    },
+    "is_breaking": {
+      "type": "boolean",
+      "description": "Whether this is a breaking change. Commonly found in: breaking change badge, breaking label, changelog entry flag."
+    },
+    "migration_required": {
+      "type": "boolean",
+      "description": "Whether migration steps are required for this change. Commonly found in: migration notice, action required label, breaking change section."
+    },
+    "migration_guide_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the migration guide for this change. Commonly found in: migration guide link, learn more link, documentation link in changelog."
+    },
+    "changelog_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the changelog page. Commonly found in: canonical link, changelog navigation link, source page URL."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["company_name", "release_date", "change_type", "title", "description"]
+}

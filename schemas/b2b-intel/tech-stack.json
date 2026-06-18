@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/tech-stack.json",
+  "title": "Tech Stack",
+  "description": "Schema for detected technology stack data for a company.",
+  "type": "object",
+  "$defs": {
+    "tech_item": {
+      "type": "object",
+      "description": "A detected technology item with metadata.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the technology. Commonly found in: tech detection output, BuiltWith data, Wappalyzer result."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category or sub-category of the technology. Commonly found in: tech detection category, BuiltWith category label."
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence score (0-1) for this detection. Commonly found in: Wappalyzer confidence score, detection engine output."
+        }
+      },
+      "required": ["name"]
+    }
+  },
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the company. Commonly found in: company profile, page title, site domain lookup."
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the company. Commonly found in: site URL, analyzed domain."
+    },
+    "detected_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the tech stack was detected. Commonly found in: detection timestamp, scraper system timestamp."
+    },
+    "frontend": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tech_item"
+      },
+      "description": "Frontend frameworks and libraries detected. Commonly found in: page source JavaScript, Wappalyzer frontend category, BuiltWith JS frameworks."
+    },
+    "backend": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tech_item"
+      },
+      "description": "Backend languages and frameworks detected. Commonly found in: HTTP response headers, Wappalyzer backend category, job postings tech mentions."
+    },
+    "infrastructure": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tech_item"
+      },
+      "description": "Infrastructure and cloud providers detected. Commonly found in: DNS records, HTTP headers, BuiltWith hosting category."
+    },
+    "databases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/tech_item"
+      },
+      "description": "Databases detected in use. Commonly found in: job postings, BuiltWith databases category, engineering blog mentions."
+    },
+    "payments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Payment processors detected. Commonly found in: checkout page scripts, BuiltWith payment category, page source scan."
+    },
+    "analytics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Analytics tools detected. Commonly found in: page source scripts, BuiltWith analytics category, Wappalyzer analytics."
+    },
+    "crm": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "CRM tools detected. Commonly found in: page source, BuiltWith CRM category, tracking scripts."
+    },
+    "marketing_automation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Marketing automation tools detected. Commonly found in: page scripts, BuiltWith email marketing category, tracking pixels."
+    },
+    "customer_support": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Customer support tools detected (e.g., chat widgets). Commonly found in: chat widget scripts, BuiltWith support category, page source scan."
+    },
+    "cdn": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Content delivery networks detected. Commonly found in: DNS records, HTTP response headers, asset URLs."
+    },
+    "ci_cd": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "CI/CD tools detected or mentioned. Commonly found in: engineering blog, job postings, GitHub workflows."
+    },
+    "monitoring": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Monitoring and observability tools detected. Commonly found in: page source scripts, job postings, engineering blog."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["company_name", "company_domain", "detected_at"]
+}

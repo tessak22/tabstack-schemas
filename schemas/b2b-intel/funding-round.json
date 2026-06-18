@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/funding-round.json",
+  "title": "Funding Round",
+  "description": "Schema for venture capital and private equity funding round records.",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the company that raised funding. Commonly found in: press release headline, Crunchbase company name, news article title."
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the funded company. Commonly found in: company website link, press release footer, Crunchbase profile."
+    },
+    "round_type": {
+      "type": "string",
+      "enum": ["pre_seed", "seed", "series_a", "series_b", "series_c", "series_d_plus", "bridge", "convertible", "ipo", "spac", "other"],
+      "description": "Type of funding round. Commonly found in: round type field, Crunchbase round stage, press release headline."
+    },
+    "amount_usd": {
+      "type": "number",
+      "description": "Amount raised in this round in USD. Commonly found in: press release headline amount, Crunchbase amount field, news article."
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code of the raise. Commonly found in: press release amount, funding details section."
+    },
+    "announced_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the funding round was publicly announced. Commonly found in: press release date, article publish date, Crunchbase announced on field."
+    },
+    "closed_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the funding round officially closed. Commonly found in: SEC filing closed date, Crunchbase closed on field, press release details."
+    },
+    "lead_investor": {
+      "type": "string",
+      "description": "Name of the lead investor. Commonly found in: press release investor mention, Crunchbase lead investor, news article."
+    },
+    "co_investors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of participating co-investors. Commonly found in: investor list in press release, Crunchbase investor list, news article investor section."
+    },
+    "total_raised_usd": {
+      "type": "number",
+      "description": "Total funding raised to date in USD. Commonly found in: Crunchbase total funding, press release total raised stat, company profile."
+    },
+    "post_money_valuation_usd": {
+      "type": "number",
+      "description": "Post-money valuation in USD. Commonly found in: press release valuation mention, news article valuation, SEC filing."
+    },
+    "pre_money_valuation_usd": {
+      "type": "number",
+      "description": "Pre-money valuation in USD. Commonly found in: SEC filing, analyst report, deal terms disclosure."
+    },
+    "investor_count": {
+      "type": "number",
+      "description": "Total number of investors participating in this round. Commonly found in: Crunchbase investor count, press release investor list count."
+    },
+    "use_of_funds": {
+      "type": "string",
+      "description": "Stated intended use of the raised funds. Commonly found in: press release body, CEO quote, news article use of funds section."
+    },
+    "company_hq_city": {
+      "type": "string",
+      "description": "City of the company's headquarters. Commonly found in: company profile location, press release company info, Crunchbase HQ."
+    },
+    "company_hq_country": {
+      "type": "string",
+      "description": "Country of the company's headquarters. Commonly found in: company profile location, press release company info, Crunchbase HQ."
+    },
+    "company_industry": {
+      "type": "string",
+      "description": "Industry of the funded company. Commonly found in: Crunchbase categories, press release company description, news article sector tag."
+    },
+    "source_type": {
+      "type": "string",
+      "description": "Type of source (e.g., press_release, crunchbase, news_article). Commonly found in: site domain classification, content type, source format."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["company_name", "round_type", "announced_date"]
+}
