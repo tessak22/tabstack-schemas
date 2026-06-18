@@ -67,7 +67,7 @@
     },
     "pricing_model": {
       "type": "string",
-      "enum": ["per_seat", "usage_based", "flat", "tiered", "custom"],
+      "enum": ["per_seat", "usage_based", "flat", "tiered", "custom", "other"],
       "description": "Primary pricing model used. Commonly found in: pricing page structure, pricing model description, plan structure."
     },
     "free_tier_available": {
@@ -108,16 +108,15 @@
       },
       "description": "List of pricing plans available. Commonly found in: pricing plan cards, plan tier section, pricing comparison table."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the pricing page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this pricing page was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["company_name", "company_domain", "plans", "source_url", "extracted_at"]
+  "required": ["company_name", "company_domain", "plans"]
 }

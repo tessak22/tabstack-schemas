@@ -123,11 +123,15 @@
       },
       "description": "Monitoring and observability tools detected. Commonly found in: page source scripts, job postings, engineering blog."
     },
-    "extracted_at": {
+    "page_title": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this data was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["company_name", "company_domain", "detected_at", "extracted_at"]
+  "required": ["company_name", "company_domain", "detected_at"]
 }

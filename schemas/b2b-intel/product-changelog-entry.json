@@ -28,7 +28,7 @@
     },
     "change_type": {
       "type": "string",
-      "enum": ["feature", "improvement", "bugfix", "deprecation", "security", "breaking_change"],
+      "enum": ["feature", "improvement", "bugfix", "deprecation", "security", "breaking_change", "other"],
       "description": "Type of change described in this entry. Commonly found in: change type badge, changelog category label, entry tag."
     },
     "title": {
@@ -71,16 +71,15 @@
       "format": "uri",
       "description": "URL of the changelog page. Commonly found in: canonical link, changelog navigation link, source page URL."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this entry was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this entry was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["company_name", "release_date", "change_type", "title", "description", "source_url", "extracted_at"]
+  "required": ["company_name", "release_date", "change_type", "title", "description"]
 }

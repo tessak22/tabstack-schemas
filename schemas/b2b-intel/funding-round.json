@@ -15,7 +15,7 @@
     },
     "round_type": {
       "type": "string",
-      "enum": ["pre_seed", "seed", "series_a", "series_b", "series_c", "series_d_plus", "bridge", "convertible", "ipo", "spac"],
+      "enum": ["pre_seed", "seed", "series_a", "series_b", "series_c", "series_d_plus", "bridge", "convertible", "ipo", "spac", "other"],
       "description": "Type of funding round. Commonly found in: round type field, Crunchbase round stage, press release headline."
     },
     "amount_usd": {
@@ -79,20 +79,19 @@
       "type": "string",
       "description": "Industry of the funded company. Commonly found in: Crunchbase categories, press release company description, news article sector tag."
     },
-    "source_url": {
-      "type": "string",
-      "format": "uri",
-      "description": "URL of the page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
     "source_type": {
       "type": "string",
       "description": "Type of source (e.g., press_release, crunchbase, news_article). Commonly found in: site domain classification, content type, source format."
     },
-    "extracted_at": {
+    "page_title": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["company_name", "round_type", "announced_date", "source_url", "extracted_at"]
+  "required": ["company_name", "round_type", "announced_date"]
 }

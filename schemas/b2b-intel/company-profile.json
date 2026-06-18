@@ -35,7 +35,7 @@
     },
     "employee_range": {
       "type": "string",
-      "enum": ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"],
+      "enum": ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+", "other"],
       "description": "Employee count range band. Commonly found in: LinkedIn company size field, company profile size indicator, data provider."
     },
     "industry": {
@@ -51,7 +51,7 @@
     },
     "funding_stage": {
       "type": "string",
-      "enum": ["pre_seed", "seed", "series_a", "series_b", "series_c", "series_d", "series_e", "series_f", "public", "acquired", "bootstrapped"],
+      "enum": ["pre_seed", "seed", "series_a", "series_b", "series_c", "series_d", "series_e", "series_f", "public", "acquired", "bootstrapped", "other"],
       "description": "Latest funding stage of the company. Commonly found in: Crunchbase funding section, company profile funding info, press release."
     },
     "total_funding_usd": {
@@ -72,7 +72,7 @@
     },
     "revenue_range": {
       "type": "string",
-      "enum": ["<1M", "1-10M", "10-50M", "50-100M", "100M+"],
+      "enum": ["<1M", "1-10M", "10-50M", "50-100M", "100M+", "other"],
       "description": "Estimated annual revenue range. Commonly found in: data provider revenue estimate, company profile revenue field, market research."
     },
     "is_public": {
@@ -130,16 +130,15 @@
       },
       "description": "List of known or identified competitors. Commonly found in: G2 competitors section, Crunchbase similar companies, analyst reports."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this profile was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this profile was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["name", "domain", "source_url", "extracted_at"]
+  "required": ["name", "domain"]
 }

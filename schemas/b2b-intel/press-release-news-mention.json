@@ -45,7 +45,7 @@
     },
     "sentiment": {
       "type": "string",
-      "enum": ["positive", "neutral", "negative"],
+      "enum": ["positive", "neutral", "negative", "other"],
       "description": "Inferred sentiment of the mention. Commonly found in: NLP sentiment analysis, tone of article, headline framing."
     },
     "quote_from_exec": {
@@ -66,16 +66,15 @@
       },
       "description": "Products mentioned in the article. Commonly found in: article body product mentions, product name references, launch announcement names."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this article was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this article was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["headline", "company_name", "publish_date", "mention_type", "source_url", "extracted_at"]
+  "required": ["headline", "company_name", "publish_date", "mention_type"]
 }

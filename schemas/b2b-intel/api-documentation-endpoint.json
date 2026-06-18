@@ -74,7 +74,7 @@
     },
     "http_method": {
       "type": "string",
-      "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"],
+      "enum": ["GET", "POST", "PUT", "PATCH", "DELETE", "other"],
       "description": "HTTP method for the endpoint. Commonly found in: HTTP method badge, endpoint label, code example."
     },
     "title": {
@@ -87,7 +87,7 @@
     },
     "auth_type": {
       "type": "string",
-      "enum": ["api_key", "oauth2", "bearer", "basic", "none"],
+      "enum": ["api_key", "oauth2", "bearer", "basic", "none", "other"],
       "description": "Authentication type required for this endpoint. Commonly found in: authentication section, auth badge, security requirements."
     },
     "parameters": {
@@ -130,16 +130,15 @@
       "format": "uri",
       "description": "URL of the documentation page for this endpoint. Commonly found in: canonical link, docs navigation link, source page URL."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this data was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["company_name", "endpoint_path", "http_method", "source_url", "extracted_at"]
+  "required": ["company_name", "endpoint_path", "http_method"]
 }
