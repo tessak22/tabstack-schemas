@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/saas-pricing-page.json",
+  "title": "SaaS Pricing Page",
+  "description": "Schema for SaaS product pricing page data including plans, features, and pricing models.",
+  "type": "object",
+  "$defs": {
+    "plan": {
+      "type": "object",
+      "description": "An individual pricing plan or tier.",
+      "properties": {
+        "plan_name": {
+          "type": "string",
+          "description": "Name of the pricing plan (e.g., Starter, Pro, Enterprise).",
+          "x-tabstack-priority": "required",
+          "x-tabstack-source-hints": ["plan header", "pricing tier name", "plan card title"]
+        },
+        "price_monthly": {
+          "type": "number",
+          "description": "Monthly price when billed monthly.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["monthly price display", "plan price card", "billing toggle monthly"]
+        },
+        "price_annual_monthly": {
+          "type": "number",
+          "description": "Monthly price when billed annually.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["annual price display", "plan price card annual view", "billing toggle annual"]
+        },
+        "price_annual_total": {
+          "type": "number",
+          "description": "Total annual price when billed annually.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["annual total display", "yearly price label", "billing summary"]
+        },
+        "seats_included": {
+          "type": "number",
+          "description": "Number of seats or users included in the plan.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["plan details", "seats/users limit", "plan feature list"]
+        },
+        "seat_overage_price": {
+          "type": "number",
+          "description": "Price per additional seat beyond the included count.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["pricing footnote", "overage pricing details", "plan FAQ"]
+        },
+        "usage_limit": {
+          "type": "string",
+          "description": "Usage limits or quotas for this plan.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["plan details", "usage limits section", "plan comparison table"]
+        },
+        "features": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of features included in this plan.",
+          "x-tabstack-priority": "required",
+          "x-tabstack-source-hints": ["plan feature list", "included features section", "plan comparison table"]
+        },
+        "highlighted": {
+          "type": "boolean",
+          "description": "Whether this plan is visually highlighted or recommended.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["recommended badge", "most popular label", "plan card highlight style"]
+        },
+        "cta_text": {
+          "type": "string",
+          "description": "Call-to-action button text for this plan.",
+          "x-tabstack-priority": "optional",
+          "x-tabstack-source-hints": ["plan CTA button", "get started button text", "sign up button"]
+        }
+      },
+      "required": ["plan_name", "features"]
+    }
+  },
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the SaaS company.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["page header", "site logo", "og:site_name meta tag"]
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the company.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["site URL", "pricing page domain", "canonical URL"]
+    },
+    "pricing_model": {
+      "type": "string",
+      "enum": ["per_seat", "usage_based", "flat", "tiered", "custom"],
+      "description": "Primary pricing model used.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["pricing page structure", "pricing model description", "plan structure"]
+    },
+    "free_tier_available": {
+      "type": "boolean",
+      "description": "Whether a free tier or free plan is available.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["free plan badge", "pricing tier list", "CTA buttons"]
+    },
+    "free_trial_available": {
+      "type": "boolean",
+      "description": "Whether a free trial is offered.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["free trial CTA", "trial badge", "pricing page header"]
+    },
+    "trial_days": {
+      "type": "number",
+      "description": "Number of days in the free trial.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["trial duration text", "free trial badge", "pricing page FAQ"]
+    },
+    "billing_intervals": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Available billing intervals (e.g., monthly, annual).",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["billing toggle", "billing period options", "pricing header"]
+    },
+    "annual_discount_percent": {
+      "type": "number",
+      "description": "Discount percentage for annual billing.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["billing toggle label", "annual discount badge", "savings callout"]
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code for pricing.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["price display currency symbol", "currency selector", "pricing footnote"]
+    },
+    "custom_pricing_available": {
+      "type": "boolean",
+      "description": "Whether custom or enterprise pricing is available.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["enterprise plan CTA", "contact us for pricing", "custom plan section"]
+    },
+    "plans": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/plan" },
+      "description": "List of pricing plans available.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["pricing plan cards", "plan tier section", "pricing comparison table"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the pricing page from which this data was extracted.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this pricing page was extracted.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+    }
+  },
+  "required": ["company_name", "company_domain", "plans", "source_url", "extracted_at"]
+}

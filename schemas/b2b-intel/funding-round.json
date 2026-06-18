@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/funding-round.json",
+  "title": "Funding Round",
+  "description": "Schema for venture capital and private equity funding round records.",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Name of the company that raised funding.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["press release headline", "Crunchbase company name", "news article title"]
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the funded company.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["company website link", "press release footer", "Crunchbase profile"]
+    },
+    "round_type": {
+      "type": "string",
+      "enum": ["pre_seed", "seed", "series_a", "series_b", "series_c", "series_d_plus", "bridge", "convertible", "ipo", "spac"],
+      "description": "Type of funding round.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["round type field", "Crunchbase round stage", "press release headline"]
+    },
+    "amount_usd": {
+      "type": "number",
+      "description": "Amount raised in this round in USD.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["press release headline amount", "Crunchbase amount field", "news article"]
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code of the raise.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["press release amount", "funding details section"]
+    },
+    "announced_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the funding round was publicly announced.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["press release date", "article publish date", "Crunchbase announced on field"]
+    },
+    "closed_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the funding round officially closed.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["SEC filing closed date", "Crunchbase closed on field", "press release details"]
+    },
+    "lead_investor": {
+      "type": "string",
+      "description": "Name of the lead investor.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["press release investor mention", "Crunchbase lead investor", "news article"]
+    },
+    "co_investors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of participating co-investors.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["investor list in press release", "Crunchbase investor list", "news article investor section"]
+    },
+    "total_raised_usd": {
+      "type": "number",
+      "description": "Total funding raised to date in USD.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["Crunchbase total funding", "press release total raised stat", "company profile"]
+    },
+    "post_money_valuation_usd": {
+      "type": "number",
+      "description": "Post-money valuation in USD.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["press release valuation mention", "news article valuation", "SEC filing"]
+    },
+    "pre_money_valuation_usd": {
+      "type": "number",
+      "description": "Pre-money valuation in USD.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["SEC filing", "analyst report", "deal terms disclosure"]
+    },
+    "investor_count": {
+      "type": "number",
+      "description": "Total number of investors participating in this round.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["Crunchbase investor count", "press release investor list count"]
+    },
+    "use_of_funds": {
+      "type": "string",
+      "description": "Stated intended use of the raised funds.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["press release body", "CEO quote", "news article use of funds section"]
+    },
+    "company_hq_city": {
+      "type": "string",
+      "description": "City of the company's headquarters.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["company profile location", "press release company info", "Crunchbase HQ"]
+    },
+    "company_hq_country": {
+      "type": "string",
+      "description": "Country of the company's headquarters.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["company profile location", "press release company info", "Crunchbase HQ"]
+    },
+    "company_industry": {
+      "type": "string",
+      "description": "Industry of the funded company.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["Crunchbase categories", "press release company description", "news article sector tag"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the page from which this data was extracted.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+    },
+    "source_type": {
+      "type": "string",
+      "description": "Type of source (e.g., press_release, crunchbase, news_article).",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["site domain classification", "content type", "source format"]
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this record was extracted.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+    }
+  },
+  "required": ["company_name", "round_type", "announced_date", "source_url", "extracted_at"]
+}

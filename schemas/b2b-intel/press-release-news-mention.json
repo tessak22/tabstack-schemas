@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/b2b-intel/press-release-news-mention.json",
+  "title": "Press Release & News Mention",
+  "description": "Schema for press releases and news mentions about B2B companies.",
+  "type": "object",
+  "properties": {
+    "headline": {
+      "type": "string",
+      "description": "Headline or title of the press release or news article.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["h1 tag", "og:title meta tag", "article headline"]
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Primary company mentioned or featured.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["press release header", "article body company mention", "company byline"]
+    },
+    "company_domain": {
+      "type": "string",
+      "description": "Website domain of the primary company.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["company website link", "press release footer", "company profile link"]
+    },
+    "publication_name": {
+      "type": "string",
+      "description": "Name of the publication or newswire.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["site header", "og:site_name meta tag", "publication byline"]
+    },
+    "author": {
+      "type": "string",
+      "description": "Author of the article or press release.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["byline", "author metadata", "article header"]
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the article or press release was published.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["publish date metadata", "article date display", "article:published_time meta tag"]
+    },
+    "mention_type": {
+      "type": "string",
+      "enum": ["funding", "product_launch", "partnership", "acquisition", "exec_change", "award", "event", "regulatory", "layoff", "other"],
+      "description": "Category of the news mention.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["article topic classification", "press release category", "news tag"]
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short summary or lead paragraph.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["article lead paragraph", "meta description", "article excerpt"]
+    },
+    "full_text": {
+      "type": "string",
+      "description": "Full text content of the press release or article.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["article body", "press release full text", "main content area"]
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": ["positive", "neutral", "negative"],
+      "description": "Inferred sentiment of the mention.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["NLP sentiment analysis", "tone of article", "headline framing"]
+    },
+    "quote_from_exec": {
+      "type": "string",
+      "description": "Notable executive quote from the article.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["quote block in article", "press release executive quote", "highlighted quote"]
+    },
+    "related_companies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Other companies mentioned in the article.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["article body company mentions", "related companies section", "linked company names"]
+    },
+    "related_products": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Products mentioned in the article.",
+      "x-tabstack-priority": "optional",
+      "x-tabstack-source-hints": ["article body product mentions", "product name references", "launch announcement names"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the page from which this article was extracted.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this article was extracted.",
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+    }
+  },
+  "required": ["headline", "company_name", "publish_date", "mention_type", "source_url", "extracted_at"]
+}
