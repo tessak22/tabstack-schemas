@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/healthcare/medical-device-recall.json",
+  "title": "Medical Device Recall",
+  "description": "Medical device recall notice from the FDA or equivalent regulatory authority.",
+  "type": "object",
+  "properties": {
+    "recall_id": {
+      "type": "string",
+      "description": "Regulatory recall identifier. Commonly found in: FDA recall database, recall notice."
+    },
+    "device_name": {
+      "type": "string",
+      "description": "Name of the recalled device. Commonly found in: FDA recall notice, press release."
+    },
+    "device_model": {
+      "type": "string",
+      "description": "Model number or name. Commonly found in: FDA recall notice, device label."
+    },
+    "device_type": {
+      "type": "string",
+      "description": "Type or category of medical device. Commonly found in: FDA device classification, recall notice."
+    },
+    "manufacturer_name": {
+      "type": "string",
+      "description": "Name of the device manufacturer. Commonly found in: FDA recall notice, press release."
+    },
+    "manufacturer_country": {
+      "type": "string",
+      "description": "Country of the manufacturer. Commonly found in: FDA recall notice, manufacturer address."
+    },
+    "recall_class": {
+      "type": "string",
+      "enum": ["I", "II", "III", "other"],
+      "description": "FDA recall class (I = most serious). Commonly found in: FDA recall database."
+    },
+    "recall_type": {
+      "type": "string",
+      "enum": ["voluntary", "mandatory", "other"],
+      "description": "Whether the recall was voluntary or mandatory. Commonly found in: FDA recall notice."
+    },
+    "recall_status": {
+      "type": "string",
+      "enum": ["ongoing", "terminated", "completed", "other"],
+      "description": "Current status of the recall. Commonly found in: FDA recall database."
+    },
+    "initiated_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the recall was initiated. Commonly found in: FDA recall notice."
+    },
+    "terminated_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the recall was terminated. Commonly found in: FDA recall database."
+    },
+    "reason_for_recall": {
+      "type": "string",
+      "description": "Reason or root cause for the recall. Commonly found in: FDA recall notice, press release."
+    },
+    "hazard_to_health": {
+      "type": "string",
+      "description": "Description of the health hazard. Commonly found in: FDA recall notice."
+    },
+    "units_affected": {
+      "type": "number",
+      "description": "Approximate number of units affected. Commonly found in: FDA recall notice, press release."
+    },
+    "lot_numbers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Affected lot or batch numbers. Commonly found in: FDA recall notice."
+    },
+    "distribution_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Geographic scope of distribution. Commonly found in: FDA recall notice."
+    },
+    "action_required": {
+      "type": "string",
+      "description": "Required action for customers or healthcare providers. Commonly found in: FDA recall notice, press release."
+    },
+    "patient_risk_level": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "other"],
+      "description": "Assessed risk level to patients. Commonly found in: FDA recall classification."
+    },
+    "press_release_url": {
+      "type": "string",
+      "description": "URL of the manufacturer press release. Commonly found in: manufacturer website, FDA press release."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["device_name", "manufacturer_name", "recall_class", "recall_status", "initiated_date", "reason_for_recall"]
+}

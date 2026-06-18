@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/healthcare/clinical-trial.json",
+  "title": "Clinical Trial",
+  "description": "Clinical trial registration and status information from ClinicalTrials.gov or equivalent registry.",
+  "type": "object",
+  "properties": {
+    "nct_id": {
+      "type": "string",
+      "description": "ClinicalTrials.gov NCT identifier. Commonly found in: ClinicalTrials.gov, trial registry."
+    },
+    "title": {
+      "type": "string",
+      "description": "Official title of the clinical trial. Commonly found in: ClinicalTrials.gov title field."
+    },
+    "sponsor_name": {
+      "type": "string",
+      "description": "Primary sponsor organization. Commonly found in: ClinicalTrials.gov sponsor field."
+    },
+    "sponsor_type": {
+      "type": "string",
+      "enum": ["industry", "academic", "nih", "other"],
+      "description": "Type of primary sponsor. Commonly found in: ClinicalTrials.gov sponsor class."
+    },
+    "collaborators": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of collaborating organizations. Commonly found in: ClinicalTrials.gov collaborators section."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["recruiting", "active_not_recruiting", "completed", "terminated", "withdrawn", "suspended", "other"],
+      "description": "Current recruitment status of the trial. Commonly found in: ClinicalTrials.gov status field."
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["1", "1_2", "2", "2_3", "3", "4", "na", "other"],
+      "description": "Clinical trial phase. Commonly found in: ClinicalTrials.gov phase field."
+    },
+    "study_type": {
+      "type": "string",
+      "enum": ["interventional", "observational", "other"],
+      "description": "Type of study design. Commonly found in: ClinicalTrials.gov study type field."
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Medical conditions or diseases being studied. Commonly found in: ClinicalTrials.gov conditions section."
+    },
+    "interventions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Intervention"
+      },
+      "description": "Interventions being tested. Commonly found in: ClinicalTrials.gov interventions section."
+    },
+    "primary_outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Outcome"
+      },
+      "description": "Primary outcome measures. Commonly found in: ClinicalTrials.gov outcome measures section."
+    },
+    "enrollment_target": {
+      "type": "number",
+      "description": "Target number of participants. Commonly found in: ClinicalTrials.gov enrollment field."
+    },
+    "enrollment_actual": {
+      "type": "number",
+      "description": "Actual number of participants enrolled. Commonly found in: ClinicalTrials.gov enrollment field."
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Study start date. Commonly found in: ClinicalTrials.gov dates section."
+    },
+    "primary_completion_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Primary completion date. Commonly found in: ClinicalTrials.gov dates section."
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TrialLocation"
+      },
+      "description": "Study locations. Commonly found in: ClinicalTrials.gov locations section."
+    },
+    "eligibility_min_age": {
+      "type": "string",
+      "description": "Minimum age for eligibility. Commonly found in: ClinicalTrials.gov eligibility criteria."
+    },
+    "eligibility_max_age": {
+      "type": "string",
+      "description": "Maximum age for eligibility. Commonly found in: ClinicalTrials.gov eligibility criteria."
+    },
+    "eligibility_sex": {
+      "type": "string",
+      "description": "Sex eligibility requirement. Commonly found in: ClinicalTrials.gov eligibility criteria."
+    },
+    "results_available": {
+      "type": "boolean",
+      "description": "Whether results have been posted. Commonly found in: ClinicalTrials.gov results section."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "$defs": {
+    "Intervention": {
+      "type": "object",
+      "description": "A drug, device, procedure, or other intervention being tested.",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Type of intervention (e.g., Drug, Device, Procedure)."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the intervention."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the intervention."
+        }
+      },
+      "required": ["type", "name"]
+    },
+    "Outcome": {
+      "type": "object",
+      "description": "An outcome measure for the trial.",
+      "properties": {
+        "measure": {
+          "type": "string",
+          "description": "Description of the outcome measure."
+        },
+        "timeframe": {
+          "type": "string",
+          "description": "Time point at which the outcome is measured."
+        }
+      },
+      "required": ["measure"]
+    },
+    "TrialLocation": {
+      "type": "object",
+      "description": "A facility or site participating in the clinical trial.",
+      "properties": {
+        "facility": {
+          "type": "string",
+          "description": "Name of the facility."
+        },
+        "city": {
+          "type": "string",
+          "description": "City of the facility."
+        },
+        "country": {
+          "type": "string",
+          "description": "Country of the facility."
+        },
+        "status": {
+          "type": "string",
+          "description": "Recruitment status at this location."
+        }
+      },
+      "required": ["city", "country"]
+    }
+  },
+  "required": ["nct_id", "title", "sponsor_name", "status", "conditions"]
+}

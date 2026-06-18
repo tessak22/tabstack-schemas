@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/healthcare/provider-directory-entry.json",
+  "title": "Provider Directory Entry",
+  "description": "Healthcare provider profile from an insurance network directory or physician finder.",
+  "type": "object",
+  "properties": {
+    "npi": {
+      "type": "string",
+      "description": "National Provider Identifier (NPI). Commonly found in: NPI registry, provider directory."
+    },
+    "provider_type": {
+      "type": "string",
+      "enum": ["physician", "np", "pa", "therapist", "dentist", "other"],
+      "description": "Type of healthcare provider. Commonly found in: provider directory, NPI registry."
+    },
+    "first_name": {
+      "type": "string",
+      "description": "Provider's first name. Commonly found in: provider directory, profile page."
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Provider's last name. Commonly found in: provider directory, profile page."
+    },
+    "credentials": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Professional credentials (e.g., MD, DO, PhD). Commonly found in: provider directory, profile page."
+    },
+    "specialty_primary": {
+      "type": "string",
+      "description": "Primary medical specialty. Commonly found in: provider directory, NPI registry."
+    },
+    "specialty_secondary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Secondary specialties or subspecialties. Commonly found in: provider directory, profile page."
+    },
+    "gender": {
+      "type": "string",
+      "description": "Provider's gender. Commonly found in: provider directory, profile page."
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages spoken by the provider. Commonly found in: provider directory, profile page."
+    },
+    "accepting_new_patients": {
+      "type": "boolean",
+      "description": "Whether the provider is accepting new patients. Commonly found in: provider directory, appointment booking."
+    },
+    "telehealth_available": {
+      "type": "boolean",
+      "description": "Whether telehealth appointments are available. Commonly found in: provider directory, profile page."
+    },
+    "accepting_medicaid": {
+      "type": "boolean",
+      "description": "Whether the provider accepts Medicaid. Commonly found in: provider directory, insurance info."
+    },
+    "accepting_medicare": {
+      "type": "boolean",
+      "description": "Whether the provider accepts Medicare. Commonly found in: provider directory, insurance info."
+    },
+    "group_practice_name": {
+      "type": "string",
+      "description": "Name of the group practice or medical group. Commonly found in: provider directory, profile page."
+    },
+    "hospital_affiliations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Hospitals where the provider has admitting privileges. Commonly found in: provider directory, hospital website."
+    },
+    "address_street": {
+      "type": "string",
+      "description": "Street address of the practice. Commonly found in: provider directory, Google Maps."
+    },
+    "address_city": {
+      "type": "string",
+      "description": "City of the practice. Commonly found in: provider directory, Google Maps."
+    },
+    "address_state": {
+      "type": "string",
+      "description": "State of the practice. Commonly found in: provider directory, NPI registry."
+    },
+    "address_zip": {
+      "type": "string",
+      "description": "ZIP code of the practice. Commonly found in: provider directory, NPI registry."
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude coordinate of the practice. Commonly found in: geocoding API, Google Maps."
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude coordinate of the practice. Commonly found in: geocoding API, Google Maps."
+    },
+    "phone": {
+      "type": "string",
+      "description": "Practice phone number. Commonly found in: provider directory, profile page."
+    },
+    "website": {
+      "type": "string",
+      "description": "Practice website URL. Commonly found in: provider directory, profile page."
+    },
+    "insurances_accepted": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Insurance plans accepted. Commonly found in: provider directory, insurance section."
+    },
+    "review_rating": {
+      "type": "number",
+      "description": "Average patient review rating. Commonly found in: Healthgrades, Zocdoc, review platform."
+    },
+    "review_count": {
+      "type": "number",
+      "description": "Total number of patient reviews. Commonly found in: Healthgrades, Zocdoc, review platform."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["provider_type", "first_name", "last_name", "specialty_primary", "address_city", "address_state"]
+}

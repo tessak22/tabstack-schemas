@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/healthcare/drug-formulary-entry.json",
+  "title": "Drug Formulary Entry",
+  "description": "A drug entry from a health insurance plan formulary, including tier, coverage requirements, and pricing.",
+  "type": "object",
+  "properties": {
+    "drug_name_brand": {
+      "type": "string",
+      "description": "Brand name of the drug. Commonly found in: formulary document, pharmacy benefit page."
+    },
+    "drug_name_generic": {
+      "type": "string",
+      "description": "Generic (INN) name of the drug. Commonly found in: formulary document, pharmacy benefit page."
+    },
+    "ndc": {
+      "type": "string",
+      "description": "National Drug Code (NDC). Commonly found in: formulary PDF, NDC database."
+    },
+    "manufacturer": {
+      "type": "string",
+      "description": "Drug manufacturer. Commonly found in: formulary document, drug label."
+    },
+    "drug_class": {
+      "type": "string",
+      "description": "Pharmacological drug class. Commonly found in: formulary document, FDA drug class."
+    },
+    "dosage_forms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/DosageForm"
+      },
+      "description": "Available dosage forms, strengths, and routes. Commonly found in: formulary document, drug label."
+    },
+    "formulary_tier": {
+      "type": "string",
+      "enum": ["1", "2", "3", "4", "5", "specialty", "other"],
+      "description": "Formulary tier which determines cost-sharing. Commonly found in: formulary document, pharmacy benefit summary."
+    },
+    "prior_auth_required": {
+      "type": "boolean",
+      "description": "Whether prior authorization is required. Commonly found in: formulary document, coverage restrictions."
+    },
+    "quantity_limits": {
+      "$ref": "#/$defs/QuantityLimit",
+      "description": "Quantity limits on coverage. Commonly found in: formulary document, coverage restrictions."
+    },
+    "step_therapy_required": {
+      "type": "boolean",
+      "description": "Whether step therapy (fail-first) is required. Commonly found in: formulary document, coverage restrictions."
+    },
+    "plan_name": {
+      "type": "string",
+      "description": "Name of the insurance plan. Commonly found in: formulary header, plan document."
+    },
+    "plan_year": {
+      "type": "number",
+      "description": "Plan year for this formulary. Commonly found in: formulary header, plan document."
+    },
+    "retail_price_30day": {
+      "type": "number",
+      "description": "Retail pharmacy price for a 30-day supply in USD. Commonly found in: formulary cost-sharing table, pharmacy page."
+    },
+    "mail_order_price_90day": {
+      "type": "number",
+      "description": "Mail order price for a 90-day supply in USD. Commonly found in: formulary cost-sharing table, pharmacy page."
+    },
+    "generic_available": {
+      "type": "boolean",
+      "description": "Whether a generic equivalent is available. Commonly found in: formulary document, pharmacy data."
+    },
+    "black_box_warning": {
+      "type": "boolean",
+      "description": "Whether the drug carries an FDA black box warning. Commonly found in: FDA label, drug monograph."
+    },
+    "controlled_substance_schedule": {
+      "type": "string",
+      "description": "DEA controlled substance schedule if applicable. Commonly found in: DEA database, drug label."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "$defs": {
+    "DosageForm": {
+      "type": "object",
+      "description": "A specific dosage form and strength of a drug.",
+      "properties": {
+        "form": {
+          "type": "string",
+          "description": "Dosage form (e.g., tablet, capsule, injection)."
+        },
+        "strength": {
+          "type": "string",
+          "description": "Drug strength (e.g., 10 mg, 500 mg/5 mL)."
+        },
+        "route": {
+          "type": "string",
+          "description": "Route of administration (e.g., oral, intravenous)."
+        }
+      },
+      "required": ["form"]
+    },
+    "QuantityLimit": {
+      "type": "object",
+      "description": "Quantity limits applied to drug coverage.",
+      "properties": {
+        "quantity": {
+          "type": "number",
+          "description": "Maximum quantity covered."
+        },
+        "days_supply": {
+          "type": "number",
+          "description": "Days supply for the quantity limit."
+        }
+      },
+      "required": ["quantity", "days_supply"]
+    }
+  },
+  "required": ["drug_name_generic"]
+}
