@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/e-commerce/product-review.json",
+  "title": "Product Review",
+  "description": "Schema for individual product reviews from e-commerce platforms.",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "description": "Platform product identifier (ASIN, SKU, etc.). Commonly found in: URL parameter, product ID field, review page metadata."
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Name of the reviewed product. Commonly found in: product review page title, reviewed product link, review header."
+    },
+    "platform": {
+      "type": "string",
+      "description": "Platform where the review was posted. Commonly found in: site domain, platform branding, page footer."
+    },
+    "review_id": {
+      "type": "string",
+      "description": "Platform-specific review identifier. Commonly found in: review URL anchor, review ID in page data, HTML element ID."
+    },
+    "reviewer_name": {
+      "type": "string",
+      "description": "Display name of the reviewer. Commonly found in: reviewer name label, reviewer profile link, review header."
+    },
+    "reviewer_verified_purchase": {
+      "type": "boolean",
+      "description": "Whether the reviewer made a verified purchase. Commonly found in: verified purchase badge, review metadata, reviewer status label."
+    },
+    "rating": {
+      "type": "number",
+      "description": "Numeric star rating given by the reviewer. Commonly found in: star rating display, review rating number, JSON-LD ratingValue."
+    },
+    "title": {
+      "type": "string",
+      "description": "Title or headline of the review. Commonly found in: review title heading, review headline, h3/h4 tag in review."
+    },
+    "body": {
+      "type": "string",
+      "description": "Full text body of the review. Commonly found in: review body text, review content area, review paragraph."
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the review was posted. Commonly found in: review date label, review metadata, article:published_time tag."
+    },
+    "helpful_votes": {
+      "type": "number",
+      "description": "Number of helpful votes for this review. Commonly found in: helpful vote count, found helpful label, review voting section."
+    },
+    "sentiment": {
+      "type": "string",
+      "enum": ["positive", "neutral", "negative", "other"],
+      "description": "Overall sentiment of the review. Commonly found in: NLP sentiment analysis, rating-derived classification, star count."
+    },
+    "topics_mentioned": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Key topics or aspects mentioned in the review. Commonly found in: NLP topic extraction, platform review topics, review aspect labels."
+    },
+    "pros": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of positives mentioned in the review. Commonly found in: pros section, positive highlights, NLP extracted pros."
+    },
+    "cons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of negatives mentioned in the review. Commonly found in: cons section, negative highlights, NLP extracted cons."
+    },
+    "seller_response": {
+      "type": "string",
+      "description": "Seller or brand response to the review, if any. Commonly found in: seller response section, brand reply, review reply block."
+    },
+    "country": {
+      "type": "string",
+      "description": "Country where the review was submitted from. Commonly found in: review location metadata, country flag in review, reviewer location."
+    },
+    "language": {
+      "type": "string",
+      "description": "Language of the review text (BCP 47 code). Commonly found in: lang attribute, review language metadata, detected language."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["product_name", "platform", "rating", "body", "review_date"]
+}

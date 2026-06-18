@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/e-commerce/grocery-cpg-product.json",
+  "title": "Grocery & CPG Product",
+  "description": "Schema for grocery and consumer packaged goods (CPG) product listings.",
+  "type": "object",
+  "properties": {
+    "product_name": {
+      "type": "string",
+      "description": "Name of the grocery or CPG product. Commonly found in: product page h1, product card title, og:title meta tag."
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand name of the product. Commonly found in: brand field in product details, product byline, package brand label."
+    },
+    "upc": {
+      "type": "string",
+      "description": "Universal Product Code (UPC/EAN barcode). Commonly found in: product details table, product ID field, barcode data."
+    },
+    "platform": {
+      "type": "string",
+      "description": "E-commerce platform or grocery delivery app. Commonly found in: site domain, platform branding, app name."
+    },
+    "store_name": {
+      "type": "string",
+      "description": "Physical or online store name. Commonly found in: store name header, retailer branding, sold by field."
+    },
+    "price": {
+      "type": "number",
+      "description": "Current price of the product. Commonly found in: price display, product price span, JSON-LD price field."
+    },
+    "unit_price": {
+      "type": "number",
+      "description": "Price per unit of measure (e.g., per oz, per count). Commonly found in: unit price display, per oz price label, price per unit section."
+    },
+    "unit_of_measure": {
+      "type": "string",
+      "description": "Unit of measure for unit pricing (e.g., oz, lb, count). Commonly found in: unit price label, product weight field, package size indicator."
+    },
+    "sale_price": {
+      "type": "number",
+      "description": "Sale or discounted price. Commonly found in: sale price display, discount label, was/now price display."
+    },
+    "availability": {
+      "type": "string",
+      "enum": ["in_stock", "out_of_stock", "limited", "other"],
+      "description": "Current availability status. Commonly found in: availability badge, in stock indicator, add to cart button state."
+    },
+    "category": {
+      "type": "string",
+      "description": "Primary product category (e.g., Dairy, Snacks, Beverages). Commonly found in: breadcrumb navigation, category field, aisle label."
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Product subcategory. Commonly found in: breadcrumb navigation, subcategory field, aisle sub-label."
+    },
+    "weight_oz": {
+      "type": "number",
+      "description": "Product weight in ounces. Commonly found in: product size/weight field, package label, product details table."
+    },
+    "calories": {
+      "type": "number",
+      "description": "Calories per serving. Commonly found in: nutrition facts label, calories per serving display, nutritional info section."
+    },
+    "ingredients": {
+      "type": "string",
+      "description": "Ingredients list as a string. Commonly found in: ingredients section, product label ingredients, nutrition tab."
+    },
+    "allergens": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of allergens present or may contain. Commonly found in: allergen section, contains/may contain labels, product warning section."
+    },
+    "nutritional_info": {
+      "type": "object",
+      "description": "Key nutritional values per serving. Commonly found in: nutrition facts panel, nutritional information section, nutrition tab.",
+      "properties": {
+        "fat": {
+          "type": "number",
+          "description": "Total fat in grams."
+        },
+        "carbs": {
+          "type": "number",
+          "description": "Total carbohydrates in grams."
+        },
+        "protein": {
+          "type": "number",
+          "description": "Protein in grams."
+        },
+        "sodium": {
+          "type": "number",
+          "description": "Sodium in milligrams."
+        },
+        "sugar": {
+          "type": "number",
+          "description": "Total sugars in grams."
+        },
+        "fiber": {
+          "type": "number",
+          "description": "Dietary fiber in grams."
+        }
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Certifications or labels (e.g., Organic, Non-GMO, Gluten-Free). Commonly found in: certification badges, product label certifications, filter tags."
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs of product images. Commonly found in: product image gallery, image carousel, og:image meta tag."
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description text. Commonly found in: product description section, about this item, product overview."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["product_name", "platform", "price", "availability"]
+}

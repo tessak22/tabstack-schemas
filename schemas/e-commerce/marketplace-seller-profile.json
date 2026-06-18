@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/e-commerce/marketplace-seller-profile.json",
+  "title": "Marketplace Seller Profile",
+  "description": "Schema for seller or merchant profile pages on e-commerce marketplaces.",
+  "type": "object",
+  "$defs": {
+    "top_product": {
+      "type": "object",
+      "description": "A top-selling product entry from the seller's profile.",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Product title."
+        },
+        "rank": {
+          "type": "number",
+          "description": "Rank among seller's top products."
+        }
+      },
+      "required": ["title"]
+    }
+  },
+  "properties": {
+    "platform": {
+      "type": "string",
+      "description": "E-commerce marketplace platform (e.g., Amazon, eBay, Etsy). Commonly found in: site domain, platform branding, seller profile URL."
+    },
+    "seller_id": {
+      "type": "string",
+      "description": "Platform-specific seller identifier. Commonly found in: seller profile URL parameter, seller ID field, storefront slug."
+    },
+    "seller_name": {
+      "type": "string",
+      "description": "Name of the seller or store. Commonly found in: seller profile header, store name display, storefront title."
+    },
+    "seller_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the seller's storefront page. Commonly found in: storefront URL, seller link href, profile page URL."
+    },
+    "rating": {
+      "type": "number",
+      "description": "Overall seller rating score. Commonly found in: seller rating display, feedback score, star rating."
+    },
+    "rating_count": {
+      "type": "number",
+      "description": "Total number of ratings or feedback received. Commonly found in: rating count label, feedback count display, review count."
+    },
+    "positive_feedback_pct": {
+      "type": "number",
+      "description": "Percentage of positive feedback. Commonly found in: positive feedback percentage, seller rating details, feedback breakdown."
+    },
+    "years_active": {
+      "type": "number",
+      "description": "Number of years the seller has been active on the platform. Commonly found in: member since date calculation, seller tenure display, account age."
+    },
+    "fulfilled_by_platform": {
+      "type": "boolean",
+      "description": "Whether the seller uses platform fulfillment (e.g., FBA). Commonly found in: FBA badge, fulfilled by platform indicator, shipping info."
+    },
+    "total_products_listed": {
+      "type": "number",
+      "description": "Total number of products listed by the seller. Commonly found in: product count display, total listings label, storefront stats."
+    },
+    "product_categories": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Categories in which the seller lists products. Commonly found in: seller categories section, product category filters, storefront navigation."
+    },
+    "country_of_origin": {
+      "type": "string",
+      "description": "Country where the seller is based. Commonly found in: seller location field, ships from country, seller profile details."
+    },
+    "top_selling_products": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/top_product"
+      },
+      "description": "List of the seller's top-selling products. Commonly found in: featured products section, top sellers display, storefront highlighted items."
+    },
+    "store_description": {
+      "type": "string",
+      "description": "Seller's store description or about text. Commonly found in: about this seller section, store bio, seller profile description."
+    },
+    "business_type": {
+      "type": "string",
+      "enum": ["individual", "business", "other"],
+      "description": "Whether the seller is an individual or registered business. Commonly found in: seller type badge, business seller indicator, seller profile details."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["platform", "seller_name"]
+}

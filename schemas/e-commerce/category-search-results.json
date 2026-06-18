@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/e-commerce/category-search-results.json",
+  "title": "Category Search Results",
+  "description": "Schema for e-commerce category browsing or search results pages.",
+  "type": "object",
+  "$defs": {
+    "result_item": {
+      "type": "object",
+      "description": "An individual product in the search or category results.",
+      "properties": {
+        "rank": {
+          "type": "number",
+          "description": "Position in the results list."
+        },
+        "product_id": {
+          "type": "string",
+          "description": "Product identifier (ASIN, SKU, etc.)."
+        },
+        "title": {
+          "type": "string",
+          "description": "Product title."
+        },
+        "brand": {
+          "type": "string",
+          "description": "Product brand."
+        },
+        "price": {
+          "type": "number",
+          "description": "Current price."
+        },
+        "sale_price": {
+          "type": "number",
+          "description": "Sale or discounted price."
+        },
+        "rating": {
+          "type": "number",
+          "description": "Average rating."
+        },
+        "review_count": {
+          "type": "number",
+          "description": "Number of reviews."
+        },
+        "is_sponsored": {
+          "type": "boolean",
+          "description": "Whether this result is a sponsored/paid placement."
+        },
+        "seller": {
+          "type": "string",
+          "description": "Seller name."
+        },
+        "availability": {
+          "type": "string",
+          "description": "Availability status."
+        },
+        "listing_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the product listing."
+        }
+      },
+      "required": ["rank", "title"]
+    }
+  },
+  "properties": {
+    "platform": {
+      "type": "string",
+      "description": "E-commerce platform (e.g., Amazon, Walmart). Commonly found in: site domain, platform branding, page header."
+    },
+    "query_or_category": {
+      "type": "string",
+      "description": "Search query string or category name browsed. Commonly found in: search bar value, page title, breadcrumb current page, URL parameter."
+    },
+    "page_number": {
+      "type": "number",
+      "description": "Current page number in paginated results. Commonly found in: pagination control, URL page parameter, page indicator."
+    },
+    "total_results": {
+      "type": "number",
+      "description": "Total number of results returned. Commonly found in: results count display, total items label, search results header."
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/result_item"
+      },
+      "description": "List of product results on this page. Commonly found in: product grid, search results list, category product cards."
+    },
+    "filters_applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Active filters applied to the results. Commonly found in: active filter chips, selected filter labels, URL filter parameters."
+    },
+    "sort_by": {
+      "type": "string",
+      "description": "Current sort order applied to results. Commonly found in: sort by dropdown selected, sort parameter in URL, results sort label."
+    },
+    "ads_count": {
+      "type": "number",
+      "description": "Number of sponsored/ad placements in results. Commonly found in: sponsored label count, ad badge count in results."
+    },
+    "snapshot_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date this search results snapshot was captured. Commonly found in: extraction date, scraper timestamp, page capture date."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["platform", "query_or_category", "results", "snapshot_date"]
+}

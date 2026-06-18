@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.io/e-commerce/product-listing.json",
+  "title": "Product Listing",
+  "description": "Schema for e-commerce product listings from marketplaces and direct retail sites.",
+  "type": "object",
+  "$defs": {
+    "variant_option": {
+      "type": "object",
+      "description": "A product variant dimension and its value.",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Variant dimension name (e.g., Color, Size)."
+        },
+        "value": {
+          "type": "string",
+          "description": "Variant value (e.g., Red, XL)."
+        }
+      },
+      "required": ["name", "value"]
+    }
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Product title or name. Commonly found in: product page h1, og:title meta tag, product card title."
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand or manufacturer name. Commonly found in: brand field in product details, product byline, breadcrumb."
+    },
+    "asin_or_sku": {
+      "type": "string",
+      "description": "Platform-specific product identifier (ASIN, SKU, or product ID). Commonly found in: product details table, URL parameter, item number field."
+    },
+    "platform": {
+      "type": "string",
+      "description": "E-commerce platform or marketplace (e.g., Amazon, Walmart, Shopify). Commonly found in: site domain, platform branding, page footer."
+    },
+    "price": {
+      "type": "number",
+      "description": "Current listed price. Commonly found in: price display, product price span, JSON-LD price field."
+    },
+    "sale_price": {
+      "type": "number",
+      "description": "Sale or discounted price. Commonly found in: sale price display, discounted price label, strikethrough price context."
+    },
+    "currency": {
+      "type": "string",
+      "description": "ISO 4217 currency code. Commonly found in: price currency symbol, JSON-LD priceCurrency, locale settings."
+    },
+    "availability": {
+      "type": "string",
+      "enum": ["in_stock", "out_of_stock", "limited", "preorder", "other"],
+      "description": "Current availability status of the product. Commonly found in: availability badge, in stock indicator, JSON-LD availability field."
+    },
+    "condition": {
+      "type": "string",
+      "enum": ["new", "used", "refurbished", "other"],
+      "description": "Condition of the product. Commonly found in: condition badge, product condition field, used/new selector."
+    },
+    "variant_options": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/variant_option"
+      },
+      "description": "Available variant options (e.g., color, size). Commonly found in: variant selector buttons, color/size options, product options section."
+    },
+    "review_count": {
+      "type": "number",
+      "description": "Total number of customer reviews. Commonly found in: review count label, ratings summary, review section header."
+    },
+    "review_rating": {
+      "type": "number",
+      "description": "Average customer review rating. Commonly found in: star rating display, average rating number, JSON-LD ratingValue."
+    },
+    "seller_name": {
+      "type": "string",
+      "description": "Name of the seller or vendor. Commonly found in: sold by field, seller name display, merchant info section."
+    },
+    "fulfillment_type": {
+      "type": "string",
+      "enum": ["FBA", "FBM", "direct", "other"],
+      "description": "Fulfillment method (Fulfilled by Amazon, Merchant, or Direct). Commonly found in: fulfillment badge, ships from label, sold and shipped by text."
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs of product images. Commonly found in: product image gallery, image carousel, og:image meta tag."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full product description text. Commonly found in: product description section, about this item, product overview."
+    },
+    "features_list": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Bullet-point feature list. Commonly found in: feature bullets section, key features list, product highlights."
+    },
+    "category": {
+      "type": "string",
+      "description": "Primary product category. Commonly found in: breadcrumb navigation, category field, product metadata."
+    },
+    "subcategory": {
+      "type": "string",
+      "description": "Product subcategory. Commonly found in: breadcrumb navigation, subcategory field, product metadata."
+    },
+    "rank_in_category": {
+      "type": "number",
+      "description": "Bestseller or sales rank within the category. Commonly found in: bestseller rank section, category rank display, product details."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["title", "platform", "price", "availability"]
+}
