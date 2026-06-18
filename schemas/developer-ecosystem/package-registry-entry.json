@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/developer-ecosystem/package-registry-entry.json",
   "title": "Package Registry Entry",
   "description": "Package from npm, PyPI, crates.io, etc.",
   "type": "object",

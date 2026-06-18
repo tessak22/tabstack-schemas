@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/travel/flight-price-snapshot.json",
   "title": "Flight Price Snapshot",
   "description": "Point-in-time price snapshot for a flight itinerary from an OTA or airline website.",
   "type": "object",

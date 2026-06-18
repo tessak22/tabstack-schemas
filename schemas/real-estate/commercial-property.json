@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/real-estate/commercial-property.json",
   "title": "Commercial Property",
   "description": "Schema for commercial real estate property listings including office, retail, and industrial.",
   "type": "object",

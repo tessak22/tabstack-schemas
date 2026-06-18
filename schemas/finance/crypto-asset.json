@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/finance/crypto-asset.json",
   "title": "Crypto Asset",
   "description": "Snapshot of market data for a cryptocurrency or digital asset.",
   "type": "object",

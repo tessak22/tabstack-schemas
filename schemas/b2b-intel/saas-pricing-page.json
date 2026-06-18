@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/b2b-intel/saas-pricing-page.json",
   "title": "SaaS Pricing Page",
   "description": "Schema for SaaS product pricing page data including plans, features, and pricing models.",
   "type": "object",

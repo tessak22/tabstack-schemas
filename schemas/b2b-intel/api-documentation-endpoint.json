@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/b2b-intel/api-documentation-endpoint.json",
   "title": "API Documentation Endpoint",
   "description": "Schema for individual API endpoint entries extracted from API documentation pages.",
   "type": "object",

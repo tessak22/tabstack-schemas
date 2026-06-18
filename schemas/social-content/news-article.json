@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/social-content/news-article.json",
   "title": "News Article",
   "description": "Structured news article for LLM pipelines and media monitoring.",
   "type": "object",

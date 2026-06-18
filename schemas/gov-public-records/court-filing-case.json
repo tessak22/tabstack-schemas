@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/gov-public-records/court-filing-case.json",
   "title": "Court Filing / Case",
   "description": "Court case record including parties, filings, and outcomes from a federal or state court docket.",
   "type": "object",

@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/social-content/social-profile.json",
   "title": "Social Profile",
   "description": "Platform social profile (LinkedIn company, Twitter/X, etc.)",
   "type": "object",

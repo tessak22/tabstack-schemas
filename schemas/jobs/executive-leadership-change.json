@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/jobs/executive-leadership-change.json",
   "title": "Executive Leadership Change",
   "description": "Schema for tracking executive and leadership role transitions at companies.",
   "type": "object",

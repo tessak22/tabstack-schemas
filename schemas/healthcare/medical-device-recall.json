@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/healthcare/medical-device-recall.json",
   "title": "Medical Device Recall",
   "description": "Medical device recall notice from the FDA or equivalent regulatory authority.",
   "type": "object",

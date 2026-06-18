@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/e-commerce/grocery-cpg-product.json",
   "title": "Grocery & CPG Product",
   "description": "Schema for grocery and consumer packaged goods (CPG) product listings.",
   "type": "object",

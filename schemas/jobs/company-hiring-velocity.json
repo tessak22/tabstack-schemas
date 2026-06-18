@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/jobs/company-hiring-velocity.json",
   "title": "Company Hiring Velocity",
   "description": "Schema for tracking a company's open job roles and hiring pace over time.",
   "type": "object",

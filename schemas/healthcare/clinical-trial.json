@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/healthcare/clinical-trial.json",
   "title": "Clinical Trial",
   "description": "Clinical trial registration and status information from ClinicalTrials.gov or equivalent registry.",
   "type": "object",

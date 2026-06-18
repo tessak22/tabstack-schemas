@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/b2b-intel/product-changelog-entry.json",
   "title": "Product Changelog Entry",
   "description": "Schema for individual product changelog or release note entries.",
   "type": "object",

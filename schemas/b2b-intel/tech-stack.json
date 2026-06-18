@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/b2b-intel/tech-stack.json",
   "title": "Tech Stack",
   "description": "Schema for detected technology stack data for a company.",
   "type": "object",

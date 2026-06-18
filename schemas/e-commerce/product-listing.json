@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/e-commerce/product-listing.json",
   "title": "Product Listing",
   "description": "Schema for e-commerce product listings from marketplaces and direct retail sites.",
   "type": "object",

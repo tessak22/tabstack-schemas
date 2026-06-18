@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/healthcare/drug-formulary-entry.json",
   "title": "Drug Formulary Entry",
   "description": "A drug entry from a health insurance plan formulary, including tier, coverage requirements, and pricing.",
   "type": "object",

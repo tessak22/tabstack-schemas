@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/b2b-intel/funding-round.json",
   "title": "Funding Round",
   "description": "Schema for venture capital and private equity funding round records.",
   "type": "object",

@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/travel/restaurant-listing.json",
   "title": "Restaurant Listing",
   "description": "Restaurant profile and details from a dining review platform or local business directory.",
   "type": "object",

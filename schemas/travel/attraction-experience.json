@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/travel/attraction-experience.json",
   "title": "Attraction & Experience",
   "description": "Tourist attraction or bookable travel experience listing from an OTA or attraction platform.",
   "type": "object",

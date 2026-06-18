@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/real-estate/foreclosure-auction-listing.json",
   "title": "Foreclosure & Auction Listing",
   "description": "Schema for foreclosure and property auction listings.",
   "type": "object",

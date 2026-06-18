@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/gov-public-records/government-contract-award.json",
   "title": "Government Contract Award",
   "description": "Federal or state government contract, grant, or other award from USASpending.gov or equivalent.",
   "type": "object",

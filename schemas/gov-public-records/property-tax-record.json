@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/gov-public-records/property-tax-record.json",
   "title": "Property Tax Record",
   "description": "Property tax assessment and payment record from a county assessor or tax collector.",
   "type": "object",

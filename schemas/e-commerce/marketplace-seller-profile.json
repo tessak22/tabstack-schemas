@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/e-commerce/marketplace-seller-profile.json",
   "title": "Marketplace Seller Profile",
   "description": "Schema for seller or merchant profile pages on e-commerce marketplaces.",
   "type": "object",

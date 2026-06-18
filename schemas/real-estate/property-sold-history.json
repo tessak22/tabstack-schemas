@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/real-estate/property-sold-history.json",
   "title": "Property Sold History",
   "description": "Schema for historical property sale transaction records.",
   "type": "object",

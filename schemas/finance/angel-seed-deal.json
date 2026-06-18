@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/finance/angel-seed-deal.json",
   "title": "Angel & Seed Deal",
   "description": "Early-stage funding round announcement including angel, pre-seed, seed, convertible note, and SAFE deals.",
   "type": "object",

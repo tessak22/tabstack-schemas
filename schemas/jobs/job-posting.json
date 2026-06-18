@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/jobs/job-posting.json",
   "title": "Job Posting",
   "description": "Schema for individual job listings extracted from job boards and company career pages.",
   "type": "object",

@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/finance/alternative-asset-listing.json",
   "title": "Alternative Asset Listing",
   "description": "Listing for an alternative asset such as art, wine, watches, sports cards, sneakers, or other collectibles.",
   "type": "object",

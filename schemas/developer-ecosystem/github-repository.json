@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/developer-ecosystem/github-repository.json",
   "title": "GitHub Repository",
   "description": "GitHub repository data for OSS research and competitive intel.",
   "type": "object",

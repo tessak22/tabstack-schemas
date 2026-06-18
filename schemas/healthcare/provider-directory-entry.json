@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.com/v1/healthcare/provider-directory-entry.json",
   "title": "Provider Directory Entry",
   "description": "Healthcare provider profile from an insurance network directory or physician finder.",
   "type": "object",

@@ -1,6 +1,5 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://schemas.tabstack.io/b2b-intel/press-release-news-mention.json",
   "title": "Press Release & News Mention",
   "description": "Schema for press releases and news mentions about B2B companies.",
   "type": "object",
