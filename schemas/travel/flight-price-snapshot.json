@@ -1,0 +1,121 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/travel/flight-price-snapshot.json",
+  "title": "Flight Price Snapshot",
+  "description": "Point-in-time price snapshot for a flight itinerary from an OTA or airline website.",
+  "type": "object",
+  "properties": {
+    "origin_iata": {
+      "type": "string",
+      "description": "IATA code for the origin airport. Commonly found in: Google Flights, Kayak, Expedia, airline website."
+    },
+    "origin_city": {
+      "type": "string",
+      "description": "City name for the origin airport. Commonly found in: Google Flights, airport database."
+    },
+    "destination_iata": {
+      "type": "string",
+      "description": "IATA code for the destination airport. Commonly found in: Google Flights, Kayak, airline website."
+    },
+    "destination_city": {
+      "type": "string",
+      "description": "City name for the destination airport. Commonly found in: Google Flights, airport database."
+    },
+    "outbound_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the outbound flight. Commonly found in: flight listing, booking page."
+    },
+    "return_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the return flight (for roundtrip). Commonly found in: flight listing, booking page."
+    },
+    "trip_type": {
+      "type": "string",
+      "enum": ["one_way", "roundtrip", "multi_city", "other"],
+      "description": "Type of trip. Commonly found in: search form, flight listing."
+    },
+    "airline": {
+      "type": "string",
+      "description": "Operating airline name. Commonly found in: flight listing, airline name in result."
+    },
+    "flight_number": {
+      "type": "string",
+      "description": "Flight number. Commonly found in: flight listing, booking page."
+    },
+    "cabin_class": {
+      "type": "string",
+      "enum": ["economy", "premium_economy", "business", "first", "other"],
+      "description": "Cabin class of the booking. Commonly found in: search form, flight listing."
+    },
+    "stops": {
+      "type": "number",
+      "description": "Number of stops (0 = nonstop). Commonly found in: flight listing, stop count indicator."
+    },
+    "layover_airports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IATA codes of layover airports. Commonly found in: flight details, itinerary breakdown."
+    },
+    "total_duration_minutes": {
+      "type": "number",
+      "description": "Total flight duration in minutes. Commonly found in: flight listing, itinerary details."
+    },
+    "outbound_departure": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Departure datetime for outbound flight. Commonly found in: flight listing, itinerary details."
+    },
+    "outbound_arrival": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Arrival datetime for outbound flight. Commonly found in: flight listing, itinerary details."
+    },
+    "price_usd": {
+      "type": "number",
+      "description": "Total price in USD. Commonly found in: flight listing price, booking page."
+    },
+    "price_currency": {
+      "type": "string",
+      "description": "Currency code for the price. Commonly found in: flight listing, currency indicator."
+    },
+    "taxes_fees_usd": {
+      "type": "number",
+      "description": "Total taxes and fees in USD. Commonly found in: price breakdown, booking page."
+    },
+    "base_fare_usd": {
+      "type": "number",
+      "description": "Base fare before taxes in USD. Commonly found in: price breakdown, booking page."
+    },
+    "booking_url": {
+      "type": "string",
+      "description": "URL to book this flight. Commonly found in: booking link from listing."
+    },
+    "seats_remaining": {
+      "type": "number",
+      "description": "Number of seats remaining at this price. Commonly found in: flight listing urgency indicator."
+    },
+    "refundable": {
+      "type": "boolean",
+      "description": "Whether the ticket is refundable. Commonly found in: fare conditions, booking page."
+    },
+    "snapshot_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp of the price snapshot. Commonly found in: scraper metadata."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["origin_iata", "destination_iata", "outbound_date", "trip_type", "airline", "cabin_class", "stops", "price_usd", "snapshot_at"]
+}

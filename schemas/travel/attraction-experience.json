@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/travel/attraction-experience.json",
+  "title": "Attraction & Experience",
+  "description": "Tourist attraction or bookable travel experience listing from an OTA or attraction platform.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Name of the attraction or experience. Commonly found in: Viator, GetYourGuide, TripAdvisor Experiences, attraction website."
+    },
+    "attraction_type": {
+      "type": "string",
+      "enum": ["museum", "tour", "activity", "show", "class", "adventure", "food_experience", "transport", "other"],
+      "description": "Category of the attraction or experience. Commonly found in: platform category, listing metadata."
+    },
+    "operator_name": {
+      "type": "string",
+      "description": "Name of the operator or organizer. Commonly found in: Viator operator, GetYourGuide supplier, listing details."
+    },
+    "address": {
+      "type": "string",
+      "description": "Meeting point or address. Commonly found in: listing details, meeting point section."
+    },
+    "city": {
+      "type": "string",
+      "description": "City where the experience takes place. Commonly found in: listing details, platform search."
+    },
+    "country": {
+      "type": "string",
+      "description": "Country where the experience takes place. Commonly found in: listing details, platform search."
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude of the meeting point or main location. Commonly found in: Google Maps, geocoding API."
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude of the meeting point or main location. Commonly found in: Google Maps, geocoding API."
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description of the experience. Commonly found in: listing description, about section."
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Duration of the experience in minutes. Commonly found in: listing details, duration field."
+    },
+    "min_participants": {
+      "type": "number",
+      "description": "Minimum number of participants. Commonly found in: listing details, booking requirements."
+    },
+    "max_participants": {
+      "type": "number",
+      "description": "Maximum number of participants. Commonly found in: listing details, group size."
+    },
+    "age_minimum": {
+      "type": "number",
+      "description": "Minimum age requirement. Commonly found in: listing details, requirements section."
+    },
+    "price_adult_usd": {
+      "type": "number",
+      "description": "Adult price in USD. Commonly found in: Viator pricing, GetYourGuide pricing, listing price."
+    },
+    "price_child_usd": {
+      "type": "number",
+      "description": "Child price in USD. Commonly found in: listing price, pricing table."
+    },
+    "price_currency": {
+      "type": "string",
+      "description": "Currency code for the prices. Commonly found in: listing price display."
+    },
+    "booking_required": {
+      "type": "boolean",
+      "description": "Whether advance booking is required. Commonly found in: listing details, booking info."
+    },
+    "cancellation_policy": {
+      "type": "string",
+      "description": "Cancellation policy description. Commonly found in: listing policies, booking terms."
+    },
+    "languages_offered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Languages in which the experience is offered. Commonly found in: listing details, language filter."
+    },
+    "inclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What is included in the experience. Commonly found in: listing inclusions section."
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What is not included in the experience. Commonly found in: listing exclusions section."
+    },
+    "review_rating": {
+      "type": "number",
+      "description": "Average review rating. Commonly found in: Viator rating, GetYourGuide rating, TripAdvisor rating."
+    },
+    "review_count": {
+      "type": "number",
+      "description": "Total number of reviews. Commonly found in: Viator, GetYourGuide, TripAdvisor."
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "URLs of experience images. Commonly found in: listing photos."
+    },
+    "category_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Category tags or labels. Commonly found in: platform tags, listing metadata."
+    },
+    "booking_url": {
+      "type": "string",
+      "description": "URL to book the experience. Commonly found in: listing page CTA, booking link."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
+      "type": "string",
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
+    }
+  },
+  "required": ["name", "attraction_type", "city", "country"]
+}
