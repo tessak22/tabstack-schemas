@@ -7,219 +7,99 @@
   "properties": {
     "property_name": {
       "type": "string",
-      "description": "Name of the hotel or lodging property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "Expedia",
-        "Hotels.com",
-        "hotel website"
-      ]
+      "description": "Name of the hotel or lodging property. Commonly found in: Booking.com, Expedia, Hotels.com, hotel website."
     },
     "chain_or_brand": {
       "type": "string",
-      "description": "Hotel chain or brand affiliation.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "hotel website"
-      ]
+      "description": "Hotel chain or brand affiliation. Commonly found in: Booking.com, hotel website."
     },
     "property_type": {
       "type": "string",
-      "enum": [
-        "hotel",
-        "motel",
-        "resort",
-        "boutique",
-        "hostel",
-        "b_and_b",
-        "apartment_hotel"
-      ],
-      "description": "Type of lodging property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com property type",
-        "listing metadata"
-      ]
+      "enum": ["hotel", "motel", "resort", "boutique", "hostel", "b_and_b", "apartment_hotel"],
+      "description": "Type of lodging property. Commonly found in: Booking.com property type, listing metadata."
     },
     "star_rating": {
       "type": "number",
-      "description": "Official star rating of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "hotel website",
-        "official classification"
-      ]
+      "description": "Official star rating of the property. Commonly found in: Booking.com, hotel website, official classification."
     },
     "address": {
       "type": "string",
-      "description": "Street address of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "hotel website",
-        "Google Maps"
-      ]
+      "description": "Street address of the property. Commonly found in: Booking.com, hotel website, Google Maps."
     },
     "city": {
       "type": "string",
-      "description": "City where the property is located.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "hotel website"
-      ]
+      "description": "City where the property is located. Commonly found in: Booking.com, hotel website."
     },
     "country": {
       "type": "string",
-      "description": "Country where the property is located.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "hotel website"
-      ]
+      "description": "Country where the property is located. Commonly found in: Booking.com, hotel website."
     },
     "latitude": {
       "type": "number",
-      "description": "Latitude coordinate of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Google Maps",
-        "geocoding API"
-      ]
+      "description": "Latitude coordinate of the property. Commonly found in: Google Maps, geocoding API."
     },
     "longitude": {
       "type": "number",
-      "description": "Longitude coordinate of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Google Maps",
-        "geocoding API"
-      ]
+      "description": "Longitude coordinate of the property. Commonly found in: Google Maps, geocoding API."
     },
     "amenities": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "List of property amenities.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com amenities",
-        "hotel website facilities"
-      ]
+      "description": "List of property amenities. Commonly found in: Booking.com amenities, hotel website facilities."
     },
     "room_types": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/RoomType"
       },
-      "description": "Available room types with pricing.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com room options",
-        "hotel website rooms page"
-      ]
+      "description": "Available room types with pricing. Commonly found in: Booking.com room options, hotel website rooms page."
     },
     "cancellation_policy": {
       "type": "string",
-      "description": "Cancellation policy description.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com policies",
-        "hotel website"
-      ]
+      "description": "Cancellation policy description. Commonly found in: Booking.com policies, hotel website."
     },
     "check_in_time": {
       "type": "string",
-      "description": "Standard check-in time.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com hotel info",
-        "hotel website"
-      ]
+      "description": "Standard check-in time. Commonly found in: Booking.com hotel info, hotel website."
     },
     "check_out_time": {
       "type": "string",
-      "description": "Standard check-out time.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com hotel info",
-        "hotel website"
-      ]
+      "description": "Standard check-out time. Commonly found in: Booking.com hotel info, hotel website."
     },
     "pet_policy": {
       "type": "string",
-      "description": "Pet policy description.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com policies",
-        "hotel website"
-      ]
+      "description": "Pet policy description. Commonly found in: Booking.com policies, hotel website."
     },
     "parking_available": {
       "type": "boolean",
-      "description": "Whether parking is available on-site.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com amenities",
-        "hotel website"
-      ]
+      "description": "Whether parking is available on-site. Commonly found in: Booking.com amenities, hotel website."
     },
     "breakfast_included": {
       "type": "boolean",
-      "description": "Whether breakfast is included in the rate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "hotel website"
-      ]
+      "description": "Whether breakfast is included in the rate. Commonly found in: Booking.com, hotel website."
     },
     "review_score": {
       "type": "number",
-      "description": "Overall guest review score.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com review score",
-        "TripAdvisor"
-      ]
+      "description": "Overall guest review score. Commonly found in: Booking.com review score, TripAdvisor."
     },
     "review_count": {
       "type": "number",
-      "description": "Total number of guest reviews.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Booking.com",
-        "TripAdvisor"
-      ]
+      "description": "Total number of guest reviews. Commonly found in: Booking.com, TripAdvisor."
     },
     "platform": {
       "type": "string",
-      "description": "Booking platform where this listing was found.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata",
-        "URL pattern"
-      ]
+      "description": "Booking platform where this listing was found. Commonly found in: scraper metadata, URL pattern."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the hotel listing page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "listing page URL"
-      ]
+      "description": "URL of the hotel listing page. Commonly found in: listing page URL."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
   "$defs": {
@@ -252,17 +132,8 @@
           "description": "Whether the room type is currently available."
         }
       },
-      "required": [
-        "name"
-      ]
+      "required": ["name"]
     }
   },
-  "required": [
-    "property_name",
-    "city",
-    "country",
-    "platform",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["property_name", "city", "country", "platform", "source_url", "extracted_at"]
 }

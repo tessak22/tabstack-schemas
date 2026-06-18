@@ -7,280 +7,128 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Name of the restaurant.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps",
-        "OpenTable",
-        "TripAdvisor"
-      ]
+      "description": "Name of the restaurant. Commonly found in: Yelp, Google Maps, OpenTable, TripAdvisor."
     },
     "cuisine_type": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Types of cuisine served.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp categories",
-        "Google Maps cuisine tags"
-      ]
+      "description": "Types of cuisine served. Commonly found in: Yelp categories, Google Maps cuisine tags."
     },
     "price_range": {
       "type": "number",
-      "description": "Price range indicator (e.g., 1-4 dollar signs).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp price range",
-        "Google Maps price level"
-      ]
+      "description": "Price range indicator (e.g., 1-4 dollar signs). Commonly found in: Yelp price range, Google Maps price level."
     },
     "address": {
       "type": "string",
-      "description": "Street address of the restaurant.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps",
-        "restaurant website"
-      ]
+      "description": "Street address of the restaurant. Commonly found in: Yelp, Google Maps, restaurant website."
     },
     "city": {
       "type": "string",
-      "description": "City of the restaurant.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps"
-      ]
+      "description": "City of the restaurant. Commonly found in: Yelp, Google Maps."
     },
     "state": {
       "type": "string",
-      "description": "State or region of the restaurant.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps"
-      ]
+      "description": "State or region of the restaurant. Commonly found in: Yelp, Google Maps."
     },
     "country": {
       "type": "string",
-      "description": "Country of the restaurant.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps"
-      ]
+      "description": "Country of the restaurant. Commonly found in: Yelp, Google Maps."
     },
     "latitude": {
       "type": "number",
-      "description": "Latitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Google Maps",
-        "geocoding API"
-      ]
+      "description": "Latitude coordinate. Commonly found in: Google Maps, geocoding API."
     },
     "longitude": {
       "type": "number",
-      "description": "Longitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Google Maps",
-        "geocoding API"
-      ]
+      "description": "Longitude coordinate. Commonly found in: Google Maps, geocoding API."
     },
     "phone": {
       "type": "string",
-      "description": "Restaurant phone number.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps",
-        "restaurant website"
-      ]
+      "description": "Restaurant phone number. Commonly found in: Yelp, Google Maps, restaurant website."
     },
     "website": {
       "type": "string",
-      "description": "Restaurant website URL.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps",
-        "restaurant website"
-      ]
+      "description": "Restaurant website URL. Commonly found in: Yelp, Google Maps, restaurant website."
     },
     "accepts_reservations": {
       "type": "boolean",
-      "description": "Whether the restaurant accepts reservations.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "OpenTable",
-        "restaurant website"
-      ]
+      "description": "Whether the restaurant accepts reservations. Commonly found in: Yelp, OpenTable, restaurant website."
     },
     "reservation_url": {
       "type": "string",
-      "description": "URL for making reservations.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "OpenTable link",
-        "Resy link",
-        "restaurant website"
-      ]
+      "description": "URL for making reservations. Commonly found in: OpenTable link, Resy link, restaurant website."
     },
     "outdoor_seating": {
       "type": "boolean",
-      "description": "Whether outdoor seating is available.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp attributes",
-        "Google Maps"
-      ]
+      "description": "Whether outdoor seating is available. Commonly found in: Yelp attributes, Google Maps."
     },
     "delivery_available": {
       "type": "boolean",
-      "description": "Whether delivery is available.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps",
-        "delivery platform"
-      ]
+      "description": "Whether delivery is available. Commonly found in: Yelp, Google Maps, delivery platform."
     },
     "delivery_platforms": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Delivery platforms the restaurant is on.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "DoorDash",
-        "Uber Eats",
-        "Grubhub listing"
-      ]
+      "description": "Delivery platforms the restaurant is on. Commonly found in: DoorDash, Uber Eats, Grubhub listing."
     },
     "takeout_available": {
       "type": "boolean",
-      "description": "Whether takeout is available.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp attributes",
-        "Google Maps"
-      ]
+      "description": "Whether takeout is available. Commonly found in: Yelp attributes, Google Maps."
     },
     "alcohol_license": {
       "type": "boolean",
-      "description": "Whether the restaurant serves alcohol.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp attributes",
-        "restaurant website"
-      ]
+      "description": "Whether the restaurant serves alcohol. Commonly found in: Yelp attributes, restaurant website."
     },
     "michelin_stars": {
       "type": "number",
-      "description": "Number of Michelin stars.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Michelin Guide",
-        "restaurant website"
-      ]
+      "description": "Number of Michelin stars. Commonly found in: Michelin Guide, restaurant website."
     },
     "review_rating": {
       "type": "number",
-      "description": "Average review rating.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp rating",
-        "Google Maps rating",
-        "TripAdvisor"
-      ]
+      "description": "Average review rating. Commonly found in: Yelp rating, Google Maps rating, TripAdvisor."
     },
     "review_count": {
       "type": "number",
-      "description": "Total number of reviews.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp",
-        "Google Maps",
-        "TripAdvisor"
-      ]
+      "description": "Total number of reviews. Commonly found in: Yelp, Google Maps, TripAdvisor."
     },
     "top_dishes": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Most popular or recommended dishes.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp popular dishes",
-        "Google Maps popular dishes"
-      ]
+      "description": "Most popular or recommended dishes. Commonly found in: Yelp popular dishes, Google Maps popular dishes."
     },
     "menu_url": {
       "type": "string",
-      "description": "URL to the restaurant's menu.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "restaurant website",
-        "Yelp menu link"
-      ]
+      "description": "URL to the restaurant's menu. Commonly found in: restaurant website, Yelp menu link."
     },
     "photos": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "URLs of restaurant photos.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp photos",
-        "Google Maps photos"
-      ]
+      "description": "URLs of restaurant photos. Commonly found in: Yelp photos, Google Maps photos."
     },
     "attributes": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Additional attributes or tags.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Yelp attributes",
-        "Google Maps features"
-      ]
+      "description": "Additional attributes or tags. Commonly found in: Yelp attributes, Google Maps features."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the restaurant listing page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Yelp URL",
-        "Google Maps URL",
-        "TripAdvisor URL"
-      ]
+      "description": "URL of the restaurant listing page. Commonly found in: Yelp URL, Google Maps URL, TripAdvisor URL."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
-  "required": [
-    "name",
-    "city",
-    "country",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["name", "city", "country", "source_url", "extracted_at"]
 }

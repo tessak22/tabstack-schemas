@@ -7,291 +7,133 @@
   "properties": {
     "name": {
       "type": "string",
-      "description": "Name of the attraction or experience.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Viator",
-        "GetYourGuide",
-        "TripAdvisor Experiences",
-        "attraction website"
-      ]
+      "description": "Name of the attraction or experience. Commonly found in: Viator, GetYourGuide, TripAdvisor Experiences, attraction website."
     },
     "attraction_type": {
       "type": "string",
-      "enum": [
-        "museum",
-        "tour",
-        "activity",
-        "show",
-        "class",
-        "adventure",
-        "food_experience",
-        "transport",
-        "other"
-      ],
-      "description": "Category of the attraction or experience.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "platform category",
-        "listing metadata"
-      ]
+      "enum": ["museum", "tour", "activity", "show", "class", "adventure", "food_experience", "transport", "other"],
+      "description": "Category of the attraction or experience. Commonly found in: platform category, listing metadata."
     },
     "operator_name": {
       "type": "string",
-      "description": "Name of the operator or organizer.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Viator operator",
-        "GetYourGuide supplier",
-        "listing details"
-      ]
+      "description": "Name of the operator or organizer. Commonly found in: Viator operator, GetYourGuide supplier, listing details."
     },
     "address": {
       "type": "string",
-      "description": "Meeting point or address.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "meeting point section"
-      ]
+      "description": "Meeting point or address. Commonly found in: listing details, meeting point section."
     },
     "city": {
       "type": "string",
-      "description": "City where the experience takes place.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "platform search"
-      ]
+      "description": "City where the experience takes place. Commonly found in: listing details, platform search."
     },
     "country": {
       "type": "string",
-      "description": "Country where the experience takes place.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "platform search"
-      ]
+      "description": "Country where the experience takes place. Commonly found in: listing details, platform search."
     },
     "latitude": {
       "type": "number",
-      "description": "Latitude of the meeting point or main location.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Google Maps",
-        "geocoding API"
-      ]
+      "description": "Latitude of the meeting point or main location. Commonly found in: Google Maps, geocoding API."
     },
     "longitude": {
       "type": "number",
-      "description": "Longitude of the meeting point or main location.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Google Maps",
-        "geocoding API"
-      ]
+      "description": "Longitude of the meeting point or main location. Commonly found in: Google Maps, geocoding API."
     },
     "description": {
       "type": "string",
-      "description": "Full description of the experience.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing description",
-        "about section"
-      ]
+      "description": "Full description of the experience. Commonly found in: listing description, about section."
     },
     "duration_minutes": {
       "type": "number",
-      "description": "Duration of the experience in minutes.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "duration field"
-      ]
+      "description": "Duration of the experience in minutes. Commonly found in: listing details, duration field."
     },
     "min_participants": {
       "type": "number",
-      "description": "Minimum number of participants.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "booking requirements"
-      ]
+      "description": "Minimum number of participants. Commonly found in: listing details, booking requirements."
     },
     "max_participants": {
       "type": "number",
-      "description": "Maximum number of participants.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "group size"
-      ]
+      "description": "Maximum number of participants. Commonly found in: listing details, group size."
     },
     "age_minimum": {
       "type": "number",
-      "description": "Minimum age requirement.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "requirements section"
-      ]
+      "description": "Minimum age requirement. Commonly found in: listing details, requirements section."
     },
     "price_adult_usd": {
       "type": "number",
-      "description": "Adult price in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Viator pricing",
-        "GetYourGuide pricing",
-        "listing price"
-      ]
+      "description": "Adult price in USD. Commonly found in: Viator pricing, GetYourGuide pricing, listing price."
     },
     "price_child_usd": {
       "type": "number",
-      "description": "Child price in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing price",
-        "pricing table"
-      ]
+      "description": "Child price in USD. Commonly found in: listing price, pricing table."
     },
     "price_currency": {
       "type": "string",
-      "description": "Currency code for the prices.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing price display"
-      ]
+      "description": "Currency code for the prices. Commonly found in: listing price display."
     },
     "booking_required": {
       "type": "boolean",
-      "description": "Whether advance booking is required.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "booking info"
-      ]
+      "description": "Whether advance booking is required. Commonly found in: listing details, booking info."
     },
     "cancellation_policy": {
       "type": "string",
-      "description": "Cancellation policy description.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing policies",
-        "booking terms"
-      ]
+      "description": "Cancellation policy description. Commonly found in: listing policies, booking terms."
     },
     "languages_offered": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Languages in which the experience is offered.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "language filter"
-      ]
+      "description": "Languages in which the experience is offered. Commonly found in: listing details, language filter."
     },
     "inclusions": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "What is included in the experience.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing inclusions section"
-      ]
+      "description": "What is included in the experience. Commonly found in: listing inclusions section."
     },
     "exclusions": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "What is not included in the experience.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing exclusions section"
-      ]
+      "description": "What is not included in the experience. Commonly found in: listing exclusions section."
     },
     "review_rating": {
       "type": "number",
-      "description": "Average review rating.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Viator rating",
-        "GetYourGuide rating",
-        "TripAdvisor rating"
-      ]
+      "description": "Average review rating. Commonly found in: Viator rating, GetYourGuide rating, TripAdvisor rating."
     },
     "review_count": {
       "type": "number",
-      "description": "Total number of reviews.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Viator",
-        "GetYourGuide",
-        "TripAdvisor"
-      ]
+      "description": "Total number of reviews. Commonly found in: Viator, GetYourGuide, TripAdvisor."
     },
     "images": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "URLs of experience images.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing photos"
-      ]
+      "description": "URLs of experience images. Commonly found in: listing photos."
     },
     "category_tags": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Category tags or labels.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "platform tags",
-        "listing metadata"
-      ]
+      "description": "Category tags or labels. Commonly found in: platform tags, listing metadata."
     },
     "booking_url": {
       "type": "string",
-      "description": "URL to book the experience.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing page CTA",
-        "booking link"
-      ]
+      "description": "URL to book the experience. Commonly found in: listing page CTA, booking link."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the listing page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Viator listing URL",
-        "GetYourGuide listing URL"
-      ]
+      "description": "URL of the listing page. Commonly found in: Viator listing URL, GetYourGuide listing URL."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
-  "required": [
-    "name",
-    "attraction_type",
-    "city",
-    "country",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["name", "attraction_type", "city", "country", "source_url", "extracted_at"]
 }
