@@ -7,221 +7,99 @@
   "properties": {
     "item_name": {
       "type": "string",
-      "description": "Name or title of the item.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "auction listing",
-        "marketplace listing"
-      ]
+      "description": "Name or title of the item. Commonly found in: auction listing, marketplace listing."
     },
     "item_type": {
       "type": "string",
-      "enum": [
-        "art",
-        "wine",
-        "watch",
-        "sports_card",
-        "sneaker",
-        "jewelry",
-        "collectible",
-        "real_assets"
-      ],
-      "description": "Category of the alternative asset.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "auction category",
-        "marketplace category"
-      ]
+      "enum": ["art", "wine", "watch", "sports_card", "sneaker", "jewelry", "collectible", "real_assets"],
+      "description": "Category of the alternative asset. Commonly found in: auction category, marketplace category."
     },
     "artist_or_maker": {
       "type": "string",
-      "description": "Artist, brand, or maker of the item.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "auction catalog"
-      ]
+      "description": "Artist, brand, or maker of the item. Commonly found in: listing details, auction catalog."
     },
     "title_or_model": {
       "type": "string",
-      "description": "Title of artwork or model name/number.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing title",
-        "auction catalog"
-      ]
+      "description": "Title of artwork or model name/number. Commonly found in: listing title, auction catalog."
     },
     "year": {
       "type": "number",
-      "description": "Year of creation or manufacture.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "auction catalog"
-      ]
+      "description": "Year of creation or manufacture. Commonly found in: listing details, auction catalog."
     },
     "condition_grade": {
       "type": "string",
-      "description": "Condition or grade of the item.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "grading service report"
-      ]
+      "description": "Condition or grade of the item. Commonly found in: listing details, grading service report."
     },
     "authentication_status": {
       "type": "boolean",
-      "description": "Whether the item has been authenticated.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "authentication certificate"
-      ]
+      "description": "Whether the item has been authenticated. Commonly found in: listing details, authentication certificate."
     },
     "authentication_provider": {
       "type": "string",
-      "description": "Name of the authentication or grading service.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing details",
-        "authentication certificate"
-      ]
+      "description": "Name of the authentication or grading service. Commonly found in: listing details, authentication certificate."
     },
     "platform": {
       "type": "string",
-      "description": "Name of the marketplace or auction platform.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "platform name from URL",
-        "listing metadata"
-      ]
+      "description": "Name of the marketplace or auction platform. Commonly found in: platform name from URL, listing metadata."
     },
     "listing_type": {
       "type": "string",
-      "enum": [
-        "auction",
-        "buy_now",
-        "make_offer"
-      ],
-      "description": "Type of sale mechanism.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "listing page",
-        "sale type indicator"
-      ]
+      "enum": ["auction", "buy_now", "make_offer"],
+      "description": "Type of sale mechanism. Commonly found in: listing page, sale type indicator."
     },
     "estimate_low_usd": {
       "type": "number",
-      "description": "Low end of auction house price estimate in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "auction catalog",
-        "estimate section"
-      ]
+      "description": "Low end of auction house price estimate in USD. Commonly found in: auction catalog, estimate section."
     },
     "estimate_high_usd": {
       "type": "number",
-      "description": "High end of auction house price estimate in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "auction catalog",
-        "estimate section"
-      ]
+      "description": "High end of auction house price estimate in USD. Commonly found in: auction catalog, estimate section."
     },
     "starting_bid_usd": {
       "type": "number",
-      "description": "Starting bid for auction in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "auction listing"
-      ]
+      "description": "Starting bid for auction in USD. Commonly found in: auction listing."
     },
     "current_bid_usd": {
       "type": "number",
-      "description": "Current highest bid in USD (for live auctions).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "live auction page"
-      ]
+      "description": "Current highest bid in USD (for live auctions). Commonly found in: live auction page."
     },
     "buy_now_price_usd": {
       "type": "number",
-      "description": "Fixed buy-now price in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "buy now listing"
-      ]
+      "description": "Fixed buy-now price in USD. Commonly found in: buy now listing."
     },
     "currency": {
       "type": "string",
-      "description": "Currency code for the listed prices.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing price display"
-      ]
+      "description": "Currency code for the listed prices. Commonly found in: listing price display."
     },
     "auction_date": {
       "type": "string",
       "format": "date",
-      "description": "Date of the auction.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "auction listing",
-        "event calendar"
-      ]
+      "description": "Date of the auction. Commonly found in: auction listing, event calendar."
     },
     "sale_result_usd": {
       "type": "number",
-      "description": "Final sale price in USD (post-auction).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "auction results page"
-      ]
+      "description": "Final sale price in USD (post-auction). Commonly found in: auction results page."
     },
     "images": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "URLs of item images.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing images"
-      ]
+      "description": "URLs of item images. Commonly found in: listing images."
     },
     "description": {
       "type": "string",
-      "description": "Full description of the item.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "listing description",
-        "auction catalog notes"
-      ]
+      "description": "Full description of the item. Commonly found in: listing description, auction catalog notes."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the listing or auction page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "listing page URL"
-      ]
+      "description": "URL of the listing or auction page. Commonly found in: listing page URL."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
-  "required": [
-    "item_name",
-    "item_type",
-    "platform",
-    "listing_type",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["item_name", "item_type", "platform", "listing_type", "source_url", "extracted_at"]
 }

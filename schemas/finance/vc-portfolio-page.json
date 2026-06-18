@@ -7,90 +7,45 @@
   "properties": {
     "firm_name": {
       "type": "string",
-      "description": "Name of the investment firm.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "firm website header",
-        "about page"
-      ]
+      "description": "Name of the investment firm. Commonly found in: firm website header, about page."
     },
     "firm_domain": {
       "type": "string",
-      "description": "Primary domain of the investment firm.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "firm website URL"
-      ]
+      "description": "Primary domain of the investment firm. Commonly found in: firm website URL."
     },
     "firm_type": {
       "type": "string",
-      "enum": [
-        "vc",
-        "family_office",
-        "corporate_vc",
-        "accelerator",
-        "angel_group"
-      ],
-      "description": "Type of investment firm.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "about page",
-        "firm description"
-      ]
+      "enum": ["vc", "family_office", "corporate_vc", "accelerator", "angel_group"],
+      "description": "Type of investment firm. Commonly found in: about page, firm description."
     },
     "investment_stages": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Stages of investment the firm participates in.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "about page",
-        "investment thesis"
-      ]
+      "description": "Stages of investment the firm participates in. Commonly found in: about page, investment thesis."
     },
     "geographic_focus": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Geographic regions the firm focuses on.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "about page",
-        "investment criteria"
-      ]
+      "description": "Geographic regions the firm focuses on. Commonly found in: about page, investment criteria."
     },
     "sector_focus": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Industry sectors the firm focuses on.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "about page",
-        "investment thesis"
-      ]
+      "description": "Industry sectors the firm focuses on. Commonly found in: about page, investment thesis."
     },
     "fund_size_usd": {
       "type": "number",
-      "description": "Size of the current or most recent fund in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "about page",
-        "press releases"
-      ]
+      "description": "Size of the current or most recent fund in USD. Commonly found in: about page, press releases."
     },
     "founding_year": {
       "type": "number",
-      "description": "Year the firm was founded.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "about page",
-        "firm history"
-      ]
+      "description": "Year the firm was founded. Commonly found in: about page, firm history."
     },
     "managing_partners": {
       "type": "array",
@@ -106,45 +61,25 @@
             "description": "LinkedIn profile URL."
           }
         },
-        "required": [
-          "name"
-        ]
+        "required": ["name"]
       },
-      "description": "List of managing partners at the firm.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "team page",
-        "about page"
-      ]
+      "description": "List of managing partners at the firm. Commonly found in: team page, about page."
     },
     "portfolio_companies": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/PortfolioCompany"
       },
-      "description": "Companies in the firm's portfolio.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "portfolio page",
-        "investments page"
-      ]
+      "description": "Companies in the firm's portfolio. Commonly found in: portfolio page, investments page."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the source portfolio page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "portfolio page URL"
-      ]
+      "description": "URL of the source portfolio page. Commonly found in: portfolio page URL."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
   "$defs": {
@@ -174,25 +109,12 @@
         },
         "status": {
           "type": "string",
-          "enum": [
-            "active",
-            "acquired",
-            "public",
-            "shut_down"
-          ],
+          "enum": ["active", "acquired", "public", "shut_down"],
           "description": "Current status of the portfolio company."
         }
       },
-      "required": [
-        "company_name"
-      ]
+      "required": ["company_name"]
     }
   },
-  "required": [
-    "firm_name",
-    "firm_domain",
-    "portfolio_companies",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["firm_name", "firm_domain", "portfolio_companies", "source_url", "extracted_at"]
 }

@@ -7,204 +7,91 @@
   "properties": {
     "token_name": {
       "type": "string",
-      "description": "Full name of the token or cryptocurrency.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap",
-        "exchange listing"
-      ]
+      "description": "Full name of the token or cryptocurrency. Commonly found in: CoinGecko, CoinMarketCap, exchange listing."
     },
     "token_symbol": {
       "type": "string",
-      "description": "Ticker symbol of the token (e.g., BTC, ETH).",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap",
-        "exchange listing"
-      ]
+      "description": "Ticker symbol of the token (e.g., BTC, ETH). Commonly found in: CoinGecko, CoinMarketCap, exchange listing."
     },
     "coingecko_id": {
       "type": "string",
-      "description": "CoinGecko identifier for the asset.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko API"
-      ]
+      "description": "CoinGecko identifier for the asset. Commonly found in: CoinGecko API."
     },
     "contract_address": {
       "type": "string",
-      "description": "Smart contract address for the token.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "blockchain explorer",
-        "CoinGecko"
-      ]
+      "description": "Smart contract address for the token. Commonly found in: blockchain explorer, CoinGecko."
     },
     "blockchain": {
       "type": "string",
-      "description": "Blockchain network where the token resides.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "blockchain explorer"
-      ]
+      "description": "Blockchain network where the token resides. Commonly found in: CoinGecko, blockchain explorer."
     },
     "price_usd": {
       "type": "number",
-      "description": "Current price in USD.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap",
-        "exchange API"
-      ]
+      "description": "Current price in USD. Commonly found in: CoinGecko, CoinMarketCap, exchange API."
     },
     "price_change_24h_pct": {
       "type": "number",
-      "description": "Price change percentage over the last 24 hours.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Price change percentage over the last 24 hours. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "price_change_7d_pct": {
       "type": "number",
-      "description": "Price change percentage over the last 7 days.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Price change percentage over the last 7 days. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "market_cap_usd": {
       "type": "number",
-      "description": "Market capitalization in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Market capitalization in USD. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "market_cap_rank": {
       "type": "number",
-      "description": "Global market cap rank.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Global market cap rank. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "volume_24h_usd": {
       "type": "number",
-      "description": "24-hour trading volume in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap",
-        "exchange"
-      ]
+      "description": "24-hour trading volume in USD. Commonly found in: CoinGecko, CoinMarketCap, exchange."
     },
     "circulating_supply": {
       "type": "number",
-      "description": "Number of tokens currently in circulation.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Number of tokens currently in circulation. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "total_supply": {
       "type": "number",
-      "description": "Total token supply.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "token contract"
-      ]
+      "description": "Total token supply. Commonly found in: CoinGecko, token contract."
     },
     "max_supply": {
       "type": "number",
-      "description": "Maximum possible token supply.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "whitepaper"
-      ]
+      "description": "Maximum possible token supply. Commonly found in: CoinGecko, whitepaper."
     },
     "fully_diluted_valuation_usd": {
       "type": "number",
-      "description": "Fully diluted valuation (FDV) in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Fully diluted valuation (FDV) in USD. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "ath_usd": {
       "type": "number",
-      "description": "All-time high price in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "All-time high price in USD. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "ath_date": {
       "type": "string",
       "format": "date",
-      "description": "Date of all-time high price.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko",
-        "CoinMarketCap"
-      ]
+      "description": "Date of all-time high price. Commonly found in: CoinGecko, CoinMarketCap."
     },
     "category": {
       "type": "string",
-      "description": "Asset category (e.g., DeFi, Layer 1, stablecoin).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "CoinGecko categories",
-        "CoinMarketCap tags"
-      ]
+      "description": "Asset category (e.g., DeFi, Layer 1, stablecoin). Commonly found in: CoinGecko categories, CoinMarketCap tags."
     },
     "snapshot_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp of the price snapshot.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "API response timestamp"
-      ]
+      "description": "ISO 8601 timestamp of the price snapshot. Commonly found in: API response timestamp."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the source page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "CoinGecko asset page",
-        "CoinMarketCap asset page"
-      ]
+      "description": "URL of the source page. Commonly found in: CoinGecko asset page, CoinMarketCap asset page."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
-  "required": [
-    "token_name",
-    "token_symbol",
-    "price_usd",
-    "snapshot_at",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["token_name", "token_symbol", "price_usd", "snapshot_at", "source_url", "extracted_at"]
 }

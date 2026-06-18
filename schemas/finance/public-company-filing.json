@@ -7,249 +7,112 @@
   "properties": {
     "company_name": {
       "type": "string",
-      "description": "Legal name of the filing company.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "SEC EDGAR",
-        "filing header"
-      ]
+      "description": "Legal name of the filing company. Commonly found in: SEC EDGAR, filing header."
     },
     "company_domain": {
       "type": "string",
-      "description": "Primary website domain of the company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "company website",
-        "IR page"
-      ]
+      "description": "Primary website domain of the company. Commonly found in: company website, IR page."
     },
     "cik": {
       "type": "string",
-      "description": "SEC Central Index Key (CIK) number.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "SEC EDGAR"
-      ]
+      "description": "SEC Central Index Key (CIK) number. Commonly found in: SEC EDGAR."
     },
     "ticker": {
       "type": "string",
-      "description": "Stock ticker symbol.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "exchange listing",
-        "filing cover page"
-      ]
+      "description": "Stock ticker symbol. Commonly found in: exchange listing, filing cover page."
     },
     "exchange": {
       "type": "string",
-      "description": "Stock exchange where the company is listed.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "filing cover page",
-        "exchange website"
-      ]
+      "description": "Stock exchange where the company is listed. Commonly found in: filing cover page, exchange website."
     },
     "filing_type": {
       "type": "string",
-      "enum": [
-        "10-K",
-        "10-Q",
-        "8-K",
-        "S-1",
-        "proxy",
-        "other"
-      ],
-      "description": "Type of regulatory filing.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "SEC EDGAR form type",
-        "filing header"
-      ]
+      "enum": ["10-K", "10-Q", "8-K", "S-1", "proxy", "other"],
+      "description": "Type of regulatory filing. Commonly found in: SEC EDGAR form type, filing header."
     },
     "period_of_report": {
       "type": "string",
       "format": "date",
-      "description": "The period covered by this report (YYYY-MM-DD).",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "filing cover page",
-        "period of report field"
-      ]
+      "description": "The period covered by this report (YYYY-MM-DD). Commonly found in: filing cover page, period of report field."
     },
     "filed_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the filing was submitted (YYYY-MM-DD).",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "SEC EDGAR filing date",
-        "filing header"
-      ]
+      "description": "Date the filing was submitted (YYYY-MM-DD). Commonly found in: SEC EDGAR filing date, filing header."
     },
     "document_url": {
       "type": "string",
-      "description": "Direct URL to the primary filing document.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "SEC EDGAR documents page"
-      ]
+      "description": "Direct URL to the primary filing document. Commonly found in: SEC EDGAR documents page."
     },
     "revenue_usd": {
       "type": "number",
-      "description": "Total revenue in USD for the reporting period.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "income statement",
-        "financial highlights"
-      ]
+      "description": "Total revenue in USD for the reporting period. Commonly found in: income statement, financial highlights."
     },
     "gross_profit_usd": {
       "type": "number",
-      "description": "Gross profit in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "income statement"
-      ]
+      "description": "Gross profit in USD. Commonly found in: income statement."
     },
     "operating_income_usd": {
       "type": "number",
-      "description": "Operating income (EBIT) in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "income statement"
-      ]
+      "description": "Operating income (EBIT) in USD. Commonly found in: income statement."
     },
     "net_income_usd": {
       "type": "number",
-      "description": "Net income in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "income statement",
-        "financial highlights"
-      ]
+      "description": "Net income in USD. Commonly found in: income statement, financial highlights."
     },
     "ebitda_usd": {
       "type": "number",
-      "description": "EBITDA in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "financial highlights",
-        "non-GAAP disclosures"
-      ]
+      "description": "EBITDA in USD. Commonly found in: financial highlights, non-GAAP disclosures."
     },
     "total_assets_usd": {
       "type": "number",
-      "description": "Total assets in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "balance sheet"
-      ]
+      "description": "Total assets in USD. Commonly found in: balance sheet."
     },
     "total_liabilities_usd": {
       "type": "number",
-      "description": "Total liabilities in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "balance sheet"
-      ]
+      "description": "Total liabilities in USD. Commonly found in: balance sheet."
     },
     "cash_and_equivalents_usd": {
       "type": "number",
-      "description": "Cash and cash equivalents in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "balance sheet",
-        "cash flow statement"
-      ]
+      "description": "Cash and cash equivalents in USD. Commonly found in: balance sheet, cash flow statement."
     },
     "total_debt_usd": {
       "type": "number",
-      "description": "Total debt in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "balance sheet",
-        "debt schedule"
-      ]
+      "description": "Total debt in USD. Commonly found in: balance sheet, debt schedule."
     },
     "shares_outstanding": {
       "type": "number",
-      "description": "Number of shares outstanding.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "balance sheet",
-        "cover page"
-      ]
+      "description": "Number of shares outstanding. Commonly found in: balance sheet, cover page."
     },
     "eps_basic": {
       "type": "number",
-      "description": "Basic earnings per share.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "income statement",
-        "EPS table"
-      ]
+      "description": "Basic earnings per share. Commonly found in: income statement, EPS table."
     },
     "eps_diluted": {
       "type": "number",
-      "description": "Diluted earnings per share.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "income statement",
-        "EPS table"
-      ]
+      "description": "Diluted earnings per share. Commonly found in: income statement, EPS table."
     },
     "guidance_revenue_low": {
       "type": "number",
-      "description": "Low end of revenue guidance in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "outlook section",
-        "press release"
-      ]
+      "description": "Low end of revenue guidance in USD. Commonly found in: outlook section, press release."
     },
     "guidance_revenue_high": {
       "type": "number",
-      "description": "High end of revenue guidance in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "outlook section",
-        "press release"
-      ]
+      "description": "High end of revenue guidance in USD. Commonly found in: outlook section, press release."
     },
     "auditor_name": {
       "type": "string",
-      "description": "Name of the external auditor.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "auditor's report",
-        "10-K notes"
-      ]
+      "description": "Name of the external auditor. Commonly found in: auditor's report, 10-K notes."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the source page where this filing was found.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "SEC EDGAR",
-        "IR website"
-      ]
+      "description": "URL of the source page where this filing was found. Commonly found in: SEC EDGAR, IR website."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
-  "required": [
-    "company_name",
-    "filing_type",
-    "period_of_report",
-    "filed_date",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["company_name", "filing_type", "period_of_report", "filed_date", "source_url", "extracted_at"]
 }

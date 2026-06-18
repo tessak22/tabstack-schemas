@@ -7,216 +7,91 @@
   "properties": {
     "company_name": {
       "type": "string",
-      "description": "Name of the company that raised funding.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "AngelList",
-        "Crunchbase",
-        "press release"
-      ]
+      "description": "Name of the company that raised funding. Commonly found in: AngelList, Crunchbase, press release."
     },
     "company_domain": {
       "type": "string",
-      "description": "Website domain of the company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "company website",
-        "Crunchbase"
-      ]
+      "description": "Website domain of the company. Commonly found in: company website, Crunchbase."
     },
     "founder_names": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "Names of the company founders.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "AngelList",
-        "LinkedIn"
-      ]
+      "description": "Names of the company founders. Commonly found in: press release, AngelList, LinkedIn."
     },
     "round_type": {
       "type": "string",
-      "enum": [
-        "angel",
-        "pre_seed",
-        "seed",
-        "convertible_note",
-        "safe"
-      ],
-      "description": "Type of funding round.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "Crunchbase",
-        "press release",
-        "AngelList"
-      ]
+      "enum": ["angel", "pre_seed", "seed", "convertible_note", "safe"],
+      "description": "Type of funding round. Commonly found in: Crunchbase, press release, AngelList."
     },
     "amount_usd": {
       "type": "number",
-      "description": "Amount raised in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "Crunchbase",
-        "SEC Form D"
-      ]
+      "description": "Amount raised in USD. Commonly found in: press release, Crunchbase, SEC Form D."
     },
     "announced_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the deal was announced.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "press release date",
-        "Crunchbase",
-        "AngelList"
-      ]
+      "description": "Date the deal was announced. Commonly found in: press release date, Crunchbase, AngelList."
     },
     "lead_investor_name": {
       "type": "string",
-      "description": "Name of the lead investor.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "Crunchbase",
-        "AngelList"
-      ]
+      "description": "Name of the lead investor. Commonly found in: press release, Crunchbase, AngelList."
     },
     "lead_investor_type": {
       "type": "string",
-      "enum": [
-        "angel",
-        "fund",
-        "accelerator"
-      ],
-      "description": "Type of lead investor.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "Crunchbase"
-      ]
+      "enum": ["angel", "fund", "accelerator"],
+      "description": "Type of lead investor. Commonly found in: press release, Crunchbase."
     },
     "co_investors": {
       "type": "array",
       "items": {
         "type": "string"
       },
-      "description": "List of co-investors in the round.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "Crunchbase",
-        "AngelList"
-      ]
+      "description": "List of co-investors in the round. Commonly found in: press release, Crunchbase, AngelList."
     },
     "valuation_cap_usd": {
       "type": "number",
-      "description": "Valuation cap for convertible note or SAFE in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "SEC Form D",
-        "press release"
-      ]
+      "description": "Valuation cap for convertible note or SAFE in USD. Commonly found in: SEC Form D, press release."
     },
     "discount_pct": {
       "type": "number",
-      "description": "Discount percentage for convertible instruments.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "SEC Form D",
-        "deal terms"
-      ]
+      "description": "Discount percentage for convertible instruments. Commonly found in: SEC Form D, deal terms."
     },
     "accelerator_name": {
       "type": "string",
-      "description": "Name of the accelerator program if applicable.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "accelerator website",
-        "press release"
-      ]
+      "description": "Name of the accelerator program if applicable. Commonly found in: accelerator website, press release."
     },
     "accelerator_batch": {
       "type": "string",
-      "description": "Accelerator batch or cohort identifier.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "accelerator website",
-        "announcement"
-      ]
+      "description": "Accelerator batch or cohort identifier. Commonly found in: accelerator website, announcement."
     },
     "company_description": {
       "type": "string",
-      "description": "Brief description of what the company does.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "Crunchbase",
-        "company website"
-      ]
+      "description": "Brief description of what the company does. Commonly found in: press release, Crunchbase, company website."
     },
     "company_industry": {
       "type": "string",
-      "description": "Industry vertical of the company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "Crunchbase",
-        "AngelList",
-        "press release"
-      ]
+      "description": "Industry vertical of the company. Commonly found in: Crunchbase, AngelList, press release."
     },
     "use_of_funds": {
       "type": "string",
-      "description": "Stated use of the raised funds.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "press release",
-        "company blog"
-      ]
+      "description": "Stated use of the raised funds. Commonly found in: press release, company blog."
     },
     "source_url": {
       "type": "string",
-      "description": "URL of the source page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "press release URL",
-        "Crunchbase",
-        "AngelList"
-      ]
+      "description": "URL of the source page. Commonly found in: press release URL, Crunchbase, AngelList."
     },
     "source_type": {
       "type": "string",
-      "enum": [
-        "angellist",
-        "crunchbase",
-        "twitter",
-        "press_release",
-        "other"
-      ],
-      "description": "Type of source where this deal was found.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "enum": ["angellist", "crunchbase", "twitter", "press_release", "other"],
+      "description": "Type of source where this deal was found. Commonly found in: scraper metadata."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": [
-        "scraper metadata"
-      ]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
     }
   },
-  "required": [
-    "company_name",
-    "round_type",
-    "announced_date",
-    "source_url",
-    "extracted_at"
-  ]
+  "required": ["company_name", "round_type", "announced_date", "source_url", "extracted_at"]
 }
