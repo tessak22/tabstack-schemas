@@ -7,107 +7,117 @@
   "properties": {
     "company_name": {
       "type": "string",
-      "description": "Name of the company.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["company careers page header", "job board company profile", "page title"]
+      "description": "Name of the company. Commonly found in: company careers page header, job board company profile, page title."
     },
     "company_domain": {
       "type": "string",
-      "description": "Website domain of the company.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["company website URL", "careers page domain", "company profile link"]
+      "description": "Website domain of the company. Commonly found in: company website URL, careers page domain, company profile link."
     },
     "snapshot_date": {
       "type": "string",
       "format": "date",
-      "description": "Date this hiring snapshot was captured.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction date", "scraper timestamp", "page cache date"]
+      "description": "Date this hiring snapshot was captured. Commonly found in: extraction date, scraper timestamp, page cache date."
     },
     "total_open_roles": {
       "type": "number",
-      "description": "Total number of currently open job listings.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["job count display", "open positions total", "search results count"]
+      "description": "Total number of currently open job listings. Commonly found in: job count display, open positions total, search results count."
     },
     "roles_by_department": {
       "type": "object",
-      "description": "Breakdown of open roles by department.",
+      "description": "Breakdown of open roles by department. Commonly found in: department filter sidebar, job category counts, careers page filter.",
       "properties": {
-        "engineering": { "type": "number", "description": "Open engineering roles." },
-        "sales": { "type": "number", "description": "Open sales roles." },
-        "marketing": { "type": "number", "description": "Open marketing roles." },
-        "product": { "type": "number", "description": "Open product roles." },
-        "ops": { "type": "number", "description": "Open operations roles." },
-        "hr": { "type": "number", "description": "Open HR roles." },
-        "finance": { "type": "number", "description": "Open finance roles." },
-        "other": { "type": "number", "description": "Open roles in other departments." }
-      },
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["department filter sidebar", "job category counts", "careers page filter"]
+        "engineering": {
+          "type": "number",
+          "description": "Open engineering roles."
+        },
+        "sales": {
+          "type": "number",
+          "description": "Open sales roles."
+        },
+        "marketing": {
+          "type": "number",
+          "description": "Open marketing roles."
+        },
+        "product": {
+          "type": "number",
+          "description": "Open product roles."
+        },
+        "ops": {
+          "type": "number",
+          "description": "Open operations roles."
+        },
+        "hr": {
+          "type": "number",
+          "description": "Open HR roles."
+        },
+        "finance": {
+          "type": "number",
+          "description": "Open finance roles."
+        },
+        "other": {
+          "type": "number",
+          "description": "Open roles in other departments."
+        }
+      }
     },
     "roles_by_seniority": {
       "type": "object",
-      "description": "Breakdown of open roles by seniority level.",
+      "description": "Breakdown of open roles by seniority level. Commonly found in: level filter sidebar, seniority category counts, job board filter.",
       "properties": {
-        "senior": { "type": "number", "description": "Open senior-level roles." },
-        "mid": { "type": "number", "description": "Open mid-level roles." },
-        "junior": { "type": "number", "description": "Open junior or entry-level roles." },
-        "leadership": { "type": "number", "description": "Open leadership/director roles." }
-      },
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["level filter sidebar", "seniority category counts", "job board filter"]
+        "senior": {
+          "type": "number",
+          "description": "Open senior-level roles."
+        },
+        "mid": {
+          "type": "number",
+          "description": "Open mid-level roles."
+        },
+        "junior": {
+          "type": "number",
+          "description": "Open junior or entry-level roles."
+        },
+        "leadership": {
+          "type": "number",
+          "description": "Open leadership/director roles."
+        }
+      }
     },
     "remote_roles_count": {
       "type": "number",
-      "description": "Number of roles that are remote.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["remote filter count", "location type breakdown", "careers page filter"]
+      "description": "Number of roles that are remote. Commonly found in: remote filter count, location type breakdown, careers page filter."
     },
     "remote_roles_pct": {
       "type": "number",
-      "description": "Percentage of open roles that are remote.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["remote filter count", "location type breakdown", "calculated from totals"]
+      "description": "Percentage of open roles that are remote. Commonly found in: remote filter count, location type breakdown, calculated from totals."
     },
     "new_roles_last_30d": {
       "type": "number",
-      "description": "Number of new roles posted in the last 30 days.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["new listings count", "date filter results", "job board trend data"]
+      "description": "Number of new roles posted in the last 30 days. Commonly found in: new listings count, date filter results, job board trend data."
     },
     "closed_roles_last_30d": {
       "type": "number",
-      "description": "Number of roles closed or filled in the last 30 days.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["closed listings count", "job board trend data", "calculated from historical snapshots"]
+      "description": "Number of roles closed or filled in the last 30 days. Commonly found in: closed listings count, job board trend data, calculated from historical snapshots."
     },
     "top_hiring_titles": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "Most common or featured job titles currently hiring.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["featured roles section", "top jobs display", "most common titles from listings"]
+      "items": {
+        "type": "string"
+      },
+      "description": "Most common or featured job titles currently hiring. Commonly found in: featured roles section, top jobs display, most common titles from listings."
     },
     "source_platform": {
       "type": "string",
-      "description": "Platform from which this data was gathered (e.g., LinkedIn, Greenhouse).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["site domain", "platform branding", "careers page ATS indicator"]
+      "description": "Platform from which this data was gathered (e.g., LinkedIn, Greenhouse). Commonly found in: site domain, platform branding, careers page ATS indicator."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this data was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this data was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this data was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["company_name", "company_domain", "snapshot_date", "total_open_roles", "source_url", "extracted_at"]

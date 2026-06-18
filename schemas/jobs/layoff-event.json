@@ -7,107 +7,79 @@
   "properties": {
     "company_name": {
       "type": "string",
-      "description": "Name of the company conducting the layoff.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release headline", "news article title", "layoff tracker entry"]
+      "description": "Name of the company conducting the layoff. Commonly found in: press release headline, news article title, layoff tracker entry."
     },
     "company_domain": {
       "type": "string",
-      "description": "Website domain of the company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["company website link", "press release footer", "company profile"]
+      "description": "Website domain of the company. Commonly found in: company website link, press release footer, company profile."
     },
     "company_industry": {
       "type": "string",
-      "description": "Industry sector of the company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["company profile", "news article classification", "layoff tracker category"]
+      "description": "Industry sector of the company. Commonly found in: company profile, news article classification, layoff tracker category."
     },
     "headcount_affected": {
       "type": "number",
-      "description": "Number of employees affected by the layoff.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "news article headline", "layoff tracker count"]
+      "description": "Number of employees affected by the layoff. Commonly found in: press release body, news article headline, layoff tracker count."
     },
     "headcount_affected_pct": {
       "type": "number",
-      "description": "Percentage of total workforce affected.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "news article body", "workforce reduction percentage"]
+      "description": "Percentage of total workforce affected. Commonly found in: press release body, news article body, workforce reduction percentage."
     },
     "affected_departments": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "Departments or teams affected by the layoff.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "news article details", "layoff announcement"]
+      "items": {
+        "type": "string"
+      },
+      "description": "Departments or teams affected by the layoff. Commonly found in: press release body, news article details, layoff announcement."
     },
     "affected_locations": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "Office locations affected by the layoff.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "news article details", "WARN notice"]
+      "items": {
+        "type": "string"
+      },
+      "description": "Office locations affected by the layoff. Commonly found in: press release body, news article details, WARN notice."
     },
     "announcement_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the layoff was publicly announced.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release date", "article publish date", "announcement timestamp"]
+      "description": "Date the layoff was publicly announced. Commonly found in: press release date, article publish date, announcement timestamp."
     },
     "effective_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the layoffs took or take effect.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "WARN notice effective date", "announcement details"]
+      "description": "Date the layoffs took or take effect. Commonly found in: press release body, WARN notice effective date, announcement details."
     },
     "layoff_type": {
       "type": "string",
       "enum": ["restructuring", "performance", "acquisition", "economic"],
-      "description": "Stated reason or type of layoff.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "news article analysis", "company statement"]
+      "description": "Stated reason or type of layoff. Commonly found in: press release body, news article analysis, company statement."
     },
     "severance_weeks": {
       "type": "number",
-      "description": "Number of weeks of severance pay offered.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "employee communication", "news article details"]
+      "description": "Number of weeks of severance pay offered. Commonly found in: press release body, employee communication, news article details."
     },
     "rehire_eligible": {
       "type": "boolean",
-      "description": "Whether laid-off employees are eligible for rehire.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "employee FAQ", "company statement"]
+      "description": "Whether laid-off employees are eligible for rehire. Commonly found in: press release body, employee FAQ, company statement."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this data was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "source_type": {
       "type": "string",
       "enum": ["press_release", "news_article", "sec_filing", "social"],
-      "description": "Type of source for the layoff information.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["site domain classification", "content type", "source format"]
+      "description": "Type of source for the layoff information. Commonly found in: site domain classification, content type, source format."
     },
     "ceo_statement": {
       "type": "string",
-      "description": "Statement or message from the CEO about the layoff.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release CEO quote", "internal memo published externally", "news article quote"]
+      "description": "Statement or message from the CEO about the layoff. Commonly found in: press release CEO quote, internal memo published externally, news article quote."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["company_name", "announcement_date", "source_url", "extracted_at"]

@@ -7,138 +7,94 @@
   "properties": {
     "job_title": {
       "type": "string",
-      "description": "Job title or role this salary corresponds to.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["salary entry title field", "compensation data row", "salary report header"]
+      "description": "Job title or role this salary corresponds to. Commonly found in: salary entry title field, compensation data row, salary report header."
     },
     "company_name": {
       "type": "string",
-      "description": "Name of the employer.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["company field in salary entry", "employer name in report", "data submission form"]
+      "description": "Name of the employer. Commonly found in: company field in salary entry, employer name in report, data submission form."
     },
     "company_domain": {
       "type": "string",
-      "description": "Website domain of the employer.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["company profile link", "employer website field"]
+      "description": "Website domain of the employer. Commonly found in: company profile link, employer website field."
     },
     "company_size_range": {
       "type": "string",
-      "description": "Company size range (e.g., '51-200', '1000+').",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["company size field", "employer details", "filter sidebar"]
+      "description": "Company size range (e.g., '51-200', '1000+'). Commonly found in: company size field, employer details, filter sidebar."
     },
     "industry": {
       "type": "string",
-      "description": "Industry sector of the employer.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["industry field", "company profile", "salary filter"]
+      "description": "Industry sector of the employer. Commonly found in: industry field, company profile, salary filter."
     },
     "location_city": {
       "type": "string",
-      "description": "City of the job location.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["location field", "city in salary entry", "geographic filter"]
+      "description": "City of the job location. Commonly found in: location field, city in salary entry, geographic filter."
     },
     "location_state": {
       "type": "string",
-      "description": "State or province of the job location.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["location field", "state in salary entry", "geographic filter"]
+      "description": "State or province of the job location. Commonly found in: location field, state in salary entry, geographic filter."
     },
     "location_country": {
       "type": "string",
-      "description": "Country of the job location.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["location field", "country in salary entry", "geographic filter"]
+      "description": "Country of the job location. Commonly found in: location field, country in salary entry, geographic filter."
     },
     "remote": {
       "type": "boolean",
-      "description": "Whether the position is fully remote.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["remote indicator", "work arrangement field", "location type"]
+      "description": "Whether the position is fully remote. Commonly found in: remote indicator, work arrangement field, location type."
     },
     "total_comp_usd": {
       "type": "number",
-      "description": "Total annual compensation in USD.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["total comp field", "TC display", "compensation summary"]
+      "description": "Total annual compensation in USD. Commonly found in: total comp field, TC display, compensation summary."
     },
     "base_salary_usd": {
       "type": "number",
-      "description": "Annual base salary in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["base salary field", "salary breakdown section", "compensation table"]
+      "description": "Annual base salary in USD. Commonly found in: base salary field, salary breakdown section, compensation table."
     },
     "bonus_usd": {
       "type": "number",
-      "description": "Annual bonus amount in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["bonus field", "salary breakdown section", "compensation table"]
+      "description": "Annual bonus amount in USD. Commonly found in: bonus field, salary breakdown section, compensation table."
     },
     "equity_usd": {
       "type": "number",
-      "description": "Annual equity value in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["equity field", "stock/RSU value", "compensation table"]
+      "description": "Annual equity value in USD. Commonly found in: equity field, stock/RSU value, compensation table."
     },
     "signing_bonus_usd": {
       "type": "number",
-      "description": "Signing bonus amount in USD.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["signing bonus field", "compensation table", "salary breakdown"]
+      "description": "Signing bonus amount in USD. Commonly found in: signing bonus field, compensation table, salary breakdown."
     },
     "years_experience": {
       "type": "number",
-      "description": "Total years of professional experience.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["experience field", "years of experience input", "salary filter"]
+      "description": "Total years of professional experience. Commonly found in: experience field, years of experience input, salary filter."
     },
     "years_at_company": {
       "type": "number",
-      "description": "Years at the current company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["tenure field", "years at company input", "compensation details"]
+      "description": "Years at the current company. Commonly found in: tenure field, years at company input, compensation details."
     },
     "education_level": {
       "type": "string",
-      "description": "Highest education level (e.g., Bachelor's, Master's, PhD).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["education field", "degree level input", "salary filter"]
+      "description": "Highest education level (e.g., Bachelor's, Master's, PhD). Commonly found in: education field, degree level input, salary filter."
     },
     "seniority_level": {
       "type": "string",
-      "description": "Seniority or career level (e.g., Senior, Staff, Principal).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["level field", "seniority input", "title level indicator"]
+      "description": "Seniority or career level (e.g., Senior, Staff, Principal). Commonly found in: level field, seniority input, title level indicator."
     },
     "data_source": {
       "type": "string",
-      "description": "Source or platform of this salary data point.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["site domain", "platform attribution", "data source label"]
+      "description": "Source or platform of this salary data point. Commonly found in: site domain, platform attribution, data source label."
     },
     "submission_date": {
       "type": "string",
       "format": "date",
-      "description": "Date this salary was submitted or reported.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["submission date field", "report date", "salary entry timestamp"]
+      "description": "Date this salary was submitted or reported. Commonly found in: submission date field, report date, salary entry timestamp."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this data was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this data was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this data was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["job_title", "total_comp_usd", "source_url", "extracted_at"]

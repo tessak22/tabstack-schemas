@@ -7,107 +7,75 @@
   "properties": {
     "person_name": {
       "type": "string",
-      "description": "Full name of the executive.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release headline", "news article body", "LinkedIn announcement"]
+      "description": "Full name of the executive. Commonly found in: press release headline, news article body, LinkedIn announcement."
     },
     "person_linkedin_url": {
       "type": "string",
       "format": "uri",
-      "description": "LinkedIn profile URL of the executive.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["LinkedIn post link", "executive bio section", "company announcement"]
+      "description": "LinkedIn profile URL of the executive. Commonly found in: LinkedIn post link, executive bio section, company announcement."
     },
     "company_name": {
       "type": "string",
-      "description": "Name of the company where the change occurred.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release header", "news article", "LinkedIn company tag"]
+      "description": "Name of the company where the change occurred. Commonly found in: press release header, news article, LinkedIn company tag."
     },
     "company_domain": {
       "type": "string",
-      "description": "Website domain of the company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["company website link", "press release footer", "company profile"]
+      "description": "Website domain of the company. Commonly found in: company website link, press release footer, company profile."
     },
     "previous_title": {
       "type": "string",
-      "description": "Executive's previous title at the company or prior company.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "LinkedIn profile history", "news article bio"]
+      "description": "Executive's previous title at the company or prior company. Commonly found in: press release body, LinkedIn profile history, news article bio."
     },
     "previous_company": {
       "type": "string",
-      "description": "Executive's previous employer, if different.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "LinkedIn work history", "executive bio"]
+      "description": "Executive's previous employer, if different. Commonly found in: press release body, LinkedIn work history, executive bio."
     },
     "new_title": {
       "type": "string",
-      "description": "Executive's new title.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release headline", "announcement title", "LinkedIn update"]
+      "description": "Executive's new title. Commonly found in: press release headline, announcement title, LinkedIn update."
     },
     "new_company": {
       "type": "string",
-      "description": "Company where the executive is joining or taking the new role.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release header", "news article headline", "LinkedIn company tag"]
+      "description": "Company where the executive is joining or taking the new role. Commonly found in: press release header, news article headline, LinkedIn company tag."
     },
     "change_type": {
       "type": "string",
       "enum": ["promotion", "new_hire", "departure", "retirement", "interim"],
-      "description": "Type of leadership change.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release context", "news article classification", "announcement language"]
+      "description": "Type of leadership change. Commonly found in: press release context, news article classification, announcement language."
     },
     "announcement_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the leadership change was publicly announced.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["press release date", "article publish date", "announcement timestamp"]
+      "description": "Date the leadership change was publicly announced. Commonly found in: press release date, article publish date, announcement timestamp."
     },
     "effective_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the leadership change takes effect.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release body", "announcement details", "effective date mention"]
+      "description": "Date the leadership change takes effect. Commonly found in: press release body, announcement details, effective date mention."
     },
     "announcement_source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the original announcement source.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release URL", "news article link", "LinkedIn post URL"]
+      "description": "URL of the original announcement source. Commonly found in: press release URL, news article link, LinkedIn post URL."
     },
     "announcement_type": {
       "type": "string",
       "enum": ["press_release", "linkedin_post", "sec_filing", "news_article"],
-      "description": "Type of source for the announcement.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["site domain classification", "content type", "source format"]
+      "description": "Type of source for the announcement. Commonly found in: site domain classification, content type, source format."
     },
     "quoted_statement": {
       "type": "string",
-      "description": "Notable quoted statement from the announcement.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["press release quote block", "news article quote", "executive statement"]
+      "description": "Notable quoted statement from the announcement. Commonly found in: press release quote block, news article quote, executive statement."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this data was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["person_name", "company_name", "new_title", "new_company", "change_type", "announcement_date", "source_url", "extracted_at"]
