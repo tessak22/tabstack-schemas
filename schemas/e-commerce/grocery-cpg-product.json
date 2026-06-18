@@ -7,149 +7,130 @@
   "properties": {
     "product_name": {
       "type": "string",
-      "description": "Name of the grocery or CPG product.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["product page h1", "product card title", "og:title meta tag"]
+      "description": "Name of the grocery or CPG product. Commonly found in: product page h1, product card title, og:title meta tag."
     },
     "brand": {
       "type": "string",
-      "description": "Brand name of the product.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["brand field in product details", "product byline", "package brand label"]
+      "description": "Brand name of the product. Commonly found in: brand field in product details, product byline, package brand label."
     },
     "upc": {
       "type": "string",
-      "description": "Universal Product Code (UPC/EAN barcode).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["product details table", "product ID field", "barcode data"]
+      "description": "Universal Product Code (UPC/EAN barcode). Commonly found in: product details table, product ID field, barcode data."
     },
     "platform": {
       "type": "string",
-      "description": "E-commerce platform or grocery delivery app.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["site domain", "platform branding", "app name"]
+      "description": "E-commerce platform or grocery delivery app. Commonly found in: site domain, platform branding, app name."
     },
     "store_name": {
       "type": "string",
-      "description": "Physical or online store name.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["store name header", "retailer branding", "sold by field"]
+      "description": "Physical or online store name. Commonly found in: store name header, retailer branding, sold by field."
     },
     "price": {
       "type": "number",
-      "description": "Current price of the product.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["price display", "product price span", "JSON-LD price field"]
+      "description": "Current price of the product. Commonly found in: price display, product price span, JSON-LD price field."
     },
     "unit_price": {
       "type": "number",
-      "description": "Price per unit of measure (e.g., per oz, per count).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["unit price display", "per oz price label", "price per unit section"]
+      "description": "Price per unit of measure (e.g., per oz, per count). Commonly found in: unit price display, per oz price label, price per unit section."
     },
     "unit_of_measure": {
       "type": "string",
-      "description": "Unit of measure for unit pricing (e.g., oz, lb, count).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["unit price label", "product weight field", "package size indicator"]
+      "description": "Unit of measure for unit pricing (e.g., oz, lb, count). Commonly found in: unit price label, product weight field, package size indicator."
     },
     "sale_price": {
       "type": "number",
-      "description": "Sale or discounted price.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["sale price display", "discount label", "was/now price display"]
+      "description": "Sale or discounted price. Commonly found in: sale price display, discount label, was/now price display."
     },
     "availability": {
       "type": "string",
       "enum": ["in_stock", "out_of_stock", "limited"],
-      "description": "Current availability status.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["availability badge", "in stock indicator", "add to cart button state"]
+      "description": "Current availability status. Commonly found in: availability badge, in stock indicator, add to cart button state."
     },
     "category": {
       "type": "string",
-      "description": "Primary product category (e.g., Dairy, Snacks, Beverages).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["breadcrumb navigation", "category field", "aisle label"]
+      "description": "Primary product category (e.g., Dairy, Snacks, Beverages). Commonly found in: breadcrumb navigation, category field, aisle label."
     },
     "subcategory": {
       "type": "string",
-      "description": "Product subcategory.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["breadcrumb navigation", "subcategory field", "aisle sub-label"]
+      "description": "Product subcategory. Commonly found in: breadcrumb navigation, subcategory field, aisle sub-label."
     },
     "weight_oz": {
       "type": "number",
-      "description": "Product weight in ounces.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["product size/weight field", "package label", "product details table"]
+      "description": "Product weight in ounces. Commonly found in: product size/weight field, package label, product details table."
     },
     "calories": {
       "type": "number",
-      "description": "Calories per serving.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["nutrition facts label", "calories per serving display", "nutritional info section"]
+      "description": "Calories per serving. Commonly found in: nutrition facts label, calories per serving display, nutritional info section."
     },
     "ingredients": {
       "type": "string",
-      "description": "Ingredients list as a string.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["ingredients section", "product label ingredients", "nutrition tab"]
+      "description": "Ingredients list as a string. Commonly found in: ingredients section, product label ingredients, nutrition tab."
     },
     "allergens": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "List of allergens present or may contain.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["allergen section", "contains/may contain labels", "product warning section"]
+      "items": {
+        "type": "string"
+      },
+      "description": "List of allergens present or may contain. Commonly found in: allergen section, contains/may contain labels, product warning section."
     },
     "nutritional_info": {
       "type": "object",
-      "description": "Key nutritional values per serving.",
+      "description": "Key nutritional values per serving. Commonly found in: nutrition facts panel, nutritional information section, nutrition tab.",
       "properties": {
-        "fat": { "type": "number", "description": "Total fat in grams." },
-        "carbs": { "type": "number", "description": "Total carbohydrates in grams." },
-        "protein": { "type": "number", "description": "Protein in grams." },
-        "sodium": { "type": "number", "description": "Sodium in milligrams." },
-        "sugar": { "type": "number", "description": "Total sugars in grams." },
-        "fiber": { "type": "number", "description": "Dietary fiber in grams." }
-      },
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["nutrition facts panel", "nutritional information section", "nutrition tab"]
+        "fat": {
+          "type": "number",
+          "description": "Total fat in grams."
+        },
+        "carbs": {
+          "type": "number",
+          "description": "Total carbohydrates in grams."
+        },
+        "protein": {
+          "type": "number",
+          "description": "Protein in grams."
+        },
+        "sodium": {
+          "type": "number",
+          "description": "Sodium in milligrams."
+        },
+        "sugar": {
+          "type": "number",
+          "description": "Total sugars in grams."
+        },
+        "fiber": {
+          "type": "number",
+          "description": "Dietary fiber in grams."
+        }
+      }
     },
     "certifications": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "Certifications or labels (e.g., Organic, Non-GMO, Gluten-Free).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["certification badges", "product label certifications", "filter tags"]
+      "items": {
+        "type": "string"
+      },
+      "description": "Certifications or labels (e.g., Organic, Non-GMO, Gluten-Free). Commonly found in: certification badges, product label certifications, filter tags."
     },
     "images": {
       "type": "array",
-      "items": { "type": "string", "format": "uri" },
-      "description": "URLs of product images.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["product image gallery", "image carousel", "og:image meta tag"]
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs of product images. Commonly found in: product image gallery, image carousel, og:image meta tag."
     },
     "description": {
       "type": "string",
-      "description": "Product description text.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["product description section", "about this item", "product overview"]
+      "description": "Product description text. Commonly found in: product description section, about this item, product overview."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the product page extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the product page extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this product was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this product was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["product_name", "platform", "price", "availability", "source_url", "extracted_at"]

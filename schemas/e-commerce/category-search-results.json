@@ -9,18 +9,55 @@
       "type": "object",
       "description": "An individual product in the search or category results.",
       "properties": {
-        "rank": { "type": "number", "description": "Position in the results list." },
-        "product_id": { "type": "string", "description": "Product identifier (ASIN, SKU, etc.)." },
-        "title": { "type": "string", "description": "Product title." },
-        "brand": { "type": "string", "description": "Product brand." },
-        "price": { "type": "number", "description": "Current price." },
-        "sale_price": { "type": "number", "description": "Sale or discounted price." },
-        "rating": { "type": "number", "description": "Average rating." },
-        "review_count": { "type": "number", "description": "Number of reviews." },
-        "is_sponsored": { "type": "boolean", "description": "Whether this result is a sponsored/paid placement." },
-        "seller": { "type": "string", "description": "Seller name." },
-        "availability": { "type": "string", "description": "Availability status." },
-        "listing_url": { "type": "string", "format": "uri", "description": "URL to the product listing." }
+        "rank": {
+          "type": "number",
+          "description": "Position in the results list."
+        },
+        "product_id": {
+          "type": "string",
+          "description": "Product identifier (ASIN, SKU, etc.)."
+        },
+        "title": {
+          "type": "string",
+          "description": "Product title."
+        },
+        "brand": {
+          "type": "string",
+          "description": "Product brand."
+        },
+        "price": {
+          "type": "number",
+          "description": "Current price."
+        },
+        "sale_price": {
+          "type": "number",
+          "description": "Sale or discounted price."
+        },
+        "rating": {
+          "type": "number",
+          "description": "Average rating."
+        },
+        "review_count": {
+          "type": "number",
+          "description": "Number of reviews."
+        },
+        "is_sponsored": {
+          "type": "boolean",
+          "description": "Whether this result is a sponsored/paid placement."
+        },
+        "seller": {
+          "type": "string",
+          "description": "Seller name."
+        },
+        "availability": {
+          "type": "string",
+          "description": "Availability status."
+        },
+        "listing_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the product listing."
+        }
       },
       "required": ["rank", "title"]
     }
@@ -28,74 +65,56 @@
   "properties": {
     "platform": {
       "type": "string",
-      "description": "E-commerce platform (e.g., Amazon, Walmart).",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["site domain", "platform branding", "page header"]
+      "description": "E-commerce platform (e.g., Amazon, Walmart). Commonly found in: site domain, platform branding, page header."
     },
     "query_or_category": {
       "type": "string",
-      "description": "Search query string or category name browsed.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["search bar value", "page title", "breadcrumb current page", "URL parameter"]
+      "description": "Search query string or category name browsed. Commonly found in: search bar value, page title, breadcrumb current page, URL parameter."
     },
     "page_number": {
       "type": "number",
-      "description": "Current page number in paginated results.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["pagination control", "URL page parameter", "page indicator"]
+      "description": "Current page number in paginated results. Commonly found in: pagination control, URL page parameter, page indicator."
     },
     "total_results": {
       "type": "number",
-      "description": "Total number of results returned.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["results count display", "total items label", "search results header"]
+      "description": "Total number of results returned. Commonly found in: results count display, total items label, search results header."
     },
     "results": {
       "type": "array",
-      "items": { "$ref": "#/$defs/result_item" },
-      "description": "List of product results on this page.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["product grid", "search results list", "category product cards"]
+      "items": {
+        "$ref": "#/$defs/result_item"
+      },
+      "description": "List of product results on this page. Commonly found in: product grid, search results list, category product cards."
     },
     "filters_applied": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "Active filters applied to the results.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["active filter chips", "selected filter labels", "URL filter parameters"]
+      "items": {
+        "type": "string"
+      },
+      "description": "Active filters applied to the results. Commonly found in: active filter chips, selected filter labels, URL filter parameters."
     },
     "sort_by": {
       "type": "string",
-      "description": "Current sort order applied to results.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["sort by dropdown selected", "sort parameter in URL", "results sort label"]
+      "description": "Current sort order applied to results. Commonly found in: sort by dropdown selected, sort parameter in URL, results sort label."
     },
     "ads_count": {
       "type": "number",
-      "description": "Number of sponsored/ad placements in results.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["sponsored label count", "ad badge count in results"]
+      "description": "Number of sponsored/ad placements in results. Commonly found in: sponsored label count, ad badge count in results."
     },
     "snapshot_date": {
       "type": "string",
       "format": "date",
-      "description": "Date this search results snapshot was captured.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction date", "scraper timestamp", "page capture date"]
+      "description": "Date this search results snapshot was captured. Commonly found in: extraction date, scraper timestamp, page capture date."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the search/category results page extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the search/category results page extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this page was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this page was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["platform", "query_or_category", "results", "snapshot_date", "source_url", "extracted_at"]
