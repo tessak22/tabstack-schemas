@@ -7,159 +7,109 @@
   "properties": {
     "address": {
       "type": "string",
-      "description": "Street address of the foreclosure property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["auction listing page", "foreclosure notice", "property header"]
+      "description": "Street address of the foreclosure property. Commonly found in: auction listing page, foreclosure notice, property header."
     },
     "city": {
       "type": "string",
-      "description": "City of the foreclosure property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["auction listing page", "property address section", "notice header"]
+      "description": "City of the foreclosure property. Commonly found in: auction listing page, property address section, notice header."
     },
     "state": {
       "type": "string",
-      "description": "State of the foreclosure property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["auction listing page", "property address section", "notice header"]
+      "description": "State of the foreclosure property. Commonly found in: auction listing page, property address section, notice header."
     },
     "zip_code": {
       "type": "string",
-      "description": "ZIP code of the foreclosure property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["property address", "foreclosure notice"]
+      "description": "ZIP code of the foreclosure property. Commonly found in: property address, foreclosure notice."
     },
     "latitude": {
       "type": "number",
-      "description": "Geographic latitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data"]
+      "description": "Geographic latitude coordinate. Commonly found in: map embed data, JSON-LD structured data."
     },
     "longitude": {
       "type": "number",
-      "description": "Geographic longitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data"]
+      "description": "Geographic longitude coordinate. Commonly found in: map embed data, JSON-LD structured data."
     },
     "property_type": {
       "type": "string",
-      "description": "Type of property (e.g., single_family, condo).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details", "foreclosure notice", "public records"]
+      "description": "Type of property (e.g., single_family, condo). Commonly found in: property details, foreclosure notice, public records."
     },
     "bedrooms": {
       "type": "number",
-      "description": "Number of bedrooms.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details", "listing specs", "public records"]
+      "description": "Number of bedrooms. Commonly found in: property details, listing specs, public records."
     },
     "bathrooms": {
       "type": "number",
-      "description": "Number of bathrooms.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details", "listing specs", "public records"]
+      "description": "Number of bathrooms. Commonly found in: property details, listing specs, public records."
     },
     "sqft": {
       "type": "number",
-      "description": "Total interior square footage.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details", "listing specs", "public records"]
+      "description": "Total interior square footage. Commonly found in: property details, listing specs, public records."
     },
     "foreclosure_stage": {
       "type": "string",
       "enum": ["pre_foreclosure", "auction", "reo", "bank_owned"],
-      "description": "Current stage of the foreclosure process.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing status badge", "foreclosure stage indicator", "property header"]
+      "description": "Current stage of the foreclosure process. Commonly found in: listing status badge, foreclosure stage indicator, property header."
     },
     "auction_date": {
       "type": "string",
       "format": "date",
-      "description": "Scheduled date of the auction.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["auction details section", "countdown timer", "event date display"]
+      "description": "Scheduled date of the auction. Commonly found in: auction details section, countdown timer, event date display."
     },
     "minimum_bid": {
       "type": "number",
-      "description": "Minimum bid required at auction.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["auction details", "bidding info section", "price display"]
+      "description": "Minimum bid required at auction. Commonly found in: auction details, bidding info section, price display."
     },
     "opening_bid": {
       "type": "number",
-      "description": "Opening bid for the auction.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["auction details", "bidding info section", "price display"]
+      "description": "Opening bid for the auction. Commonly found in: auction details, bidding info section, price display."
     },
     "estimated_value": {
       "type": "number",
-      "description": "Estimated market value of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property valuation section", "estimated value display", "AVM data"]
+      "description": "Estimated market value of the property. Commonly found in: property valuation section, estimated value display, AVM data."
     },
     "lien_amount": {
       "type": "number",
-      "description": "Total amount of the lien(s) on the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["lien details section", "foreclosure notice", "legal documents"]
+      "description": "Total amount of the lien(s) on the property. Commonly found in: lien details section, foreclosure notice, legal documents."
     },
     "property_condition": {
       "type": "string",
       "enum": ["unknown", "poor", "fair", "good"],
-      "description": "Reported condition of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property condition section", "inspection notes", "listing details"]
+      "description": "Reported condition of the property. Commonly found in: property condition section, inspection notes, listing details."
     },
     "occupancy_status": {
       "type": "string",
       "enum": ["vacant", "occupied"],
-      "description": "Whether the property is currently vacant or occupied.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details", "occupancy status field", "listing notes"]
+      "description": "Whether the property is currently vacant or occupied. Commonly found in: property details, occupancy status field, listing notes."
     },
     "inspection_allowed": {
       "type": "boolean",
-      "description": "Whether property inspection is allowed prior to auction.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["auction terms section", "inspection details", "listing notes"]
+      "description": "Whether property inspection is allowed prior to auction. Commonly found in: auction terms section, inspection details, listing notes."
     },
     "trustee_name": {
       "type": "string",
-      "description": "Name of the trustee managing the foreclosure.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["foreclosure notice", "legal documents", "trustee details section"]
+      "description": "Name of the trustee managing the foreclosure. Commonly found in: foreclosure notice, legal documents, trustee details section."
     },
     "lender_name": {
       "type": "string",
-      "description": "Name of the lender initiating the foreclosure.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["foreclosure notice", "lender details section", "legal documents"]
+      "description": "Name of the lender initiating the foreclosure. Commonly found in: foreclosure notice, lender details section, legal documents."
     },
     "case_number": {
       "type": "string",
-      "description": "Legal case or file number for the foreclosure.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["foreclosure notice", "legal documents", "case reference field"]
+      "description": "Legal case or file number for the foreclosure. Commonly found in: foreclosure notice, legal documents, case reference field."
     },
     "default_amount": {
       "type": "number",
-      "description": "Amount the borrower has defaulted on.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["foreclosure notice", "default details", "legal documents"]
+      "description": "Amount the borrower has defaulted on. Commonly found in: foreclosure notice, default details, legal documents."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["address", "city", "state", "zip_code", "foreclosure_stage", "source_url", "extracted_at"]

@@ -7,212 +7,153 @@
   "properties": {
     "address": {
       "type": "string",
-      "description": "Street address of the rental property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing page header", "property details section", "contact section"]
+      "description": "Street address of the rental property. Commonly found in: listing page header, property details section, contact section."
     },
     "city": {
       "type": "string",
-      "description": "City where the rental is located.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address", "breadcrumb navigation", "property header"]
+      "description": "City where the rental is located. Commonly found in: listing address, breadcrumb navigation, property header."
     },
     "state": {
       "type": "string",
-      "description": "State or province of the rental.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address", "breadcrumb navigation", "property header"]
+      "description": "State or province of the rental. Commonly found in: listing address, breadcrumb navigation, property header."
     },
     "zip_code": {
       "type": "string",
-      "description": "ZIP or postal code of the rental.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address line", "property details"]
+      "description": "ZIP or postal code of the rental. Commonly found in: listing address line, property details."
     },
     "latitude": {
       "type": "number",
-      "description": "Geographic latitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data", "page metadata"]
+      "description": "Geographic latitude coordinate. Commonly found in: map embed data, JSON-LD structured data, page metadata."
     },
     "longitude": {
       "type": "number",
-      "description": "Geographic longitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data", "page metadata"]
+      "description": "Geographic longitude coordinate. Commonly found in: map embed data, JSON-LD structured data, page metadata."
     },
     "rent_monthly": {
       "type": "number",
-      "description": "Monthly rent amount.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing price header", "rental details section", "pricing box"]
+      "description": "Monthly rent amount. Commonly found in: listing price header, rental details section, pricing box."
     },
     "rent_currency": {
       "type": "string",
-      "description": "ISO 4217 currency code for rent (e.g. USD).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["price display", "listing details"]
+      "description": "ISO 4217 currency code for rent (e.g. USD). Commonly found in: price display, listing details."
     },
     "deposit_amount": {
       "type": "number",
-      "description": "Security deposit amount.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["rental terms section", "pricing details", "lease terms"]
+      "description": "Security deposit amount. Commonly found in: rental terms section, pricing details, lease terms."
     },
     "lease_term_months": {
       "type": "number",
-      "description": "Lease duration in months.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["lease terms section", "rental details", "availability info"]
+      "description": "Lease duration in months. Commonly found in: lease terms section, rental details, availability info."
     },
     "lease_type": {
       "type": "string",
       "enum": ["fixed", "month_to_month"],
-      "description": "Type of lease agreement.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["lease terms section", "rental details"]
+      "description": "Type of lease agreement. Commonly found in: lease terms section, rental details."
     },
     "available_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the rental is available for move-in.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["availability section", "listing details", "rental terms"]
+      "description": "Date the rental is available for move-in. Commonly found in: availability section, listing details, rental terms."
     },
     "bedrooms": {
       "type": "number",
-      "description": "Number of bedrooms.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["property specs bar", "listing summary", "header stats"]
+      "description": "Number of bedrooms. Commonly found in: property specs bar, listing summary, header stats."
     },
     "bathrooms": {
       "type": "number",
-      "description": "Number of bathrooms.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["property specs bar", "listing summary", "header stats"]
+      "description": "Number of bathrooms. Commonly found in: property specs bar, listing summary, header stats."
     },
     "sqft": {
       "type": "number",
-      "description": "Total interior square footage.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property specs bar", "listing summary", "property details table"]
+      "description": "Total interior square footage. Commonly found in: property specs bar, listing summary, property details table."
     },
     "unit_number": {
       "type": "string",
-      "description": "Unit or apartment number.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing address", "property details", "contact section"]
+      "description": "Unit or apartment number. Commonly found in: listing address, property details, contact section."
     },
     "building_name": {
       "type": "string",
-      "description": "Name of the apartment building or complex.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing header", "property name", "breadcrumb"]
+      "description": "Name of the apartment building or complex. Commonly found in: listing header, property name, breadcrumb."
     },
     "pet_policy": {
       "type": "string",
       "enum": ["allowed", "cats_only", "no_pets"],
-      "description": "Pet policy for the rental.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["rental policies section", "amenities list", "listing details"]
+      "description": "Pet policy for the rental. Commonly found in: rental policies section, amenities list, listing details."
     },
     "utilities_included": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "List of utilities included in the rent.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["rental features section", "utilities section", "listing details"]
+      "items": {
+        "type": "string"
+      },
+      "description": "List of utilities included in the rent. Commonly found in: rental features section, utilities section, listing details."
     },
     "parking_included": {
       "type": "boolean",
-      "description": "Whether parking is included with the rental.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["amenities section", "parking details", "rental features"]
+      "description": "Whether parking is included with the rental. Commonly found in: amenities section, parking details, rental features."
     },
     "parking_fee": {
       "type": "number",
-      "description": "Monthly parking fee if parking is not included.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["parking details", "additional fees section", "rental terms"]
+      "description": "Monthly parking fee if parking is not included. Commonly found in: parking details, additional fees section, rental terms."
     },
     "amenities": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "List of amenities available with the rental.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["amenities section", "building features", "listing details"]
+      "items": {
+        "type": "string"
+      },
+      "description": "List of amenities available with the rental. Commonly found in: amenities section, building features, listing details."
     },
     "laundry_type": {
       "type": "string",
       "enum": ["in_unit", "shared", "none"],
-      "description": "Type of laundry facilities available.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["amenities section", "rental features list", "property details"]
+      "description": "Type of laundry facilities available. Commonly found in: amenities section, rental features list, property details."
     },
     "furnished": {
       "type": "boolean",
-      "description": "Whether the unit is furnished.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing header", "property details", "amenities section"]
+      "description": "Whether the unit is furnished. Commonly found in: listing header, property details, amenities section."
     },
     "air_conditioning": {
       "type": "boolean",
-      "description": "Whether the unit has air conditioning.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["amenities section", "property features", "listing details"]
+      "description": "Whether the unit has air conditioning. Commonly found in: amenities section, property features, listing details."
     },
     "description": {
       "type": "string",
-      "description": "Full text description of the rental.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing description section", "overview text block"]
+      "description": "Full text description of the rental. Commonly found in: listing description section, overview text block."
     },
     "images": {
       "type": "array",
-      "items": { "type": "string", "format": "uri" },
-      "description": "URLs of rental property images.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["photo gallery", "image carousel", "media section"]
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs of rental property images. Commonly found in: photo gallery, image carousel, media section."
     },
     "contact_phone": {
       "type": "string",
-      "description": "Contact phone number for the rental inquiry.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["contact section", "landlord info", "sidebar"]
+      "description": "Contact phone number for the rental inquiry. Commonly found in: contact section, landlord info, sidebar."
     },
     "contact_email": {
       "type": "string",
       "format": "email",
-      "description": "Contact email address for the rental inquiry.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["contact section", "landlord info", "apply button"]
+      "description": "Contact email address for the rental inquiry. Commonly found in: contact section, landlord info, apply button."
     },
     "listing_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the rental was listed.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing stats", "posted date label", "metadata"]
+      "description": "Date the rental was listed. Commonly found in: listing stats, posted date label, metadata."
     },
     "days_on_market": {
       "type": "number",
-      "description": "Number of days the rental has been listed.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing stats section", "property details"]
+      "description": "Number of days the rental has been listed. Commonly found in: listing stats section, property details."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["address", "city", "state", "zip_code", "rent_monthly", "bedrooms", "bathrooms", "source_url", "extracted_at"]

@@ -7,190 +7,130 @@
   "properties": {
     "address": {
       "type": "string",
-      "description": "Street address of the commercial property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing page header", "property details section", "contact block"]
+      "description": "Street address of the commercial property. Commonly found in: listing page header, property details section, contact block."
     },
     "city": {
       "type": "string",
-      "description": "City where the property is located.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address", "breadcrumb navigation", "property header"]
+      "description": "City where the property is located. Commonly found in: listing address, breadcrumb navigation, property header."
     },
     "state": {
       "type": "string",
-      "description": "State or province of the property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address", "breadcrumb navigation", "property header"]
+      "description": "State or province of the property. Commonly found in: listing address, breadcrumb navigation, property header."
     },
     "zip_code": {
       "type": "string",
-      "description": "ZIP or postal code.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address line", "property details"]
+      "description": "ZIP or postal code. Commonly found in: listing address line, property details."
     },
     "latitude": {
       "type": "number",
-      "description": "Geographic latitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data", "page metadata"]
+      "description": "Geographic latitude coordinate. Commonly found in: map embed data, JSON-LD structured data, page metadata."
     },
     "longitude": {
       "type": "number",
-      "description": "Geographic longitude coordinate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data", "page metadata"]
+      "description": "Geographic longitude coordinate. Commonly found in: map embed data, JSON-LD structured data, page metadata."
     },
     "price": {
       "type": "number",
-      "description": "Listing price or annual lease rate.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing price header", "property financials section", "asking price display"]
+      "description": "Listing price or annual lease rate. Commonly found in: listing price header, property financials section, asking price display."
     },
     "price_type": {
       "type": "string",
       "enum": ["sale", "lease"],
-      "description": "Whether the property is listed for sale or lease.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing type badge", "property header", "transaction type field"]
+      "description": "Whether the property is listed for sale or lease. Commonly found in: listing type badge, property header, transaction type field."
     },
     "lease_type": {
       "type": "string",
       "enum": ["NNN", "gross", "modified_gross"],
-      "description": "Type of lease structure (Net, Gross, or Modified Gross).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["lease details section", "property financials", "listing details table"]
+      "description": "Type of lease structure (Net, Gross, or Modified Gross). Commonly found in: lease details section, property financials, listing details table."
     },
     "price_per_sqft": {
       "type": "number",
-      "description": "Price or rent per square foot.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property financials section", "listing stats", "price breakdown"]
+      "description": "Price or rent per square foot. Commonly found in: property financials section, listing stats, price breakdown."
     },
     "cap_rate": {
       "type": "number",
-      "description": "Capitalization rate as a percentage.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["investment highlights", "property financials", "listing stats"]
+      "description": "Capitalization rate as a percentage. Commonly found in: investment highlights, property financials, listing stats."
     },
     "noi": {
       "type": "number",
-      "description": "Net Operating Income (NOI) in dollars.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["investment highlights", "property financials", "income section"]
+      "description": "Net Operating Income (NOI) in dollars. Commonly found in: investment highlights, property financials, income section."
     },
     "building_class": {
       "type": "string",
       "enum": ["A", "B", "C"],
-      "description": "Building class rating (A, B, or C).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "building specs section", "listing highlights"]
+      "description": "Building class rating (A, B, or C). Commonly found in: property details table, building specs section, listing highlights."
     },
     "property_type": {
       "type": "string",
       "enum": ["office", "retail", "industrial", "multifamily", "mixed_use", "land"],
-      "description": "Type of commercial property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing header", "property type badge", "breadcrumb navigation"]
+      "description": "Type of commercial property. Commonly found in: listing header, property type badge, breadcrumb navigation."
     },
     "total_sqft": {
       "type": "number",
-      "description": "Total square footage of the building.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property specs", "building details", "listing summary"]
+      "description": "Total square footage of the building. Commonly found in: property specs, building details, listing summary."
     },
     "available_sqft": {
       "type": "number",
-      "description": "Available square footage for lease.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["availability section", "space details", "listing specs"]
+      "description": "Available square footage for lease. Commonly found in: availability section, space details, listing specs."
     },
     "lot_size_sqft": {
       "type": "number",
-      "description": "Total lot size in square feet.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "land details", "site specs"]
+      "description": "Total lot size in square feet. Commonly found in: property details table, land details, site specs."
     },
     "year_built": {
       "type": "number",
-      "description": "Year the building was constructed.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "building specs", "overview section"]
+      "description": "Year the building was constructed. Commonly found in: property details table, building specs, overview section."
     },
     "floors": {
       "type": "number",
-      "description": "Number of floors in the building.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["building details", "property specs table", "listing details"]
+      "description": "Number of floors in the building. Commonly found in: building details, property specs table, listing details."
     },
     "zoning": {
       "type": "string",
-      "description": "Zoning classification of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "zoning section", "public records link"]
+      "description": "Zoning classification of the property. Commonly found in: property details table, zoning section, public records link."
     },
     "parking_ratio": {
       "type": "number",
-      "description": "Parking spaces per 1,000 square feet.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["parking details", "property specs", "building amenities"]
+      "description": "Parking spaces per 1,000 square feet. Commonly found in: parking details, property specs, building amenities."
     },
     "loading_docks": {
       "type": "number",
-      "description": "Number of loading docks (industrial properties).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["industrial specs", "property details", "building features"]
+      "description": "Number of loading docks (industrial properties). Commonly found in: industrial specs, property details, building features."
     },
     "clear_height_ft": {
       "type": "number",
-      "description": "Clear ceiling height in feet (industrial properties).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["industrial specs", "building features", "property details table"]
+      "description": "Clear ceiling height in feet (industrial properties). Commonly found in: industrial specs, building features, property details table."
     },
     "occupancy_rate": {
       "type": "number",
-      "description": "Current building occupancy rate as a percentage.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["investment highlights", "property financials", "occupancy section"]
+      "description": "Current building occupancy rate as a percentage. Commonly found in: investment highlights, property financials, occupancy section."
     },
     "broker_name": {
       "type": "string",
-      "description": "Name of the listing broker or agent.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["broker contact card", "listing agent section", "sidebar"]
+      "description": "Name of the listing broker or agent. Commonly found in: broker contact card, listing agent section, sidebar."
     },
     "broker_firm": {
       "type": "string",
-      "description": "Name of the brokerage firm.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["broker contact card", "listing attribution", "footer"]
+      "description": "Name of the brokerage firm. Commonly found in: broker contact card, listing attribution, footer."
     },
     "status": {
       "type": "string",
-      "description": "Current listing status.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing status badge", "property header", "availability section"]
+      "description": "Current listing status. Commonly found in: listing status badge, property header, availability section."
     },
     "listing_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the property was listed.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing stats section", "property history", "metadata"]
+      "description": "Date the property was listed. Commonly found in: listing stats section, property history, metadata."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["address", "city", "state", "zip_code", "price_type", "property_type", "source_url", "extracted_at"]

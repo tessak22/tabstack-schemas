@@ -7,221 +7,159 @@
   "properties": {
     "address": {
       "type": "string",
-      "description": "Street address of the property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing page header", "property details section", "MLS data block"]
+      "description": "Street address of the property. Commonly found in: listing page header, property details section, MLS data block."
     },
     "city": {
       "type": "string",
-      "description": "City where the property is located.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address line", "property details", "breadcrumb navigation"]
+      "description": "City where the property is located. Commonly found in: listing address line, property details, breadcrumb navigation."
     },
     "state": {
       "type": "string",
-      "description": "State or province where the property is located.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address line", "property details", "breadcrumb navigation"]
+      "description": "State or province where the property is located. Commonly found in: listing address line, property details, breadcrumb navigation."
     },
     "zip_code": {
       "type": "string",
-      "description": "ZIP or postal code of the property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing address line", "property details"]
+      "description": "ZIP or postal code of the property. Commonly found in: listing address line, property details."
     },
     "country": {
       "type": "string",
-      "description": "Country where the property is located.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing address line", "property details"]
+      "description": "Country where the property is located. Commonly found in: listing address line, property details."
     },
     "latitude": {
       "type": "number",
-      "description": "Geographic latitude coordinate of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data", "page metadata"]
+      "description": "Geographic latitude coordinate of the property. Commonly found in: map embed data, JSON-LD structured data, page metadata."
     },
     "longitude": {
       "type": "number",
-      "description": "Geographic longitude coordinate of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["map embed data", "JSON-LD structured data", "page metadata"]
+      "description": "Geographic longitude coordinate of the property. Commonly found in: map embed data, JSON-LD structured data, page metadata."
     },
     "price": {
       "type": "number",
-      "description": "Listing price of the property in the listed currency.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing header price display", "property summary box", "price history section"]
+      "description": "Listing price of the property in the listed currency. Commonly found in: listing header price display, property summary box, price history section."
     },
     "price_currency": {
       "type": "string",
-      "description": "ISO 4217 currency code for the listing price (e.g. USD).",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["price display", "property details"]
+      "description": "ISO 4217 currency code for the listing price (e.g. USD). Commonly found in: price display, property details."
     },
     "price_per_sqft": {
       "type": "number",
-      "description": "Price per square foot of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing stats section"]
+      "description": "Price per square foot of the property. Commonly found in: property details table, listing stats section."
     },
     "status": {
       "type": "string",
       "enum": ["active", "pending", "sold", "off_market"],
-      "description": "Current listing status of the property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing status badge", "property header", "MLS status field"]
+      "description": "Current listing status of the property. Commonly found in: listing status badge, property header, MLS status field."
     },
     "bedrooms": {
       "type": "number",
-      "description": "Number of bedrooms.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["property specs bar", "listing summary", "property details table"]
+      "description": "Number of bedrooms. Commonly found in: property specs bar, listing summary, property details table."
     },
     "bathrooms_full": {
       "type": "number",
-      "description": "Number of full bathrooms.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["property specs bar", "listing summary", "property details table"]
+      "description": "Number of full bathrooms. Commonly found in: property specs bar, listing summary, property details table."
     },
     "bathrooms_half": {
       "type": "number",
-      "description": "Number of half bathrooms.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing summary"]
+      "description": "Number of half bathrooms. Commonly found in: property details table, listing summary."
     },
     "sqft": {
       "type": "number",
-      "description": "Total interior square footage of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property specs bar", "listing summary", "property details table"]
+      "description": "Total interior square footage of the property. Commonly found in: property specs bar, listing summary, property details table."
     },
     "lot_size_sqft": {
       "type": "number",
-      "description": "Lot size in square feet.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing stats section"]
+      "description": "Lot size in square feet. Commonly found in: property details table, listing stats section."
     },
     "year_built": {
       "type": "number",
-      "description": "Year the property was built.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing overview section"]
+      "description": "Year the property was built. Commonly found in: property details table, listing overview section."
     },
     "property_type": {
       "type": "string",
       "enum": ["single_family", "condo", "townhouse", "multi_family", "land"],
-      "description": "Type of residential property.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["listing header", "property details", "breadcrumb navigation"]
+      "description": "Type of residential property. Commonly found in: listing header, property details, breadcrumb navigation."
     },
     "stories": {
       "type": "number",
-      "description": "Number of stories or floors in the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing features section"]
+      "description": "Number of stories or floors in the property. Commonly found in: property details table, listing features section."
     },
     "garage_spaces": {
       "type": "number",
-      "description": "Number of garage parking spaces.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing features section"]
+      "description": "Number of garage parking spaces. Commonly found in: property details table, listing features section."
     },
     "hoa_fee_monthly": {
       "type": "number",
-      "description": "Monthly HOA (Homeowners Association) fee amount.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property details table", "listing financial section", "HOA info block"]
+      "description": "Monthly HOA (Homeowners Association) fee amount. Commonly found in: property details table, listing financial section, HOA info block."
     },
     "days_on_market": {
       "type": "number",
-      "description": "Number of days the property has been listed on the market.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing stats section", "property details table", "MLS data"]
+      "description": "Number of days the property has been listed on the market. Commonly found in: listing stats section, property details table, MLS data."
     },
     "listing_date": {
       "type": "string",
       "format": "date",
-      "description": "Date the property was listed.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing stats section", "property history", "MLS data"]
+      "description": "Date the property was listed. Commonly found in: listing stats section, property history, MLS data."
     },
     "description": {
       "type": "string",
-      "description": "Full text description of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing description section", "property overview text block"]
+      "description": "Full text description of the property. Commonly found in: listing description section, property overview text block."
     },
     "features": {
       "type": "array",
-      "items": { "type": "string" },
-      "description": "List of property features and amenities.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property features section", "listing amenities list", "interior/exterior features"]
+      "items": {
+        "type": "string"
+      },
+      "description": "List of property features and amenities. Commonly found in: property features section, listing amenities list, interior/exterior features."
     },
     "images": {
       "type": "array",
-      "items": { "type": "string", "format": "uri" },
-      "description": "URLs of property images.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["photo gallery", "listing image carousel", "media section"]
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URLs of property images. Commonly found in: photo gallery, listing image carousel, media section."
     },
     "agent_name": {
       "type": "string",
-      "description": "Name of the listing agent.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["agent contact card", "listing agent section", "sidebar"]
+      "description": "Name of the listing agent. Commonly found in: agent contact card, listing agent section, sidebar."
     },
     "agent_phone": {
       "type": "string",
-      "description": "Phone number of the listing agent.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["agent contact card", "listing agent section"]
+      "description": "Phone number of the listing agent. Commonly found in: agent contact card, listing agent section."
     },
     "brokerage": {
       "type": "string",
-      "description": "Name of the brokerage firm representing the listing.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["agent contact card", "listing attribution", "footer"]
+      "description": "Name of the brokerage firm representing the listing. Commonly found in: agent contact card, listing attribution, footer."
     },
     "mls_id": {
       "type": "string",
-      "description": "MLS (Multiple Listing Service) identifier for this listing.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["listing details table", "MLS data block", "footer attribution"]
+      "description": "MLS (Multiple Listing Service) identifier for this listing. Commonly found in: listing details table, MLS data block, footer attribution."
     },
     "open_house_dates": {
       "type": "array",
-      "items": { "type": "string", "format": "date-time" },
-      "description": "Scheduled open house dates and times.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["open house section", "listing sidebar", "event calendar"]
+      "items": {
+        "type": "string",
+        "format": "date-time"
+      },
+      "description": "Scheduled open house dates and times. Commonly found in: open house section, listing sidebar, event calendar."
     },
     "tax_assessed_value": {
       "type": "number",
-      "description": "Tax assessed value of the property.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property tax section", "listing financial details", "public records"]
+      "description": "Tax assessed value of the property. Commonly found in: property tax section, listing financial details, public records."
     },
     "annual_tax": {
       "type": "number",
-      "description": "Annual property tax amount.",
-      "x-tabstack-priority": "optional",
-      "x-tabstack-source-hints": ["property tax section", "listing financial details", "public records"]
+      "description": "Annual property tax amount. Commonly found in: property tax section, listing financial details, public records."
     },
     "source_url": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["browser URL bar", "canonical link tag", "og:url meta tag"]
+      "description": "URL of the page from which this listing was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
     },
     "extracted_at": {
       "type": "string",
       "format": "date-time",
-      "description": "ISO 8601 timestamp when this listing was extracted.",
-      "x-tabstack-priority": "required",
-      "x-tabstack-source-hints": ["extraction metadata", "scraper system timestamp"]
+      "description": "ISO 8601 timestamp when this listing was extracted. Commonly found in: extraction metadata, scraper system timestamp."
     }
   },
   "required": ["address", "city", "state", "zip_code", "price", "status", "bedrooms", "bathrooms_full", "property_type", "source_url", "extracted_at"]
