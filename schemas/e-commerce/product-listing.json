@@ -52,12 +52,12 @@
     },
     "availability": {
       "type": "string",
-      "enum": ["in_stock", "out_of_stock", "limited", "preorder"],
+      "enum": ["in_stock", "out_of_stock", "limited", "preorder", "other"],
       "description": "Current availability status of the product. Commonly found in: availability badge, in stock indicator, JSON-LD availability field."
     },
     "condition": {
       "type": "string",
-      "enum": ["new", "used", "refurbished"],
+      "enum": ["new", "used", "refurbished", "other"],
       "description": "Condition of the product. Commonly found in: condition badge, product condition field, used/new selector."
     },
     "variant_options": {
@@ -81,7 +81,7 @@
     },
     "fulfillment_type": {
       "type": "string",
-      "enum": ["FBA", "FBM", "direct"],
+      "enum": ["FBA", "FBM", "direct", "other"],
       "description": "Fulfillment method (Fulfilled by Amazon, Merchant, or Direct). Commonly found in: fulfillment badge, ships from label, sold and shipped by text."
     },
     "images": {
@@ -115,16 +115,15 @@
       "type": "number",
       "description": "Bestseller or sales rank within the category. Commonly found in: bestseller rank section, category rank display, product details."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the product page from which this data was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this product was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["title", "platform", "price", "availability", "source_url", "extracted_at"]
+  "required": ["title", "platform", "price", "availability"]
 }

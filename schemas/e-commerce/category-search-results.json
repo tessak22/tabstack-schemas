@@ -106,16 +106,15 @@
       "format": "date",
       "description": "Date this search results snapshot was captured. Commonly found in: extraction date, scraper timestamp, page capture date."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the search/category results page extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this page was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["platform", "query_or_category", "results", "snapshot_date", "source_url", "extracted_at"]
+  "required": ["platform", "query_or_category", "results", "snapshot_date"]
 }

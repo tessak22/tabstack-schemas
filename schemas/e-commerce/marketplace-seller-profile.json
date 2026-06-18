@@ -87,19 +87,18 @@
     },
     "business_type": {
       "type": "string",
-      "enum": ["individual", "business"],
+      "enum": ["individual", "business", "other"],
       "description": "Whether the seller is an individual or registered business. Commonly found in: seller type badge, business seller indicator, seller profile details."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the seller profile page extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this profile was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["platform", "seller_name", "source_url", "extracted_at"]
+  "required": ["platform", "seller_name"]
 }

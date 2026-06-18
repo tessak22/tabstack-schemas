@@ -43,7 +43,7 @@
     },
     "availability": {
       "type": "string",
-      "enum": ["in_stock", "out_of_stock", "limited"],
+      "enum": ["in_stock", "out_of_stock", "limited", "other"],
       "description": "Current availability status. Commonly found in: availability badge, in stock indicator, add to cart button state."
     },
     "category": {
@@ -122,16 +122,15 @@
       "type": "string",
       "description": "Product description text. Commonly found in: product description section, about this item, product overview."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the product page extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this product was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["product_name", "platform", "price", "availability", "source_url", "extracted_at"]
+  "required": ["product_name", "platform", "price", "availability"]
 }

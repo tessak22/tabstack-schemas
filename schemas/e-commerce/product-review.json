@@ -52,7 +52,7 @@
     },
     "sentiment": {
       "type": "string",
-      "enum": ["positive", "neutral", "negative"],
+      "enum": ["positive", "neutral", "negative", "other"],
       "description": "Overall sentiment of the review. Commonly found in: NLP sentiment analysis, rating-derived classification, star count."
     },
     "topics_mentioned": {
@@ -88,16 +88,15 @@
       "type": "string",
       "description": "Language of the review text (BCP 47 code). Commonly found in: lang attribute, review language metadata, detected language."
     },
-    "source_url": {
+    "page_title": {
+      "type": "string",
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
+    },
+    "favicon": {
       "type": "string",
       "format": "uri",
-      "description": "URL of the page from which this review was extracted. Commonly found in: browser URL bar, canonical link tag, og:url meta tag."
-    },
-    "extracted_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this review was extracted. Commonly found in: extraction metadata, scraper system timestamp."
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["product_name", "platform", "rating", "body", "review_date", "source_url", "extracted_at"]
+  "required": ["product_name", "platform", "rating", "body", "review_date"]
 }
