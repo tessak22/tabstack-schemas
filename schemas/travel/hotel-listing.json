@@ -15,7 +15,7 @@
     },
     "property_type": {
       "type": "string",
-      "enum": ["hotel", "motel", "resort", "boutique", "hostel", "b_and_b", "apartment_hotel"],
+      "enum": ["hotel", "motel", "resort", "boutique", "hostel", "b_and_b", "apartment_hotel", "other"],
       "description": "Type of lodging property. Commonly found in: Booking.com property type, listing metadata."
     },
     "star_rating": {
@@ -92,14 +92,14 @@
       "type": "string",
       "description": "Booking platform where this listing was found. Commonly found in: scraper metadata, URL pattern."
     },
-    "source_url": {
+    "page_title": {
       "type": "string",
-      "description": "URL of the hotel listing page. Commonly found in: listing page URL."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
     },
-    "extracted_at": {
+    "favicon": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
   "$defs": {
@@ -135,5 +135,5 @@
       "required": ["name"]
     }
   },
-  "required": ["property_name", "city", "country", "platform", "source_url", "extracted_at"]
+  "required": ["property_name", "city", "country", "platform"]
 }

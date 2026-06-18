@@ -120,15 +120,15 @@
       },
       "description": "Additional attributes or tags. Commonly found in: Yelp attributes, Google Maps features."
     },
-    "source_url": {
+    "page_title": {
       "type": "string",
-      "description": "URL of the restaurant listing page. Commonly found in: Yelp URL, Google Maps URL, TripAdvisor URL."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
     },
-    "extracted_at": {
+    "favicon": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["name", "city", "country", "source_url", "extracted_at"]
+  "required": ["name", "city", "country"]
 }

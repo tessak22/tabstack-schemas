@@ -33,7 +33,7 @@
     },
     "trip_type": {
       "type": "string",
-      "enum": ["one_way", "roundtrip", "multi_city"],
+      "enum": ["one_way", "roundtrip", "multi_city", "other"],
       "description": "Type of trip. Commonly found in: search form, flight listing."
     },
     "airline": {
@@ -46,7 +46,7 @@
     },
     "cabin_class": {
       "type": "string",
-      "enum": ["economy", "premium_economy", "business", "first"],
+      "enum": ["economy", "premium_economy", "business", "first", "other"],
       "description": "Cabin class of the booking. Commonly found in: search form, flight listing."
     },
     "stops": {
@@ -107,15 +107,15 @@
       "format": "date-time",
       "description": "ISO 8601 timestamp of the price snapshot. Commonly found in: scraper metadata."
     },
-    "source_url": {
+    "page_title": {
       "type": "string",
-      "description": "URL of the source search results page. Commonly found in: OTA search URL, airline website URL."
+      "description": "Title of the source page. Tabstack auto-fills this from page metadata when left empty."
     },
-    "extracted_at": {
+    "favicon": {
       "type": "string",
-      "format": "date-time",
-      "description": "ISO 8601 timestamp when this record was extracted. Commonly found in: scraper metadata."
+      "format": "uri",
+      "description": "Favicon URL of the source page. Tabstack auto-fills this from page metadata when left empty."
     }
   },
-  "required": ["origin_iata", "destination_iata", "outbound_date", "trip_type", "airline", "cabin_class", "stops", "price_usd", "snapshot_at", "source_url", "extracted_at"]
+  "required": ["origin_iata", "destination_iata", "outbound_date", "trip_type", "airline", "cabin_class", "stops", "price_usd", "snapshot_at"]
 }
