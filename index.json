@@ -7,277 +7,277 @@
       "category": "b2b-intel",
       "title": "API Documentation Endpoint",
       "description": "Schema for individual API endpoint entries extracted from API documentation pages.",
-      "path": "schemas/b2b-intel/api-documentation-endpoint.json"
+      "path": "b2b-intel/api-documentation-endpoint.json"
     },
     {
       "category": "b2b-intel",
       "title": "Company Profile",
       "description": "Schema for B2B company profile data including firmographics, funding, and contact info.",
-      "path": "schemas/b2b-intel/company-profile.json"
+      "path": "b2b-intel/company-profile.json"
     },
     {
       "category": "b2b-intel",
       "title": "Funding Round",
       "description": "Schema for venture capital and private equity funding round records.",
-      "path": "schemas/b2b-intel/funding-round.json"
+      "path": "b2b-intel/funding-round.json"
     },
     {
       "category": "b2b-intel",
       "title": "Press Release & News Mention",
       "description": "Schema for press releases and news mentions about B2B companies.",
-      "path": "schemas/b2b-intel/press-release-news-mention.json"
+      "path": "b2b-intel/press-release-news-mention.json"
     },
     {
       "category": "b2b-intel",
       "title": "Product Changelog Entry",
       "description": "Schema for individual product changelog or release note entries.",
-      "path": "schemas/b2b-intel/product-changelog-entry.json"
+      "path": "b2b-intel/product-changelog-entry.json"
     },
     {
       "category": "b2b-intel",
       "title": "SaaS Pricing Page",
       "description": "Schema for SaaS product pricing page data including plans, features, and pricing models.",
-      "path": "schemas/b2b-intel/saas-pricing-page.json"
+      "path": "b2b-intel/saas-pricing-page.json"
     },
     {
       "category": "b2b-intel",
       "title": "Tech Stack",
       "description": "Schema for detected technology stack data for a company.",
-      "path": "schemas/b2b-intel/tech-stack.json"
+      "path": "b2b-intel/tech-stack.json"
     },
     {
       "category": "developer-ecosystem",
       "title": "GitHub Repository",
       "description": "GitHub repository data for OSS research and competitive intel.",
-      "path": "schemas/developer-ecosystem/github-repository.json"
+      "path": "developer-ecosystem/github-repository.json"
     },
     {
       "category": "developer-ecosystem",
       "title": "Package Registry Entry",
       "description": "Package from npm, PyPI, crates.io, etc.",
-      "path": "schemas/developer-ecosystem/package-registry-entry.json"
+      "path": "developer-ecosystem/package-registry-entry.json"
     },
     {
       "category": "e-commerce",
       "title": "Category Search Results",
       "description": "Schema for e-commerce category browsing or search results pages.",
-      "path": "schemas/e-commerce/category-search-results.json"
+      "path": "e-commerce/category-search-results.json"
     },
     {
       "category": "e-commerce",
       "title": "Grocery & CPG Product",
       "description": "Schema for grocery and consumer packaged goods (CPG) product listings.",
-      "path": "schemas/e-commerce/grocery-cpg-product.json"
+      "path": "e-commerce/grocery-cpg-product.json"
     },
     {
       "category": "e-commerce",
       "title": "Marketplace Seller Profile",
       "description": "Schema for seller or merchant profile pages on e-commerce marketplaces.",
-      "path": "schemas/e-commerce/marketplace-seller-profile.json"
+      "path": "e-commerce/marketplace-seller-profile.json"
     },
     {
       "category": "e-commerce",
       "title": "Product Listing",
       "description": "Schema for e-commerce product listings from marketplaces and direct retail sites.",
-      "path": "schemas/e-commerce/product-listing.json"
+      "path": "e-commerce/product-listing.json"
     },
     {
       "category": "e-commerce",
       "title": "Product Review",
       "description": "Schema for individual product reviews from e-commerce platforms.",
-      "path": "schemas/e-commerce/product-review.json"
+      "path": "e-commerce/product-review.json"
     },
     {
       "category": "finance",
       "title": "Alternative Asset Listing",
       "description": "Listing for an alternative asset such as art, wine, watches, sports cards, sneakers, or other collectibles.",
-      "path": "schemas/finance/alternative-asset-listing.json"
+      "path": "finance/alternative-asset-listing.json"
     },
     {
       "category": "finance",
       "title": "Angel & Seed Deal",
       "description": "Early-stage funding round announcement including angel, pre-seed, seed, convertible note, and SAFE deals.",
-      "path": "schemas/finance/angel-seed-deal.json"
+      "path": "finance/angel-seed-deal.json"
     },
     {
       "category": "finance",
       "title": "Crypto Asset",
       "description": "Snapshot of market data for a cryptocurrency or digital asset.",
-      "path": "schemas/finance/crypto-asset.json"
+      "path": "finance/crypto-asset.json"
     },
     {
       "category": "finance",
       "title": "Public Company Filing",
       "description": "SEC or equivalent regulatory filing from a publicly traded company, including financial statements and key metrics.",
-      "path": "schemas/finance/public-company-filing.json"
+      "path": "finance/public-company-filing.json"
     },
     {
       "category": "finance",
       "title": "VC Portfolio Page",
       "description": "Venture capital or investment firm portfolio page listing companies and investment details.",
-      "path": "schemas/finance/vc-portfolio-page.json"
+      "path": "finance/vc-portfolio-page.json"
     },
     {
       "category": "gov-public-records",
       "title": "Building Permit",
       "description": "Building or construction permit record from a municipal or county permitting authority.",
-      "path": "schemas/gov-public-records/building-permit.json"
+      "path": "gov-public-records/building-permit.json"
     },
     {
       "category": "gov-public-records",
       "title": "Business Registration",
       "description": "Business entity registration record from a state secretary of state or equivalent authority.",
-      "path": "schemas/gov-public-records/business-registration.json"
+      "path": "gov-public-records/business-registration.json"
     },
     {
       "category": "gov-public-records",
       "title": "Court Filing / Case",
       "description": "Court case record including parties, filings, and outcomes from a federal or state court docket.",
-      "path": "schemas/gov-public-records/court-filing-case.json"
+      "path": "gov-public-records/court-filing-case.json"
     },
     {
       "category": "gov-public-records",
       "title": "Government Contract Award",
       "description": "Federal or state government contract, grant, or other award from USASpending.gov or equivalent.",
-      "path": "schemas/gov-public-records/government-contract-award.json"
+      "path": "gov-public-records/government-contract-award.json"
     },
     {
       "category": "gov-public-records",
       "title": "Property Tax Record",
       "description": "Property tax assessment and payment record from a county assessor or tax collector.",
-      "path": "schemas/gov-public-records/property-tax-record.json"
+      "path": "gov-public-records/property-tax-record.json"
     },
     {
       "category": "healthcare",
       "title": "Clinical Trial",
       "description": "Clinical trial registration and status information from ClinicalTrials.gov or equivalent registry.",
-      "path": "schemas/healthcare/clinical-trial.json"
+      "path": "healthcare/clinical-trial.json"
     },
     {
       "category": "healthcare",
       "title": "Drug Formulary Entry",
       "description": "A drug entry from a health insurance plan formulary, including tier, coverage requirements, and pricing.",
-      "path": "schemas/healthcare/drug-formulary-entry.json"
+      "path": "healthcare/drug-formulary-entry.json"
     },
     {
       "category": "healthcare",
       "title": "Medical Device Recall",
       "description": "Medical device recall notice from the FDA or equivalent regulatory authority.",
-      "path": "schemas/healthcare/medical-device-recall.json"
+      "path": "healthcare/medical-device-recall.json"
     },
     {
       "category": "healthcare",
       "title": "Provider Directory Entry",
       "description": "Healthcare provider profile from an insurance network directory or physician finder.",
-      "path": "schemas/healthcare/provider-directory-entry.json"
+      "path": "healthcare/provider-directory-entry.json"
     },
     {
       "category": "jobs",
       "title": "Company Hiring Velocity",
       "description": "Schema for tracking a company's open job roles and hiring pace over time.",
-      "path": "schemas/jobs/company-hiring-velocity.json"
+      "path": "jobs/company-hiring-velocity.json"
     },
     {
       "category": "jobs",
       "title": "Executive Leadership Change",
       "description": "Schema for tracking executive and leadership role transitions at companies.",
-      "path": "schemas/jobs/executive-leadership-change.json"
+      "path": "jobs/executive-leadership-change.json"
     },
     {
       "category": "jobs",
       "title": "Job Posting",
       "description": "Schema for individual job listings extracted from job boards and company career pages.",
-      "path": "schemas/jobs/job-posting.json"
+      "path": "jobs/job-posting.json"
     },
     {
       "category": "jobs",
       "title": "Layoff Event",
       "description": "Schema for company layoff and workforce reduction event records.",
-      "path": "schemas/jobs/layoff-event.json"
+      "path": "jobs/layoff-event.json"
     },
     {
       "category": "jobs",
       "title": "Salary Data Point",
       "description": "Schema for individual salary data points from crowdsourced and published compensation sources.",
-      "path": "schemas/jobs/salary-data-point.json"
+      "path": "jobs/salary-data-point.json"
     },
     {
       "category": "real-estate",
       "title": "Commercial Property",
       "description": "Schema for commercial real estate property listings including office, retail, and industrial.",
-      "path": "schemas/real-estate/commercial-property.json"
+      "path": "real-estate/commercial-property.json"
     },
     {
       "category": "real-estate",
       "title": "Foreclosure & Auction Listing",
       "description": "Schema for foreclosure and property auction listings.",
-      "path": "schemas/real-estate/foreclosure-auction-listing.json"
+      "path": "real-estate/foreclosure-auction-listing.json"
     },
     {
       "category": "real-estate",
       "title": "Property Sold History",
       "description": "Schema for historical property sale transaction records.",
-      "path": "schemas/real-estate/property-sold-history.json"
+      "path": "real-estate/property-sold-history.json"
     },
     {
       "category": "real-estate",
       "title": "Rental Listing",
       "description": "Schema for residential rental property listings.",
-      "path": "schemas/real-estate/rental-listing.json"
+      "path": "real-estate/rental-listing.json"
     },
     {
       "category": "real-estate",
       "title": "Residential Listing",
       "description": "Schema for residential real estate listings including homes, condos, and townhouses for sale.",
-      "path": "schemas/real-estate/residential-listing.json"
+      "path": "real-estate/residential-listing.json"
     },
     {
       "category": "real-estate",
       "title": "Short-Term Rental",
       "description": "Schema for short-term vacation rental listings (Airbnb, VRBO, etc.).",
-      "path": "schemas/real-estate/short-term-rental.json"
+      "path": "real-estate/short-term-rental.json"
     },
     {
       "category": "social-content",
       "title": "News Article",
       "description": "Structured news article for LLM pipelines and media monitoring.",
-      "path": "schemas/social-content/news-article.json"
+      "path": "social-content/news-article.json"
     },
     {
       "category": "social-content",
       "title": "Social Profile",
       "description": "Platform social profile (LinkedIn company, Twitter/X, etc.)",
-      "path": "schemas/social-content/social-profile.json"
+      "path": "social-content/social-profile.json"
     },
     {
       "category": "social-content",
       "title": "Software Review",
       "description": "Software review from G2, Capterra, Trustpilot, etc.",
-      "path": "schemas/social-content/software-review.json"
+      "path": "social-content/software-review.json"
     },
     {
       "category": "travel",
       "title": "Attraction & Experience",
       "description": "Tourist attraction or bookable travel experience listing from an OTA or attraction platform.",
-      "path": "schemas/travel/attraction-experience.json"
+      "path": "travel/attraction-experience.json"
     },
     {
       "category": "travel",
       "title": "Flight Price Snapshot",
       "description": "Point-in-time price snapshot for a flight itinerary from an OTA or airline website.",
-      "path": "schemas/travel/flight-price-snapshot.json"
+      "path": "travel/flight-price-snapshot.json"
     },
     {
       "category": "travel",
       "title": "Hotel Listing",
       "description": "Hotel or lodging property listing with pricing, amenities, and availability from a booking platform.",
-      "path": "schemas/travel/hotel-listing.json"
+      "path": "travel/hotel-listing.json"
     },
     {
       "category": "travel",
       "title": "Restaurant Listing",
       "description": "Restaurant profile and details from a dining review platform or local business directory.",
-      "path": "schemas/travel/restaurant-listing.json"
+      "path": "travel/restaurant-listing.json"
     }
   ]
 }

@@ -8,7 +8,7 @@ These are **not hosted** — grab a file straight from this repo (or the docs si
 
 ```typescript
 import Tabstack from '@tabstack/sdk'
-import schema from './schemas/real-estate/residential-listing.json' with { type: 'json' }
+import schema from './real-estate/residential-listing.json' with { type: 'json' }
 
 const client = new Tabstack() // reads TABSTACK_API_KEY from the environment
 
@@ -30,16 +30,16 @@ Python and the other SDKs take the same `json_schema` object.
 
 | Category | Schemas | Includes |
 |---|---|---|
-| [`b2b-intel`](schemas/b2b-intel/) | 7 | API Documentation Endpoint, Company Profile, Funding Round, Press Release & News Mention, Product Changelog Entry, SaaS Pricing Page, Tech Stack |
-| [`developer-ecosystem`](schemas/developer-ecosystem/) | 2 | GitHub Repository, Package Registry Entry |
-| [`e-commerce`](schemas/e-commerce/) | 5 | Category Search Results, Grocery & CPG Product, Marketplace Seller Profile, Product Listing, Product Review |
-| [`finance`](schemas/finance/) | 5 | Alternative Asset Listing, Angel & Seed Deal, Crypto Asset, Public Company Filing, VC Portfolio Page |
-| [`gov-public-records`](schemas/gov-public-records/) | 5 | Building Permit, Business Registration, Court Filing / Case, Government Contract Award, Property Tax Record |
-| [`healthcare`](schemas/healthcare/) | 4 | Clinical Trial, Drug Formulary Entry, Medical Device Recall, Provider Directory Entry |
-| [`jobs`](schemas/jobs/) | 5 | Company Hiring Velocity, Executive Leadership Change, Job Posting, Layoff Event, Salary Data Point |
-| [`real-estate`](schemas/real-estate/) | 6 | Commercial Property, Foreclosure & Auction Listing, Property Sold History, Rental Listing, Residential Listing, Short-Term Rental |
-| [`social-content`](schemas/social-content/) | 3 | News Article, Social Profile, Software Review |
-| [`travel`](schemas/travel/) | 4 | Attraction & Experience, Flight Price Snapshot, Hotel Listing, Restaurant Listing |
+| [`b2b-intel`](b2b-intel/) | 7 | API Documentation Endpoint, Company Profile, Funding Round, Press Release & News Mention, Product Changelog Entry, SaaS Pricing Page, Tech Stack |
+| [`developer-ecosystem`](developer-ecosystem/) | 2 | GitHub Repository, Package Registry Entry |
+| [`e-commerce`](e-commerce/) | 5 | Category Search Results, Grocery & CPG Product, Marketplace Seller Profile, Product Listing, Product Review |
+| [`finance`](finance/) | 5 | Alternative Asset Listing, Angel & Seed Deal, Crypto Asset, Public Company Filing, VC Portfolio Page |
+| [`gov-public-records`](gov-public-records/) | 5 | Building Permit, Business Registration, Court Filing / Case, Government Contract Award, Property Tax Record |
+| [`healthcare`](healthcare/) | 4 | Clinical Trial, Drug Formulary Entry, Medical Device Recall, Provider Directory Entry |
+| [`jobs`](jobs/) | 5 | Company Hiring Velocity, Executive Leadership Change, Job Posting, Layoff Event, Salary Data Point |
+| [`real-estate`](real-estate/) | 6 | Commercial Property, Foreclosure & Auction Listing, Property Sold History, Rental Listing, Residential Listing, Short-Term Rental |
+| [`social-content`](social-content/) | 3 | News Article, Social Profile, Software Review |
+| [`travel`](travel/) | 4 | Attraction & Experience, Flight Price Snapshot, Hotel Listing, Restaurant Listing |
 
 Each category folder has its own README with a runnable example. [`index.json`](index.json) is a machine-readable manifest of every schema.
 
@@ -53,9 +53,8 @@ Each category folder has its own README with a runnable example. [`index.json`](
 ## Structure
 
 ```
-schemas/
-  <category>/
-    README.md
-    <schema-name>.json
+<category>/
+  README.md
+  <schema-name>.json
 index.json
 ```
