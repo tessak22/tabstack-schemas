@@ -6,9 +6,9 @@ Each file is a standalone [JSON Schema](https://json-schema.org/) (draft-07) you
 
 ## Schemas
 
-- `news-article.json` — News Article
-- `social-profile.json` — Social Profile
-- `software-review.json` — Software Review
+- `news-article.json`: News Article
+- `social-profile.json`: Social Profile
+- `software-review.json`: Software Review
 
 ## Use it
 
@@ -25,7 +25,7 @@ const data = await client.extract.json({
 })
 
 // `page_title` and `favicon` are auto-filled by Tabstack from page metadata.
-// Stamp request-side provenance yourself — it is always correct this way:
+// Stamp request-side provenance yourself so it stays accurate:
 const record = { ...data, source_url: 'https://www.example-news.com/2026/06/18/headline', extracted_at: new Date().toISOString() }
 console.log(record)
 ```

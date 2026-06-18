@@ -6,10 +6,10 @@ Each file is a standalone [JSON Schema](https://json-schema.org/) (draft-07) you
 
 ## Schemas
 
-- `attraction-experience.json` — Attraction & Experience
-- `flight-price-snapshot.json` — Flight Price Snapshot
-- `hotel-listing.json` — Hotel Listing
-- `restaurant-listing.json` — Restaurant Listing
+- `attraction-experience.json`: Attraction & Experience
+- `flight-price-snapshot.json`: Flight Price Snapshot
+- `hotel-listing.json`: Hotel Listing
+- `restaurant-listing.json`: Restaurant Listing
 
 ## Use it
 
@@ -26,7 +26,7 @@ const data = await client.extract.json({
 })
 
 // `page_title` and `favicon` are auto-filled by Tabstack from page metadata.
-// Stamp request-side provenance yourself — it is always correct this way:
+// Stamp request-side provenance yourself so it stays accurate:
 const record = { ...data, source_url: 'https://www.example-travel.com/hotels/grand-plaza', extracted_at: new Date().toISOString() }
 console.log(record)
 ```

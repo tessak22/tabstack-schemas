@@ -2,7 +2,7 @@
 
 Ready-to-use [JSON Schema](https://json-schema.org/) definitions for [Tabstack](https://tabstack.ai)'s `extract.json`. Point one at any URL and get structured, typed data back. 46 schemas across 10 categories.
 
-These are **not hosted** — grab a file straight from this repo (or the docs site) and pass it to the API. No install, no base URL.
+Grab a file straight from this repo (or the docs site) and pass it to the API.
 
 ## Use it
 
@@ -48,7 +48,7 @@ Each category folder has its own README with a runnable example. [`index.json`](
 - Standard JSON Schema (draft-07). Every field has a `description` that also notes where the value usually appears on the page, which steers extraction.
 - Closed enums include an `"other"` value so off-list page wording is captured instead of dropped.
 - Missing fields come back as `null` rather than failing the call, so partial pages still return useful data.
-- Provenance (`source_url`, `extracted_at`) is left to the caller — it is always correct that way. `page_title` and `favicon` are auto-filled by Tabstack when present.
+- Provenance (`source_url`, `extracted_at`) is left to the caller, which keeps it accurate. `page_title` and `favicon` are auto-filled by Tabstack when present.
 
 ## Structure
 
