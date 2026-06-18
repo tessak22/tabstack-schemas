@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/developer-ecosystem/package-registry-entry.json",
+  "title": "Package Registry Entry",
+  "description": "Package from npm, PyPI, crates.io, etc.",
+  "type": "object",
+  "properties": {
+    "registry": {
+      "type": "string",
+      "description": "The package registry this entry comes from.",
+      "enum": [
+        "npm",
+        "pypi",
+        "crates_io",
+        "rubygems",
+        "packagist",
+        "nuget",
+        "maven",
+        "go_modules",
+        "other"
+      ],
+      "x-tabstack-priority": "required",
+      "x-tabstack-source-hints": [
+        "npmjs.com/package",
+        "pypi.org/project",
+        "crates.io/crates"
+      ]
+    },
+    "package_name": {
+      "type": "string",
+      "description": "Name of the package as listed in the registry.",
+      "x-tabstack-priority": "required"
+    },
+    "package_version": {
+      "type": "string",
+      "description": "Version of the package this record describes.",
+      "x-tabstack-priority": "required"
+    },
+    "latest_version": {
+      "type": "string",
+      "description": "The latest stable version available in the registry.",
+      "x-tabstack-priority": "optional"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description of the package.",
+      "x-tabstack-priority": "optional"
+    },
+    "homepage_url": {
+      "type": "string",
+      "description": "Homepage URL for the package.",
+      "x-tabstack-priority": "optional"
+    },
+    "repository_url": {
+      "type": "string",
+      "description": "Source repository URL (e.g., GitHub link).",
+      "x-tabstack-priority": "optional"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier or license name.",
+      "x-tabstack-priority": "optional"
+    },
+    "keywords": {
+      "type": "array",
+      "description": "Keywords or tags associated with the package.",
+      "items": {
+        "type": "string"
+      },
+      "x-tabstack-priority": "optional"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Name of the primary author.",
+      "x-tabstack-priority": "optional"
+    },
+    "author_email": {
+      "type": "string",
+      "description": "Email of the primary author.",
+      "x-tabstack-priority": "optional"
+    },
+    "maintainers": {
+      "type": "array",
+      "description": "List of maintainer usernames or names.",
+      "items": {
+        "type": "string"
+      },
+      "x-tabstack-priority": "optional"
+    },
+    "dependencies": {
+      "type": "array",
+      "description": "List of runtime dependencies.",
+      "items": {
+        "type": "string"
+      },
+      "x-tabstack-priority": "optional"
+    },
+    "dev_dependencies": {
+      "type": "array",
+      "description": "List of development dependencies.",
+      "items": {
+        "type": "string"
+      },
+      "x-tabstack-priority": "optional"
+    },
+    "weekly_downloads": {
+      "type": "number",
+      "description": "Number of downloads in the past 7 days.",
+      "x-tabstack-priority": "optional"
+    },
+    "total_downloads": {
+      "type": "number",
+      "description": "Total all-time download count.",
+      "x-tabstack-priority": "optional"
+    },
+    "dependent_packages_count": {
+      "type": "number",
+      "description": "Number of packages that depend on this package.",
+      "x-tabstack-priority": "optional"
+    },
+    "github_stars": {
+      "type": "number",
+      "description": "GitHub star count for the linked repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "open_issues_count": {
+      "type": "number",
+      "description": "Number of open issues on the repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "first_published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when the package was first published.",
+      "x-tabstack-priority": "optional"
+    },
+    "last_published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime of the most recent release.",
+      "x-tabstack-priority": "optional"
+    },
+    "deprecated": {
+      "type": "boolean",
+      "description": "Whether the package has been marked as deprecated.",
+      "x-tabstack-priority": "optional"
+    },
+    "deprecation_message": {
+      "type": "string",
+      "description": "Message explaining why or what to migrate to.",
+      "x-tabstack-priority": "optional"
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL of the page this data was sourced from.",
+      "x-tabstack-priority": "required"
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this record was extracted.",
+      "x-tabstack-priority": "required"
+    }
+  },
+  "required": [
+    "registry",
+    "package_name",
+    "package_version",
+    "source_url",
+    "extracted_at"
+  ]
+}

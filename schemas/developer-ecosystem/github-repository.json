@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.tabstack.com/v1/developer-ecosystem/github-repository.json",
+  "title": "GitHub Repository",
+  "description": "GitHub repository data for OSS research and competitive intel.",
+  "type": "object",
+  "properties": {
+    "owner": {
+      "type": "string",
+      "description": "GitHub username or organization name that owns the repository.",
+      "x-tabstack-priority": "required"
+    },
+    "repo_name": {
+      "type": "string",
+      "description": "Repository name (without owner prefix).",
+      "x-tabstack-priority": "required"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Full repository identifier in 'owner/repo' format.",
+      "x-tabstack-priority": "required"
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description of the repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "homepage_url": {
+      "type": "string",
+      "description": "Homepage URL set on the repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "language_primary": {
+      "type": "string",
+      "description": "Primary programming language detected by GitHub.",
+      "x-tabstack-priority": "optional"
+    },
+    "languages": {
+      "type": "array",
+      "description": "Breakdown of programming languages used in the repository.",
+      "items": {
+        "$ref": "#/$defs/LanguageStat"
+      },
+      "x-tabstack-priority": "optional"
+    },
+    "topics": {
+      "type": "array",
+      "description": "GitHub topic tags applied to the repository.",
+      "items": {
+        "type": "string"
+      },
+      "x-tabstack-priority": "optional"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX license identifier or license name.",
+      "x-tabstack-priority": "optional"
+    },
+    "is_fork": {
+      "type": "boolean",
+      "description": "Whether this repository is a fork of another repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "is_archived": {
+      "type": "boolean",
+      "description": "Whether the repository has been archived.",
+      "x-tabstack-priority": "optional"
+    },
+    "is_template": {
+      "type": "boolean",
+      "description": "Whether the repository is marked as a template.",
+      "x-tabstack-priority": "optional"
+    },
+    "visibility": {
+      "type": "string",
+      "description": "Visibility level of the repository.",
+      "enum": [
+        "public",
+        "private",
+        "internal"
+      ],
+      "x-tabstack-priority": "optional"
+    },
+    "stars_count": {
+      "type": "number",
+      "description": "Number of stars the repository has received.",
+      "x-tabstack-priority": "required"
+    },
+    "forks_count": {
+      "type": "number",
+      "description": "Number of forks of this repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "watchers_count": {
+      "type": "number",
+      "description": "Number of users watching the repository.",
+      "x-tabstack-priority": "optional"
+    },
+    "open_issues_count": {
+      "type": "number",
+      "description": "Number of currently open issues.",
+      "x-tabstack-priority": "optional"
+    },
+    "open_prs_count": {
+      "type": "number",
+      "description": "Number of currently open pull requests.",
+      "x-tabstack-priority": "optional"
+    },
+    "contributors_count": {
+      "type": "number",
+      "description": "Total number of contributors.",
+      "x-tabstack-priority": "optional"
+    },
+    "commits_count": {
+      "type": "number",
+      "description": "Total number of commits on the default branch.",
+      "x-tabstack-priority": "optional"
+    },
+    "releases_count": {
+      "type": "number",
+      "description": "Total number of GitHub releases published.",
+      "x-tabstack-priority": "optional"
+    },
+    "latest_release_tag": {
+      "type": "string",
+      "description": "Tag name of the latest release (e.g., 'v1.2.3').",
+      "x-tabstack-priority": "optional"
+    },
+    "latest_release_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime of the latest release.",
+      "x-tabstack-priority": "optional"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when the repository was created.",
+      "x-tabstack-priority": "optional"
+    },
+    "pushed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime of the most recent push.",
+      "x-tabstack-priority": "optional"
+    },
+    "default_branch": {
+      "type": "string",
+      "description": "Name of the default branch (e.g., 'main', 'master').",
+      "x-tabstack-priority": "optional"
+    },
+    "readme_url": {
+      "type": "string",
+      "description": "URL to the raw README file.",
+      "x-tabstack-priority": "optional"
+    },
+    "source_url": {
+      "type": "string",
+      "description": "The URL of the page this data was sourced from.",
+      "x-tabstack-priority": "required"
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when this record was extracted.",
+      "x-tabstack-priority": "required"
+    }
+  },
+  "$defs": {
+    "LanguageStat": {
+      "type": "object",
+      "description": "Language usage statistics for a repository.",
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "Programming language name."
+        },
+        "bytes": {
+          "type": "number",
+          "description": "Number of bytes of code written in this language."
+        },
+        "percentage": {
+          "type": "number",
+          "description": "Percentage of the codebase written in this language."
+        }
+      },
+      "required": [
+        "language"
+      ]
+    }
+  },
+  "required": [
+    "owner",
+    "repo_name",
+    "full_name",
+    "stars_count",
+    "source_url",
+    "extracted_at"
+  ]
+}
